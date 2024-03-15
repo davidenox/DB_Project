@@ -18,3 +18,4 @@ I requisiti sono:
 - Mostrare una Hall of Fame ( Top 5 ) dei pro e non.
 - Assegnare priorità di accesso ai dati del DB in base al ruolo degli utenti.
 - Inserire, eliminare e visualizzare i vari videogames adibiti a tornei.
+Work in Progress
