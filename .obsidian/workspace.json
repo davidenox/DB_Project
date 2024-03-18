@@ -11,8 +11,22 @@
             "id": "669047c462f88021",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e1e215941dba588d",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Documentazione/Fase Uno.pdf"
+              }
             }
           }
         ]
@@ -81,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ]
@@ -139,11 +157,11 @@
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
-    "Fase Uno.md",
     "Fasi/Fase Uno.md",
-    "Fasi",
+    "README.md",
     "Documentazione/Fase Uno.pdf",
-    "Documentazione",
-    "README.md"
+    "Fase Uno.md",
+    "Fasi",
+    "Documentazione"
   ]
 }
