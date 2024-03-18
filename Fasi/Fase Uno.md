@@ -6,8 +6,9 @@
 | Davide | Noce      | 0306904   | davide.noce@students.uniroma2.eu     |
 | Simone | Zheng     | 0293045   | simone.zheng@students.uniroma2.eu    |
 # Progetto
+Si vuole creare un DB per un sito web che permette alle sale LAN ( sale gaming ) di organizzare e gestire tornei videoludici accessibili a giocatori pro e amatoriali. 
 ## Obiettivo del progetto
-Si vuole creare un DB per un sito web che permette alle sale LAN ( sala gaming ) di organizzare e gestire tornei videoludici accessibili a giocatori pro e non. L'obiettivo è quello di automatizzare, ottimizzare e rendere trasparente l'organizzazione di un torneo videoludico garantendo scalabilità in base ai giocatori, al formato ed altre variabili.
+L'obiettivo è di automatizzare, ottimizzare e rendere trasparente l'organizzazione di un torneo videoludico garantendo scalabilità in base ai giocatori, al formato ed altre variabili.
 ## Requisiti del progetto
 I requisiti sono:
 - Creare, modificare ed eliminare i vari tipi di tornei;
@@ -18,4 +19,3 @@ I requisiti sono:
 - Mostrare una Hall of Fame ( Top 5 ) dei pro e non.
 - Assegnare priorità di accesso ai dati del DB in base al ruolo degli utenti.
 - Inserire, eliminare e visualizzare i vari videogames adibiti a tornei.
-Work in Progress

@@ -11,12 +11,8 @@
             "id": "669047c462f88021",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bozza.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bozza.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bozza.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,17 +118,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Bozza.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,7 +139,11 @@
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
-    "README.md",
-    "Bozza.md"
+    "Fase Uno.md",
+    "Fasi/Fase Uno.md",
+    "Fasi",
+    "Documentazione/Fase Uno.pdf",
+    "Documentazione",
+    "README.md"
   ]
 }
