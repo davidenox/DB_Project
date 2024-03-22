@@ -19,3 +19,4 @@
 | Partita              | Rappresenta il match singolo di una competizione                                          | *ID_partita*, ID_giocatore, ID_torneo, ID_team, ID_classifica, risultato |                     |
 | Arbitri              | Moderano i comportamenti dei giocatori durante gli eventi.                                | *Dati anagrafici*, ID_torneo, ID_partita                                 |                     |
 | Sponsor              | Finanziano l'evento                                                                       | *ID_sponsor*                                                             |                     |
+work in progress
