@@ -139,13 +139,21 @@
                 "file": "Fasi/bozza fase 2.md"
               }
             }
+          },
+          {
+            "id": "b426d025edcfdb9d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
