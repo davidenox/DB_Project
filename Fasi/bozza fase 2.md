@@ -22,6 +22,18 @@
 
 # Glossario delle relazioni
 
-| Relazioni | Descrizione | Entità |     |
-| --------- | ----------- | ------ | --- |
-|           |             |        |     |
+| Relazioni  | Descrizione                                                                     | Entità                                  |     |
+| ---------- | ------------------------------------------------------------------------------- | --------------------------------------- | --- |
+| Èmembrodi  | Relazione che indica una team per un giocatore                                  | Giocatore (1,N), Team (1,N)             |     |
+| Iscrive    | Relazione che indica che un team può iscriversi ad una competizione             | Team (1,1), Prenotazione (1,1)          |     |
+| Riceve     | Relazione che inidica un premio da assegnare ad un team                         | Premi (1,1), Team (1,N)                 |     |
+| Partecipa  | Relazione che indica la partecipazione di un team ad una competizione           | Team (0,N), Competizione(1,N)           |     |
+| Organizza  | Relazione che indica l'organizzazione di un torneo da parte degli organizzatori | Organizzatori (1,N), Competizione (1,N) |     |
+| Inviano    | Relazione che indica l'invio di una notifica da parte degli organizzatori       | Organizzatori (1,N), Notifiche(1,N)     |     |
+| Finanziano | Relazione che indica che gli sponsor possono finanziare una competizione        | Sponsor (1,N), Competizione (0,N)       |     |
+| Giocano    | Relazione che indica <font color="red"> non so come specificare</font>          | Competizione (1,N), Partita(1,N)        |     |
+| Dirige     | Relazione che assegna un arbitro ad una partita                                 | Arbitro(0,1), Partita(1,?)              |     |
+| Narrano    | Relazione che indica il commento di una partita da parte di un commentatore     | Commentatori (1,N), Partita (1,1)       |     |
+| Decide     | Relazione che indica la classifica in base alle partite                         | Partita (1,N), Classifica (1,1)         |     |
+| Aggiudica  | Relazione che indica il vincitore del premio                                    | Classifica(1,1), Premi(1,N?)            |     |
+| Assegna    | Relazione che indica la Hall of Fame                                            | Classifica(1,1), Hall of Fame (1,1)     |     |
