@@ -19,7 +19,23 @@
 | Partita              | Rappresenta il match singolo di una competizione                                          | *ID_partita*, ID_giocatore, ID_torneo, ID_team, ID_classifica, risultato | Competizione, Commentatori, Arbitro, Classifica         |
 | Arbitri              | Moderano i comportamenti dei giocatori durante gli eventi.                                | *Dati anagrafici*, ID_torneo, ID_partita                                 | Partita                                                 |
 | Sponsor              | Finanziano l'evento                                                                       | *ID_sponsor*                                                             | Competizione                                            |
-
+# Glossario dei termini
+| Entità               | Descrizione                                                                         | Sinonimi                 |
+| -------------------- | ----------------------------------------------------------------------------------- | ------------------------ |
+| Giocatore            | Persona che fa parte di un team                                                     | Player                   |
+| Team                 | Gruppo di giocatori che formano un team                                             | Squadra                  |
+| Competizione         | Tipo di torneo organizzato                                                          | Tornei                   |
+| Organizzatori        | Membri che organizzano i tornei                                                     |                          |
+| Classifica           | Tabella che indica la posizione del team nel torneo                                 |                          |
+| Hall of Fame         | Tabella che indica quale team ha fatto più vittorie in una determinata competizione | HoF                      |
+| Prenotazione         | Prenotazione effettuate da un team ad una specifica competizione                    | Richiesta Prenotazione   |
+| Premio               | Premio che viene assegnato al vincitore                                             | Trofeo                   |
+| Commentatori         | Persone che commentano una partita                                                  | Telecronisti             |
+| Notifiche            | Aggiornamenti delle competizioni lasciate dagli organizzatori                       | Messaggi ( controllare ) |
+| Sistema di pagamento | Metodo desiderato per pagare                                                        |                          |
+| Partita              | Singola partita presente in una competizione                                        | Match                    |
+| Arbitri              | Persone che controllano il comportamento dei giocatori                              | Controllore              |
+| Sponsor              | Finanziatore della competizione                                                     | Ente                     |
 # Glossario delle relazioni
 
 | Relazioni  | Descrizione                                                                     | Entità                                  |     |
@@ -37,3 +53,22 @@
 | Decide     | Relazione che indica la classifica in base alle partite                         | Partita (1,N), Classifica (1,1)         |     |
 | Aggiudica  | Relazione che indica il vincitore del premio                                    | Classifica(1,1), Premi(1,N?)            |     |
 | Assegna    | Relazione che indica la Hall of Fame                                            | Classifica(1,1), Hall of Fame (1,1)     |     |
+
+# Schemi 
+## Schemi di relazione
+
+Le chiavi primarie sono identificate in **grassetto** , mentre le chiavi secondarie sono <font color="red"> storte</font>.
+- Giocatori (**ID_Utente**, Dati Anagrafici, Email, Alias)
+- Team (**ID_Team** , _ID_Utente_ )
+- Competizione (**ID_Toreno**, _ID_Team_, Data, Ora, Gioco, Piattaforma, Tipologia, Nome, Regolamento)
+- Organizzatori (**ID_Organizzatori**, Email, Dati Anagrafici)
+- Notifiche (**ID_Notifiche**, _ID_Organizzatori_)
+- Sponsor (**ID_Sponsor**, Denaro????)
+- Arbitro (**ID_Arbitro**, _ID_Partita_, _ID_Torneo_)
+- Partita (**ID_Partita**, _ID_Torneo_, _ID_Arbitro_, <font color="red"> controllare</font>)
+- Commentatori (**ID_Commentatori**, Dati Anagrafici)
+- Prenotazione (**ID_Prenotazione**, _ID_Team_, _ID_Torneo_, Data, Ora)
+- Sistema di pagamento (**ID_Pagamento**, _ID_Prenotazione_, _ID_Premi_)
+- Premi (**ID_Premi**, Valore, Numero Premi, _ID_Classifica_)
+- Classifica (**ID_Classifica**, _ID_Partita_, Punteggio)
+- Hall of Fame (**ID_HoF** , _ID_Utente_ , Num_vittorie)
