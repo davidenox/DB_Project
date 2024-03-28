@@ -4,7 +4,7 @@
 | Entità               | Descrizione                                                                               | Attributi                                                                | Relazioni Coinvolte                                     |
 | -------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------- |
 | Giocatore            | Rappresenta l'utente che intende partecipare alla competizione.                           | *ID_utente*, email, dati anagrafici, nickname                            | Team                                                    |
-| Competizione         | Rappresenta il tipo di evento organizzato per il videogioco scelto.                       | *ID_torneo*, tipologia, nome_torneo, regolamento, data inizio/fine       | Team, Organizzatori, Sponsor, Partita, Prenotazione     |
+| Torneo               | Rappresenta il tipo di evento organizzato per il videogioco scelto.                       | *ID_torneo*, tipologia, nome_torneo, regolamento, data inizio/fine       | Team, Organizzatori, Sponsor, Partita, Prenotazione     |
 | Videogioco           | Rappresenta gioco utilizzato nella competizione.                                          | *ID_gioco*, nome, genere                                                 |                                                         |
 | Piattaforma          | Rappresenta la postazione di gioco per gli utenti.                                        | *ID_piattaforma*, tipo di piattaforma                                    |                                                         |
 | Organizzatori        | Rappresenta la figura che intende creare la competizione.                                 | *ID_organizzatori*, email, dati anagrafici                               | Competizione, Notifiche                                 |
@@ -24,7 +24,7 @@
 | -------------------- | ----------------------------------------------------------------------------------- | ------------------------ |
 | Giocatore            | Persona che fa parte di un team                                                     | Player                   |
 | Team                 | Gruppo di giocatori che formano un team                                             | Squadra                  |
-| Competizione         | Tipo di torneo organizzato                                                          | Tornei                   |
+| Torneo               | Tipo di torneo organizzato                                                          | Competizione             |
 | Organizzatori        | Membri che organizzano i tornei                                                     |                          |
 | Classifica           | Tabella che indica la posizione del team nel torneo                                 |                          |
 | Hall of Fame         | Tabella che indica quale team ha fatto più vittorie in una determinata competizione | HoF                      |
