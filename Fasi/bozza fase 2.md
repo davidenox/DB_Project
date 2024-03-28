@@ -55,6 +55,8 @@
 | Assegna    | Relazione che indica la Hall of Fame                                            | Classifica(1,1), Hall of Fame (1,1)     |     |
 
 # Schemi 
+## Schema scheletro
+![[Pasted image 20240328153745.png]]
 ## Schemi di relazione
 
 Le chiavi primarie sono identificate in **grassetto** , mentre le chiavi secondarie sono <font color="red"> storte</font>.
