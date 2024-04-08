@@ -146,25 +146,20 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
     }
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
     "Img/Pasted image 20240328153745.png",
     "Img",
-    "Fasi/bozza fase 2.md",
-    "schema_scheletro.drawio.pdf",
-    "Pasted image 20240328153656.png",
-    "Pasted image 20240328153655.png",
-    "Pasted image 20240328153643.png",
-    "Pasted image 20240328153549.png",
     "Documentazione/Fase Uno.pdf",
+    "Fasi/bozza fase 2.md",
     "README.md",
     "Fasi/Fase Uno.md",
     "Fase Uno.md",
