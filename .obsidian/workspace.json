@@ -1,39 +1,51 @@
 {
   "main": {
-    "id": "e55afb45a3183ce8",
+    "id": "048f6ff3ba5180aa",
     "type": "split",
     "children": [
       {
-        "id": "1de6665c227d260e",
+        "id": "797e06b01b8f6781",
         "type": "tabs",
         "children": [
           {
-            "id": "669047c462f88021",
+            "id": "0a8b96fcc07e98ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/bozza fase 2.md",
+                "file": "Fasi/Fase Uno.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "28f6d14b58071b0b",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "SchemaER.pdf",
+                "staged": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "5a1ee69b77c04da3",
+    "id": "4e5fa17e2888e35c",
     "type": "split",
     "children": [
       {
-        "id": "27097e77db6abaef",
+        "id": "4a71614ce8ae1de9",
         "type": "tabs",
         "children": [
           {
-            "id": "4b4063c61c456e68",
+            "id": "09682ba127953d19",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +55,7 @@
             }
           },
           {
-            "id": "82a89755a19db723",
+            "id": "e72e82b57e184708",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +70,7 @@
             }
           },
           {
-            "id": "eac85018a76ef514",
+            "id": "46da6b9f18733526",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,23 +81,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 300
   },
   "right": {
-    "id": "6c39f1351ceb0013",
+    "id": "2085bde465646547",
     "type": "split",
     "children": [
       {
-        "id": "17e28bd2f5fcf856",
+        "id": "eddd7f7bbe24da19",
         "type": "tabs",
         "children": [
           {
-            "id": "e5b10cb83008b275",
+            "id": "d116db5e21bc391f",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/bozza fase 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +108,18 @@
             }
           },
           {
-            "id": "798052f484849b46",
+            "id": "e3f6e9a03a639216",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/bozza fase 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "3969e03e5ff19f05",
+            "id": "7aa06f53d6d30c4a",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,17 +130,15 @@
             }
           },
           {
-            "id": "155c7f1805277e3f",
+            "id": "edb5fa2e229857bb",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Fasi/bozza fase 2.md"
-              }
+              "state": {}
             }
           },
           {
-            "id": "b426d025edcfdb9d",
+            "id": "a7b67e9da0d2967b",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -142,7 +150,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,21 +162,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "669047c462f88021",
+  "active": "28f6d14b58071b0b",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "SchemaER.pdf",
+    "Progettazione logica.md",
+    "ER.md",
     "Fasi/Fase Uno.md",
-    "Fasi/bozza fase 2.md",
-    "Img/Pasted image 20240328153745.png",
-    "Img",
-    "schema_scheletro.drawio.pdf",
-    "Pasted image 20240328153656.png",
-    "Pasted image 20240328153655.png",
-    "Pasted image 20240328153643.png",
-    "Pasted image 20240328153549.png",
-    "Documentazione/Fase Uno.pdf",
-    "README.md",
-    "Fase Uno.md",
-    "Fasi",
-    "Documentazione"
+    "Fasi/bozza fase 2.md"
   ]
 }
