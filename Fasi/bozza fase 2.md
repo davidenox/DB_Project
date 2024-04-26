@@ -16,6 +16,31 @@
 | Arbitro       | Modera i comportamenti dei giocatori durante gli eventi.                                  | *ID_Arbitro*, Dati Anagrafici                    | Partita                                    |
 | Sponsor       | Finanziano l'evento                                                                       | *ID_Sponsor*, Nome, Fondi                        | Torneo                                     |
 
+
+| Entità              | Descrizione                                                                | Attributi | Relazioni coinvolte |
+| ------------------- | -------------------------------------------------------------------------- | --------- | ------------------- |
+| Persone             | Rappresentano un qualsiasi utente ed il suo ruolo annesso                  |           |                     |
+| Giocatore           | Rappresenta l'utente che farà parte di un team                             |           |                     |
+| Allenatore          | Rappresenta l'utente che dirigerà un team                                  |           |                     |
+| Staff               | Rappresenta l'utente collaboratore di un determinato team                  |           |                     |
+| Arbitro             | Rappresenta l'utente che dirigerà le partite                               |           |                     |
+| Telecronista        | Rappresenta l'utente che commenterà le partite                             |           |                     |
+| Team                | Rappresenta l'insieme di giocatori che partecipano in squadra al torneo    |           |                     |
+| Partita             | Rappresenta il singolo match del torneo                                    |           |                     |
+| Torneo              | Rappresenta la competizione organizzata                                    |           |                     |
+| Partita non giocata | Rappresenta una partita annullata o sospesa per una motivazione specifica. |           |                     |
+| Partita giocata     | Rappresenta una partita giocata regolarmente                               |           |                     |
+| Classifica          | Rappresenta la posizione delle squadre in un torneo.                       |           |                     |
+| Premi               | Rappresentano il compenso assegnato a team e giocatori                     |           |                     |
+| Statistiche         | Rappresentano le statistiche delle partite                                 |           |                     |
+
+
+
+
+
+
+
+
 <font color="yellow">Punti di vista:</font> 
 - Non è meglio mettere ai commentatori come chiave primaria i dati anagrafici? Tanto alla fine devi sapere il cognome di chi commenta. 
 - Poi l'attributo Risultato l'ho messo come attributo di partita. Va bene?  
