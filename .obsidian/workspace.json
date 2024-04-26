@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/bozza fase 2.md",
+                "file": "Fasi/Fase Uno.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/bozza fase 2.md",
+                "file": "Fasi/Fase Uno.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/bozza fase 2.md",
+                "file": "Fasi/Fase Uno.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/bozza fase 2.md"
+                "file": "Fasi/Fase Uno.md"
               }
             }
           },
@@ -166,12 +166,13 @@
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "Roba bocciata/SchemaER.pdf",
+    "Roba bocciata",
     "Fasi/bozza fase 2.md",
-    "Documentazione/Fase Uno.pdf",
-    "SchemaER.pdf",
     "ER.md",
-    "Progettazione logica.md",
+    "conflict-files-obsidian-git.md",
+    "Documentazione/Fase Uno.pdf",
+    "Fasi/Progettazione logica.md",
     "Img/Pasted image 20240328153745.png",
     "Img",
     "README.md",
