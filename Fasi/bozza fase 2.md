@@ -19,21 +19,6 @@
 | Sponsor             | Rappresentano i finanziatori della competizione                             | Intestazione, P. IVA, E-mail, N° Telefono, Somma                            |                     |
 | Notifiche           | Rappresentano gli avvisi per i partecipanti o per chi segue la competizione | Ora, Data, Tipologia Avviso, Testo, Team                                    |                     |
 
-
-
-
-
-
-
-
-<font color="yellow">Punti di vista:</font> 
-- Non è meglio mettere ai commentatori come chiave primaria i dati anagrafici? Tanto alla fine devi sapere il cognome di chi commenta. 
-- Poi l'attributo Risultato l'ho messo come attributo di partita. Va bene?  
-- Anche per l'Hall of Fame invece di mettere ID_Player, dato che è chiave esterna, io metterei direttamente il Nickname 
-- Per quanto riguarda lo schema il collegamento tra Player e Team, dato che è solo un torneo sportivo, non è meglio mettere un player ad una sola squadra, quindi 1:1,  e una squadra ha più player, quindi 1:N ?
-- Il collegamento tra Torneo e Sponsor 0:N va bene perché zero o più tornei possono essere sponsorizzati, ma al contrario metterei che zero o più sponsor possono sponsorizzarli, quindi 0:N anche qui?
-- Per quanto riguarda la Hall of Fame, la facciamo che riguarda una squadra o per ogni tipologia di sport c'è una HoF? Perché sennò tocca cambiare le associazioni. 
-
 # Glossario dei termini
 | Entità        | Descrizione                                                                         | Sinonimi     |
 | ------------- | ----------------------------------------------------------------------------------- | ------------ |
