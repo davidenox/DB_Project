@@ -1,38 +1,23 @@
-
 # Glossario delle Entità
 
-| Entità        | Descrizione                                                                               | Attributi                                        | Relazioni Coinvolte                        |
-| ------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------ |
-| Player        | Rappresenta l'utente che intende partecipare alla competizione.                           | *ID_Player*, E-mail, Dati Anagrafici, Nickname   | Team                                       |
-| Torneo        | Rappresenta il tipo di evento organizzato per il videogioco scelto.                       | *ID_Torneo*, Sport, Nome, Regolamento, Tipologia | Team, Organizzatori, Sponsor, <br>Partita, |
-| Organizzatori | Rappresenta la figura che intende creare la competizione.                                 | *ID_Organizzatori*, E-mail, Dati Anagrafici      | Torneo, Notifiche                          |
-| Classifica    | Rappresenta la posizione dei giocatori o delle squadre in un torneo.                      | *ID_Classifica*,  Punteggio, Anno                | Partita, Premi, Hall of Fame               |
-| Hall of Fame  | Rappresenta uno storico dei migliori giocatori che hanno partecipato ad una competizione. | *ID_HoF*, ID_Player, Numero vittorie             | Classifica                                 |
-| Premi         | Rappresenta il riconoscimento per la vittoria di una competizione.                        | *ID_Premio*, Valore, Numero premi                | Team, Classifica                           |
-| Team          | Rappresenta un gruppo di utenti che vogliono partecipare in squadra ad una competizione.  | *ID_Team*, Nome                                  | Player, Notifiche,  Torneo, Premi          |
-| Commentatori  | Commentano e fanno la telecronaca della partita                                           | *ID_Commentatori*, Dati Anagrafici               | Partita                                    |
-| Notifiche     | Rappresentano la gestione delle comunicazioni agli utenti                                 | *ID_Notifiche*,                                  | Team, Organizzatori                        |
-| Partita       | Rappresenta il match singolo di una competizione                                          | *ID_Partita*, Data, Ora, Luogo, Risultato        | Torneo, Arbitro, Commentatori, Classifica  |
-| Arbitro       | Modera i comportamenti dei giocatori durante gli eventi.                                  | *ID_Arbitro*, Dati Anagrafici                    | Partita                                    |
-| Sponsor       | Finanziano l'evento                                                                       | *ID_Sponsor*, Nome, Fondi                        | Torneo                                     |
-
-
-| Entità              | Descrizione                                                                | Attributi | Relazioni coinvolte |
-| ------------------- | -------------------------------------------------------------------------- | --------- | ------------------- |
-| Persone             | Rappresentano un qualsiasi utente ed il suo ruolo annesso                  |           |                     |
-| Giocatore           | Rappresenta l'utente che farà parte di un team                             |           |                     |
-| Allenatore          | Rappresenta l'utente che dirigerà un team                                  |           |                     |
-| Staff               | Rappresenta l'utente collaboratore di un determinato team                  |           |                     |
-| Arbitro             | Rappresenta l'utente che dirigerà le partite                               |           |                     |
-| Telecronista        | Rappresenta l'utente che commenterà le partite                             |           |                     |
-| Team                | Rappresenta l'insieme di giocatori che partecipano in squadra al torneo    |           |                     |
-| Partita             | Rappresenta il singolo match del torneo                                    |           |                     |
-| Torneo              | Rappresenta la competizione organizzata                                    |           |                     |
-| Partita non giocata | Rappresenta una partita annullata o sospesa per una motivazione specifica. |           |                     |
-| Partita giocata     | Rappresenta una partita giocata regolarmente                               |           |                     |
-| Classifica          | Rappresenta la posizione delle squadre in un torneo.                       |           |                     |
-| Premi               | Rappresentano il compenso assegnato a team e giocatori                     |           |                     |
-| Statistiche         | Rappresentano le statistiche delle partite                                 |           |                     |
+| Entità              | Descrizione                                                                 | Attributi                                                                   | Relazioni coinvolte |
+| ------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------- |
+| Persone             | Rappresentano un qualsiasi utente ed il suo ruolo annesso                   | Nome, Cognome, CF, Ruolo                                                    |                     |
+| Giocatore           | Rappresenta l'utente che farà parte di un team                              | Nome, Cognome, Data di nascita, CF, Nazionalità, Team                       |                     |
+| Allenatore          | Rappresenta l'utente che dirigerà un team                                   | Nome, Cognome, Data di Nascita, CF, Nazionalità, Team                       |                     |
+| Arbitro             | Rappresenta l'utente che dirigerà le partite                                | Nome, Cognome, Anno di nascita, CF, Luogo di nascita                        |                     |
+| Telecronista        | Rappresenta l'utente che commenterà le partite                              | Nome, Cognome, Anno di nascita, CF                                          |                     |
+| Team                | Rappresenta l'insieme di giocatori che partecipano in squadra al torneo     | Nome, Numeri di maglia, Capitano, Ruoli, Città                              |                     |
+| Partita             | Rappresenta il singolo match del torneo                                     | Ora, Data, Luogo, Team casa, Team ospite                                    |                     |
+| Torneo              | Rappresenta la competizione organizzata                                     | Nome, Anno, Tipologia, Premi, Team                                          |                     |
+| Partita non giocata | Rappresenta una partita annullata o sospesa per una motivazione specifica.  | Ora, Data, Luogo, Team casa, Team ospite, Motivazione                       |                     |
+| Partita giocata     | Rappresenta una partita giocata regolarmente                                | Team casa, Team ospite, Gol casa, Gol fuori casa, Risultato                 |                     |
+| Classifica          | Rappresenta la posizione delle squadre in un torneo.                        | Punti, Posizione, Team, Vittorie, Pareggi, Sconfitte, Gol fatti, Gol subiti |                     |
+| Premi               | Rappresentano il compenso assegnato a team e giocatori                      | Compenso, Posizione                                                         |                     |
+| Statistiche         | Rappresentano le statistiche delle partite                                  | Possesso palla, Cartellini gialli, Cartellini rossi, Gol team,  Tiri        |                     |
+| Organizzatori       | Rappresentano gli organizzatori della competizione                          | Intestazione, CF, Rappresentante, E-mail, N° di telefono.                   |                     |
+| Sponsor             | Rappresentano i finanziatori della competizione                             | Intestazione, P. IVA, E-mail, N° Telefono, Somma                            |                     |
+| Notifiche           | Rappresentano gli avvisi per i partecipanti o per chi segue la competizione | Ora, Data, Tipologia Avviso, Testo, Team                                    |                     |
 
 
 
