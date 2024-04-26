@@ -18,16 +18,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "98f489a808f1f8f6",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Documentazione/Fase Uno.pdf"
-              }
-            }
           }
         ]
       }
@@ -166,15 +156,15 @@
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
-    "Documentazione/Fase Uno.pdf",
     "SchemaER.pdf",
-    "ER.md",
-    "Fasi/bozza fase 2.md",
     "Progettazione logica.md",
+    "README.md",
+    "Fasi/bozza fase 2.md",
+    "Fasi/Fase Uno.md",
+    "ER.md",
     "Img/Pasted image 20240328153745.png",
     "Img",
-    "README.md",
-    "Fasi/Fase Uno.md",
+    "Documentazione/Fase Uno.pdf",
     "Fase Uno.md",
     "Fasi",
     "Documentazione"
