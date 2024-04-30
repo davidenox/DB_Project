@@ -11,19 +11,11 @@
             "id": "669047c462f88021",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf"
-              }
-            }
-          },
-          {
-            "id": "98f489a808f1f8f6",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Documentazione/Fase Uno.pdf"
+                "file": "Fasi/bozza fase 2.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -93,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
+                "file": "Fasi/bozza fase 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
+                "file": "Fasi/bozza fase 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf"
+                "file": "Fasi/bozza fase 2.md"
               }
             }
           },
@@ -154,33 +146,31 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
     }
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
-    "Soccer_tournament_management_system(1)(1).drawio",
-    "Fasi/bozza fase 2.md",
     "Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
+    "Fasi/bozza fase 2.md",
+    "Soccer_tournament_management_system(1)(1).drawio",
     "Progettazione Concettuale/ER",
     "Progettazione Concettuale",
+    "Fasi/Fase Uno.md",
     "Roba bocciata/SchemaER.pdf",
     "Roba bocciata",
-    "Fasi/Progettazione logica.md",
+    "ER.md",
     "conflict-files-obsidian-git.md",
     "Documentazione/Fase Uno.pdf",
-    "SchemaER.pdf",
-    "ER.md",
-    "Progettazione logica.md",
+    "Fasi/Progettazione logica.md",
     "Img/Pasted image 20240328153745.png",
     "Img",
     "README.md",
-    "Fasi/Fase Uno.md",
     "Fase Uno.md",
     "Fasi",
     "Documentazione"
