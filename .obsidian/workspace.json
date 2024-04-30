@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "Fasi/bozza fase 2.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "Fasi/bozza fase 2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "Fasi/bozza fase 2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase Uno.md"
+                "file": "Fasi/bozza fase 2.md"
               }
             }
           },
@@ -166,6 +166,7 @@
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
+    "Fasi/Fase Uno.md",
     "Roba bocciata/SchemaER.pdf",
     "Roba bocciata",
     "Fasi/bozza fase 2.md",
@@ -176,7 +177,6 @@
     "Img/Pasted image 20240328153745.png",
     "Img",
     "README.md",
-    "Fasi/Fase Uno.md",
     "Fase Uno.md",
     "Fasi",
     "Documentazione"
