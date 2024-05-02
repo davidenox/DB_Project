@@ -6,5 +6,7 @@
 | Azienda          |             |           |                     |
 | Vino             |             |           |                     |
 | Carta di credito |             |           |                     |
-|                  |             |           |                     |
+| Ordine           |             |           |                     |
+| Ricevuta         |             |           |                     |
+| Vigneto          |             |           |                     |
 
