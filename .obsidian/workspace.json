@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase Uno.md"
+                "file": "README.md"
               }
             }
           },
@@ -156,9 +156,9 @@
   },
   "active": "669047c462f88021",
   "lastOpenFiles": [
+    "Fasi/Fase Uno.md",
     "Documentazione/Fase Uno.pdf",
     "Roba bocciata/Fase Uno.md",
-    "Fasi/Fase Uno.md",
     "README.md",
     "Roba bocciata/bozza fase 2.md",
     "Roba bocciata/Torneo ESPORT",
@@ -174,7 +174,6 @@
     "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
     "Roba bocciata/Torneo ESPORT/Img",
-    "Fase Uno.md",
-    "Fasi"
+    "Fase Uno.md"
   ]
 }
