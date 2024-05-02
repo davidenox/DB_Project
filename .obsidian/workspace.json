@@ -8,18 +8,29 @@
         "type": "tabs",
         "children": [
           {
-            "id": "669047c462f88021",
+            "id": "98f489a808f1f8f6",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Documentazione/Fase Uno.pdf"
+              }
+            }
+          },
+          {
+            "id": "620e7cb568a5a9b2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Fasi/Schema Scheletro/Scheletro.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Fasi/Schema Scheletro/Scheletro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Fasi/Schema Scheletro/Scheletro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Fasi/Schema Scheletro/Scheletro.md"
               }
             }
           },
@@ -146,34 +157,40 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Apri selezione rapida": false,
-      "graph:Apri vista grafo": false,
-      "canvas:Crea nuova lavagna": false,
-      "daily-notes:Apri nota del giorno": false,
-      "templates:Inserisci modello": false,
-      "command-palette:Apri riquadro comandi": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "669047c462f88021",
+  "active": "620e7cb568a5a9b2",
   "lastOpenFiles": [
-    "Fasi/Fase Uno.md",
+    "Fasi/Schema Scheletro/Scheletro.md",
+    "Fasi/Schema Scheletro/Schema_Scheletro.drawio",
+    "Pasted image 20240502150142.png",
     "Documentazione/Fase Uno.pdf",
-    "Roba bocciata/Fase Uno.md",
-    "README.md",
+    "Fasi/Schema Scheletro",
+    "Fasi/bozza fase 2.md",
     "Roba bocciata/bozza fase 2.md",
-    "Roba bocciata/Torneo ESPORT",
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
-    "Soccer_tournament_management_system(1)(1).drawio",
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER",
-    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
-    "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
-    "Roba bocciata",
-    "ER.md",
-    "conflict-files-obsidian-git.md",
-    "Roba bocciata/Fase Uno.pdf",
-    "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
+    "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
+    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
     "Roba bocciata/Torneo ESPORT/Img",
+    "Roba bocciata/Torneo ESPORT",
+    "Roba bocciata/Progettazione logica.md",
+    "Roba bocciata/Fase Uno.pdf",
+    "Roba bocciata/Fase Uno.md",
+    "Fasi/Progettazione logica.md",
+    "conflict-files-obsidian-git.md",
+    "ER.md",
+    "Progettazione logica.md",
+    "Img/Pasted image 20240328153745.png",
+    "README.md",
+    "Fasi/Fase Uno.md",
     "Fase Uno.md"
   ]
 }
