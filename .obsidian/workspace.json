@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6542577dadb7fe95",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase Uno.md",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase Uno.md"
+                "file": "Fasi/Fase 2/Fase Due.md"
               }
             }
           },
@@ -156,25 +169,26 @@
   },
   "active": "4b4063c61c456e68",
   "lastOpenFiles": [
+    "Fasi/Fase 2/Raffinazioni",
+    "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
+    "Fasi/Fase 2/Fase Due.md",
+    "Roba bocciata/bozza fase 2.md",
+    "Fasi/Fase Uno.md",
+    "Fasi/Fase 2",
     "Fasi/Immagini",
     "Fasi/Immagini/Pasted image 20240502150142.png",
     "Documentazione/Fase Uno.pdf",
     "README.md",
-    "Fasi/Schema Scheletro/Scheletro.md",
-    "Fasi/Schema Scheletro",
-    "Fasi/Fase Uno.md",
+    "Fasi/Fase 2/Schema Scheletro",
     "Roba bocciata/Fase Uno.md",
-    "Roba bocciata/bozza fase 2.md",
     "Roba bocciata/Torneo ESPORT",
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
     "Soccer_tournament_management_system(1)(1).drawio",
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER",
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
     "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
-    "Roba bocciata",
     "ER.md",
     "conflict-files-obsidian-git.md",
-    "Roba bocciata/Fase Uno.pdf",
     "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
     "Fase Uno.md"
