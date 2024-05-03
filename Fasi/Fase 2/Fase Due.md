@@ -32,5 +32,17 @@
 | Recensione        | Feedback dell'utente                    | Feedback             |
 | Personale         | Gestore degli acquisti                  | Dipendenti           |
 
-
 # Glossario delle Relazioni 
+
+| Relazione | Descrizione                                              | Entità                        |
+| --------- | -------------------------------------------------------- | ----------------------------- |
+| Associa   | L'associazione di una carta di credito ad un cliente     | Carta di credito, Cliente     |
+| Produce   | L'operazione di produzione del prodotto                  | Vino, Cantina                 |
+| Sceglie   | La scelta dei prodotti da parte del cliente              | Cliente, Vino                 |
+| Contenuto | Prodotti all'interno del carrello                        | Vino, Carrello                |
+| Crea      | Creazione dell'ordine                                    | Carrello, Ordine              |
+| Avere     | Rilascio dell'opinione sul servizio da parte dell'utente | Ordine confermato, recensione |
+| Riceve    | Ricezione dell'ordine da parte dell'azienda              | Ordine confermato, Azienda    |
+| Lavora    | Personale all'interno dell'azienda                       | Azienda, Personale            |
+| Organizza | Gestione della spedizione                                | Personale, Spedizione         |
+| Consegna  | Operazione di consegna dell'ordine effettuato all'utente | Spedizione, Cliente           |
