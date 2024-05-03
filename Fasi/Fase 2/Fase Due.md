@@ -46,3 +46,18 @@
 | Lavora    | Personale all'interno dell'azienda                       | Azienda, Personale            |
 | Organizza | Gestione della spedizione                                | Personale, Spedizione         |
 | Consegna  | Operazione di consegna dell'ordine effettuato all'utente | Spedizione, Cliente           |
+
+# Schemi di Relazione
+
+- Cliente (*E-mail*, Password, Nome, Cognome, Data di Nascita )
+- Azienda (Intestazione, P.IVA, Sede)
+- Vino (Gradazione, Tipologia, Annata, Nome, Descrizione, Provenienza, Costo)
+- Carta di Credito (*Numero di Carta*, Circuito, CVV, Data Scadenza, Nome carta, Cognome carta)
+- Carrello (N° Prodotti, Prodotti, Saldo Totale)
+- Spedizione (*N° Ordine*, **E-mail**, Data di Consegna, Nome Corriere)
+- Cantina (Macchinari, Indirizzo, Intestazione, Ettari, Specie, Operai)
+- Ordine (*N° Ordine*, Data Ordine, Prodotti, Quantità)
+- Ordine Confermato (*N° Ordine*, Data Ordine, Prodotti, Quantità)
+- Ordine Rifiutato (Motivo, *N° Ordine*, Data Ordine, Prodotti, Quantità)
+- Recensione (*Autore*, *Data*, *Ordine*, Stelle, Commento)
+- Personale (*Ruolo*, Nome, Cognome)
