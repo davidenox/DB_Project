@@ -15,3 +15,22 @@
 | Recensione        | Feedback dell'utente                              | *Autore*, *Data*, *Ordine*, Stelle, Commento                            |                     |
 | Personale         | Utente che gestisce l'azienda                     | *Ruolo*, Nome, Cognome                                                  |                     |
 
+## Glossario dei Termini
+
+| Entità            | Descrizione                             | Sinonimi             |
+| ----------------- | --------------------------------------- | -------------------- |
+| Cliente           | Compra il prodotto                      | Compratore           |
+| Azienda           | Vende il prodotto                       | Venditore            |
+| Vino              | Prodotto in vendita                     | Prodotto             |
+| Carta di Credito  | Metodo di pagamento                     | Carta                |
+| Carrello          | Anteprima dell'ordine                   | Checkout             |
+| Spedizione        | Consegna del prodotto                   | Invio                |
+| Cantina           | Produzione e conservazione del prodotto | Bottiglieria         |
+| Ordine            | Acquisto del prodotto                   | Richiesta            |
+| Ordine Confermato | Conferma di acquisto                    | Richiesta confermata |
+| Ordine Rifiutato  | Annullamento dell'acquisto              | Richiesta rifiutata  |
+| Recensione        | Feedback dell'utente                    | Feedback             |
+| Personale         | Gestore degli acquisti                  | Dipendenti           |
+
+
+# Glossario delle Relazioni 
