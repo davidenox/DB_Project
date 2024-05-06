@@ -8,7 +8,6 @@
 | Carta di credito  | Metodo di pagamento                               | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta |                     |
 | Carrello          | Resoconto dei prodotti che si vogliono acquistare | N° Prodotti, Prodotti, Saldo Totale                                     |                     |
 | Spedizione        | Metodo di consegna del prodotto                   | *N° Ordine*, **E-mail**,  Data di Consegna, Nome Corriere,              |                     |
-| Cantina           | Luogo dove vengono conservati i prodotti          | Macchinari, Indirizzo, Intestazione, Ettari, Specie, Operai             |                     |
 | Ordine            | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine, Prodotti, Quantità                            |                     |
 | Ordine Confermato | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine, Prodotti, Quantità                            |                     |
 | Ordine Rifiutato  | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine, Prodotti, Quantità               |                     |
