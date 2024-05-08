@@ -18,17 +18,6 @@
             }
           },
           {
-            "id": "620e7cb568a5a9b2",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "Fasi/Schema Scheletro/Schema_Scheletro.drawio",
-                "staged": false
-              }
-            }
-          },
-          {
             "id": "f82f923242ed0409",
             "type": "leaf",
             "state": {
@@ -58,14 +47,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -131,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md"
+                "file": "Fasi/Fase 2/Fase Due.md"
               }
             }
           },
@@ -192,19 +181,20 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
     }
   },
   "active": "67b04f3e9cca9dd4",
   "lastOpenFiles": [
+    "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
+    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Schema_ER.drawio-2.pdf",
     "Fasi/Fase 2/Fase Due.md",
-    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 1/Fase Uno.md",
     "Documentazione/Schema_Scheletro.drawio.pdf",
     "Documentazione/Schema_ER.drawio.pdf",
@@ -222,8 +212,6 @@
     "Fasi/Fase 2/Raffinazioni",
     "Fasi/Schema Scheletro/Scheletro.md",
     "Fasi/Immagini/Pasted image 20240502150142.png",
-    "Fasi/Immagini",
-    "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
     "Pasted image 20240502150142.png",
     "Fasi/bozza fase 2.md",
     "Roba bocciata/bozza fase 2.md",

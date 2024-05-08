@@ -4,32 +4,39 @@
 | ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------- | ------------------- |
 | Cliente           | Utente che intende acquistare il prodotto         | *E-mail*, Password,  Nome, Cognome, Data di Nascita                     |                     |
 | Azienda           | Entità che rappresenta il venditore               | Intestazione, P.IVA, Sede                                               |                     |
-| Vino              | Prodotto in vendita                               | Gradazione, Tipologia, Annata, Nome, Descrizione, Provenienza, Costo    |                     |
+| Vino              | Prodotto in vendita                               | *Nome*, *Annata*, *Cantina*, Descrizione, Tipologia, Prezzo             |                     |
 | Carta di credito  | Metodo di pagamento                               | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta |                     |
-| Carrello          | Resoconto dei prodotti che si vogliono acquistare | N° Prodotti, Prodotti, Saldo Totale                                     |                     |
-| Spedizione        | Metodo di consegna del prodotto                   | *N° Ordine*, **E-mail**,  Data di Consegna, Nome Corriere,              |                     |
-| Ordine            | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine, Prodotti, Quantità                            |                     |
-| Ordine Confermato | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine, Prodotti, Quantità                            |                     |
-| Ordine Rifiutato  | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine, Prodotti, Quantità               |                     |
+| Carrello          | Resoconto dei prodotti che si vogliono acquistare | *Prodotti*, *Quantità*                                                  |                     |
+| Spedizione        | Metodo di consegna del prodotto                   | *N° Spedizione*                                                         |                     |
+| Ordine            | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine,                                               |                     |
+| Ordine Confermato | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine,                                               |                     |
+| Ordine Rifiutato  | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine,                                  |                     |
 | Recensione        | Feedback dell'utente                              | *Autore*, *Data*, *Ordine*, Stelle, Commento                            |                     |
 | Personale         | Utente che gestisce l'azienda                     | *Ruolo*, Nome, Cognome                                                  |                     |
+| Corriere          |                                                   | Nome, N°Telefono                                                        |                     |
+| Magazzino         |                                                   | *Indirizzo*, Prodotto, Quantità, Data scadenza                          |                     |
+| Indirizzo         |                                                   | *Via*, *N°Civico*, *CAP*, Capoluogo, Città, Stato                       |                     |
+| Pagamento         |                                                   | *N°Pagamento*, Data, Importo, Conferma                                  |                     |
+| Miscela           |                                                   | Uva, Quantità                                                           |                     |
+| Cantina           |                                                   | *Nome cantina*, Regione                                                 |                     |
 
 ## Glossario dei Termini
 
-| Entità            | Descrizione                             | Sinonimi             |
-| ----------------- | --------------------------------------- | -------------------- |
-| Cliente           | Compra il prodotto                      | Compratore           |
-| Azienda           | Vende il prodotto                       | Venditore            |
-| Vino              | Prodotto in vendita                     | Prodotto             |
-| Carta di Credito  | Metodo di pagamento                     | Carta                |
-| Carrello          | Anteprima dell'ordine                   | Checkout             |
-| Spedizione        | Consegna del prodotto                   | Invio                |
-| Cantina           | Produzione e conservazione del prodotto | Bottiglieria         |
-| Ordine            | Acquisto del prodotto                   | Richiesta            |
-| Ordine Confermato | Conferma di acquisto                    | Richiesta confermata |
-| Ordine Rifiutato  | Annullamento dell'acquisto              | Richiesta rifiutata  |
-| Recensione        | Feedback dell'utente                    | Feedback             |
-| Personale         | Gestore degli acquisti                  | Dipendenti           |
+| Entità            | Descrizione                             | Sinonimi                                          |
+| ----------------- | --------------------------------------- | ------------------------------------------------- |
+| Cliente           | Compra il prodotto                      | Compratore                                        |
+| Azienda           | Vende il prodotto                       | Venditore                                         |
+| Vino              | Prodotto in vendita                     | Prodotto                                          |
+| Carta di Credito  | Metodo di pagamento                     | Carta                                             |
+| Carrello          | Anteprima dell'ordine                   | Checkout                                          |
+| Spedizione        | Consegna del prodotto                   | Invio                                             |
+| Cantina           | Produzione e conservazione del prodotto | Bottiglieria                                      |
+| Ordine            | Acquisto del prodotto                   | Richiesta                                         |
+| Ordine Confermato | Conferma di acquisto                    | Richiesta confermata                              |
+| Ordine Rifiutato  | Annullamento dell'acquisto              | Richiesta rifiutata                               |
+| Recensione        | Feedback dell'utente                    | Feedback                                          |
+| Personale         | Gestore degli acquisti                  | Dipendenti                                        |
+
 
 # Glossario delle Relazioni 
 
