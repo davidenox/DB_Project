@@ -1,22 +1,22 @@
 # Glossario delle entità
 
-| Entità             | Descrizione                                       | Attributi                                                               | Relazioni coinvolte                              |
-| ------------------ | ------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
-| Cliente            | Utente che intende acquistare il prodotto         | *E-mail*, Password,  Nome, Cognome, Data di Nascita, Indirizzo          | Consegna, Esegue, Associa, Scrive                |
-| Vino               | Prodotto in vendita                               | *Nome*, *Annata*, *Cantina*, Descrizione, Tipologia, Prezzo             | Conservato, Contenuto, Valuta, Produce, Composto |
-| Carta di credito   | Metodo di pagamento                               | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta | Associa                                          |
-| Carrello           | Resoconto dei prodotti che si vogliono acquistare | *Prodotti*, *Quantità*                                                  | Contenuto, Crea                                  |
-| Spedizione         | Metodo di consegna del prodotto                   | *N° Spedizione*                                                         | Organizza, Ritiro, Consegna                      |
-| Ordine             | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine,                                               | Crea, Esegue                                     |
-| Ordine Confermato. | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine,                                               | Organizza                                        |
-| Ordine Rifiutato   | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine,                                  | Rifiutato                                        |
-| Recensione         | Feedback dell'utente                              | *Autore*, *Data*, *Ordine*, Stelle, Commento                            | Scrive, Valuta                                   |
-| Personale          | Utente che gestisce l'azienda                     | *Ruolo*, Nome, Cognome                                                  | Rifiutato, Organizza                             |
-| Corriere           | Azienda che gestiscele consegne                   | *ID_Corriere*, Nome, N°Telefono                                         | Ritiro, Consegna                                 |
-| Magazzino          | Luogo in cui vengono gestiti i ritiri dei vini    | *Indirizzo*, Prodotto, Quantità, Data scadenza                          | Ritiro, Conservato                               |
-| Pagamento          | Metodo per pagare gli ordini                      | *N°Pagamento*, Data, Importo, Conferma                                  | Esegue, Associa                                  |
-| Miscela            | Informazione aggiuntive del vino                  | *Uva, Quantità*                                                         | Composto                                         |
-| Cantina            | Informazione di dove è stato prodotto il vino     | *Nome cantina*, Regione                                                 | Produce                                          |
+| Entità            | Descrizione                                       | Attributi                                                               | Relazioni coinvolte                              |
+| ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| Cliente           | Utente che intende acquistare il prodotto         | *E-mail*, Password,  Nome, Cognome, Data di Nascita, Indirizzo          | Consegna, Esegue, Associa, Scrive                |
+| Vino              | Prodotto in vendita                               | *Nome*, *Annata*, Descrizione, Tipologia, Prezzo                        | Conservato, Contenuto, Valuta, Produce, Composto |
+| Carta di credito  | Metodo di pagamento                               | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta | Associa                                          |
+| Carrello          | Resoconto dei prodotti che si vogliono acquistare | *N° Ordine*,*Prodotti*, *Quantità*                                      | Contenuto, Crea                                  |
+| Spedizione        | Metodo di consegna del prodotto                   | *N° Spedizione*                                                         | Organizza, Ritiro, Consegna                      |
+| Ordine            | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine                                                | Crea, Esegue                                     |
+| Ordine Confermato | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine                                                | Organizza                                        |
+| Ordine Rifiutato  | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine                                   | Rifiutato                                        |
+| Recensione        | Feedback dell'utente                              | *Autore*, *Data*, *Ordine*, Stelle, Commento                            | Scrive, Valuta                                   |
+| Personale         | Utente che gestisce l'azienda                     | *Ruolo*, Nome, Cognome                                                  | Rifiutato, Organizza                             |
+| Trasportatore     | Azienda che gestiscele consegne                   | *NomeAzienda*, NomeCorriere, N°Telefono                                 | Ritiro, Consegna                                 |
+| Magazzino         | Luogo in cui vengono gestiti i ritiri dei vini    | *Indirizzo*, Quantità, Data scadenza                                    | Ritiro, Conservato                               |
+| Pagamento         | Metodo per pagare gli ordini                      | *N°Pagamento*, Data, Importo, Conferma                                  | Esegue, Associa                                  |
+| Miscela           | Informazione aggiuntive del vino                  | *Uva*, *Quantità*, *Nome*, *Annata*                                     | Composto                                         |
+| Cantina           | Informazione di dove è stato prodotto il vino     | *Nome cantina*, Regione                                                 | Produce                                          |
 
 ## Glossario dei Termini
 
@@ -32,7 +32,7 @@
 | Ordine Rifiutato  | Annullamento dell'acquisto | Richiesta rifiutata  |
 | Recensione        | Feedback dell'utente       | Feedback             |
 | Personale         | Gestore degli acquisti     | Dipendenti           |
-| Corriere          | Gestore consegne           | Servizio postale     |
+| Trasportatore     | Gestore consegne           | Corriere             |
 | Magazzino         | Deposito dei vini          | Riserva              |
 | Pagamento         | Metodo di pagamento        | Versamento           |
 | Miscela           | Informazioni del vino      | Composto             |
