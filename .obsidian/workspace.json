@@ -11,27 +11,61 @@
             "id": "98f489a808f1f8f6",
             "type": "leaf",
             "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Documentazione/Fase Uno.pdf"
+              }
+            }
+          },
+          {
+            "id": "620e7cb568a5a9b2",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "Fasi/Schema Scheletro/Schema_Scheletro.drawio",
+                "staged": false
+              }
+            }
+          },
+          {
+            "id": "f82f923242ed0409",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md",
+                "file": "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "af831d3626636aaf",
+            "id": "107928518d466c07",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Roba bocciata/bozza fase 2.md",
+                "file": "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "67b04f3e9cca9dd4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -97,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md"
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md"
               }
             }
           },
@@ -154,44 +188,49 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 210
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Apri selezione rapida": false,
-      "graph:Apri vista grafo": false,
-      "canvas:Crea nuova lavagna": false,
-      "daily-notes:Apri nota del giorno": false,
-      "templates:Inserisci modello": false,
-      "command-palette:Apri riquadro comandi": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "98f489a808f1f8f6",
+  "active": "67b04f3e9cca9dd4",
   "lastOpenFiles": [
-    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
-    "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
-    "Fasi/Fase 2/Fase Due.md",
+    "Progetto_DB.drawio.pdf",
     "Schema_ER.drawio-2.pdf",
-    "Roba bocciata/bozza fase 2.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
-    "Documentazione/Fase Uno.pdf",
-    "Fasi/bozza fase 2.md",
-    "Soccer_tournament_management_system(1)(1).drawio",
-    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
-    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER",
-    "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
-    "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
-    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
-    "Roba bocciata/Torneo ESPORT/Img",
-    "Roba bocciata/Torneo ESPORT",
-    "Roba bocciata/Progettazione logica.md",
-    "Roba bocciata/Fase Uno.pdf",
-    "Roba bocciata/Fase Uno.md",
-    "Fasi/Immagini/Pasted image 20240502155452.png",
-    "Fasi/Immagini/Pasted image 20240502151541.png",
-    "Fasi/Immagini/Pasted image 20240502150142.png",
+    "Fasi/Fase 2/Fase Due.md",
+    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 1/Fase Uno.md",
+    "Documentazione/Schema_Scheletro.drawio.pdf",
+    "Documentazione/Schema_ER.drawio.pdf",
+    "Documentazione/Fase Uno.pdf",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
+    "Fasi/Immagini/Pasted image 20240502155452.png",
+    "Fasi/Fase 1",
+    "Schema_ER.drawio.pdf",
+    "Schema_Scheletro.drawio.pdf",
+    "Fasi/Fase 2/Fase Concettuale",
+    "Pasted image 20240502155452.png",
+    "Fasi/Fase 2/Raffinazioni/img",
+    "Fasi/Immagini/Pasted image 20240502151541.png",
+    "Fasi/Fase 2/Raffinazioni",
+    "Fasi/Schema Scheletro/Scheletro.md",
+    "Fasi/Immagini/Pasted image 20240502150142.png",
+    "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
+    "Pasted image 20240502150142.png",
+    "Fasi/bozza fase 2.md",
+    "Roba bocciata/bozza fase 2.md",
+    "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
+    "Roba bocciata/Progettazione logica.md",
+    "Roba bocciata/Fase Uno.md",
+    "Fasi/Progettazione logica.md",
     "conflict-files-obsidian-git.md",
     "ER.md",
     "Progettazione logica.md",
