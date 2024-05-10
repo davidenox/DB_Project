@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "98f489a808f1f8f6",
+            "id": "67b04f3e9cca9dd4",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -18,54 +18,19 @@
             }
           },
           {
-            "id": "620e7cb568a5a9b2",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "Fasi/Schema Scheletro/Schema_Scheletro.drawio",
-                "staged": false
-              }
-            }
-          },
-          {
-            "id": "f82f923242ed0409",
+            "id": "1f252eea97378f13",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "107928518d466c07",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "67b04f3e9cca9dd4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Cose da migliorare.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -131,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Cose da migliorare.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Cose da migliorare.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md"
+                "file": "Cose da migliorare.md"
               }
             }
           },
@@ -200,26 +165,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "67b04f3e9cca9dd4",
+  "active": "1f252eea97378f13",
   "lastOpenFiles": [
+    "Documentazione/Fase Uno.pdf",
+    "Cose da migliorare.md",
+    "Fasi/Fase 2/Fase Due.md",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
+    "Documentazione/Schema_Scheletro.drawio.pdf",
+    "Documentazione/Schema_ER.drawio.pdf",
+    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+    "Fasi/Fase 1/Fase Uno.md",
     "Progetto_DB.drawio 1.pdf",
     "Progetto_DB.drawio.pdf",
     "Schema_ER.drawio-2.pdf",
-    "Fasi/Fase 2/Fase Due.md",
-    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
-    "Fasi/Fase 1/Fase Uno.md",
-    "Documentazione/Schema_Scheletro.drawio.pdf",
-    "Documentazione/Schema_ER.drawio.pdf",
-    "Documentazione/Fase Uno.pdf",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
     "Fasi/Immagini/Pasted image 20240502155452.png",
     "Fasi/Fase 1",
     "Schema_ER.drawio.pdf",
     "Schema_Scheletro.drawio.pdf",
     "Fasi/Fase 2/Fase Concettuale",
     "Pasted image 20240502155452.png",
-    "Fasi/Fase 2/Raffinazioni/img",
     "Fasi/Immagini/Pasted image 20240502151541.png",
     "Fasi/Schema Scheletro/Scheletro.md",
     "Fasi/Immagini/Pasted image 20240502150142.png",
