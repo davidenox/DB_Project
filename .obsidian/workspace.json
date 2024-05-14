@@ -8,17 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "67b04f3e9cca9dd4",
+            "id": "98f489a808f1f8f6",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Documentazione/Fase Uno.pdf"
+                "file": "Cose da migliorare.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
           {
-            "id": "1f252eea97378f13",
+            "id": "af831d3626636aaf",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -29,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Cose da migliorare.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+                "file": "Cose da migliorare.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -136,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md"
+                "file": "Cose da migliorare.md"
               }
             }
           },
@@ -153,55 +154,50 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "1f252eea97378f13",
+  "active": "98f489a808f1f8f6",
   "lastOpenFiles": [
-    "Progetto_DB.drawio 2.pdf",
-    "Cose da migliorare.md",
-    "Documentazione/Fase Uno.pdf",
-    "Fasi/Fase 2/Fase Due.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
-    "Documentazione/Schema_Scheletro.drawio.pdf",
-    "Documentazione/Schema_ER.drawio.pdf",
+    "Schema_ER.drawio-2.pdf",
     "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
-    "Fasi/Fase 1/Fase Uno.md",
+    "Cose da migliorare.md",
+    "Progetto_DB.drawio 2.pdf",
+    "Roba bocciata/bozza fase 2.md",
     "Progetto_DB.drawio 1.pdf",
     "Progetto_DB.drawio.pdf",
-    "Schema_ER.drawio-2.pdf",
-    "Fasi/Immagini/Pasted image 20240502155452.png",
-    "Fasi/Fase 1",
-    "Schema_ER.drawio.pdf",
-    "Schema_Scheletro.drawio.pdf",
-    "Fasi/Fase 2/Fase Concettuale",
-    "Pasted image 20240502155452.png",
-    "Fasi/Immagini/Pasted image 20240502151541.png",
-    "Fasi/Schema Scheletro/Scheletro.md",
-    "Fasi/Immagini/Pasted image 20240502150142.png",
+    "README.md",
+    "Fasi/Fase 2/Fase Due.md",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
-    "Pasted image 20240502150142.png",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
+    "Documentazione/Fase Uno.pdf",
     "Fasi/bozza fase 2.md",
-    "Roba bocciata/bozza fase 2.md",
+    "Soccer_tournament_management_system(1)(1).drawio",
+    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER/Soccer_tournament_management_system(1).drawio.pdf",
+    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
+    "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
+    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
     "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Fase Uno.md",
-    "Fasi/Progettazione logica.md",
+    "Fasi/Immagini/Pasted image 20240502155452.png",
+    "Fasi/Immagini/Pasted image 20240502151541.png",
+    "Fasi/Immagini/Pasted image 20240502150142.png",
+    "Fasi/Fase 1/Fase Uno.md",
     "conflict-files-obsidian-git.md",
     "ER.md",
     "Progettazione logica.md",
     "Img/Pasted image 20240328153745.png",
-    "README.md",
     "Fasi/Fase Uno.md",
     "Fase Uno.md"
   ]
