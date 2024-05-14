@@ -57,7 +57,8 @@
 | Conservato | Luogo dove viene conservato il vino da vendere                        | Magazzino (0:N), Vino (0:N)                                |
 | Rifiutato  | Ordine rifiutato                                                      | Ordine Rifiutato (1:1), Personale (0:N)                    |
 
-# Schemi di Relazione
+# Schemi
+## Schemi di Relazione
 
 - Cliente (*E-mail*, Password, Nome, Cognome, Data di Nascita, Indirizzo )
 - Vino (*Cantina, Annata, Nome*, Descrizione, Tipologia, Prezzo)
