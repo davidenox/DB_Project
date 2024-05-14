@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "98f489a808f1f8f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cose da migliorare.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "af831d3626636aaf",
             "type": "leaf",
             "state": {
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cose da migliorare.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cose da migliorare.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cose da migliorare.md"
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema ER.md"
               }
             }
           },
@@ -166,18 +154,20 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "98f489a808f1f8f6",
+  "active": "4b4063c61c456e68",
   "lastOpenFiles": [
-    "Schema_ER.drawio-2.pdf",
+    "Fasi/Fase 2/Fase Concettuale/pdf",
+    "Fasi/Fase 2/Fase Concettuale/pdf/Progetto_DB.drawio (2).pdf",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
     "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Cose da migliorare.md",
+    "Schema_ER.drawio-2.pdf",
     "Progetto_DB.drawio 2.pdf",
     "Roba bocciata/bozza fase 2.md",
     "Progetto_DB.drawio 1.pdf",
     "Progetto_DB.drawio.pdf",
     "README.md",
     "Fasi/Fase 2/Fase Due.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
     "Documentazione/Fase Uno.pdf",
@@ -187,7 +177,6 @@
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
     "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
-    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
     "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Fase Uno.md",
     "Fasi/Immagini/Pasted image 20240502155452.png",
