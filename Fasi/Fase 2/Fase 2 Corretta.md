@@ -60,23 +60,28 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 - **Tracciabilità delle Spedizioni**: Sistema di tracciamento per monitorare il percorso delle spedizioni e fornire aggiornamenti ai clienti e agli operatori del magazzino.
 
 # Parte seconda: Raccolta e analisi dei Requisiti
-    
-
-- **Utenti** (interviste, documentazione scritta)
-    
-    - Analisi dell’utente: a quali utenti è destinato il progetto?
-        
-    - Analisi dei bisogni: quali sono le necessità di tali utenti?
-        
-- **Documentazione esistente** (normative, leggi e regolamenti del settore, regolamenti interni, procedure aziendali, moduli)
-    
-- **Realizzazioni preesistenti** (applicativi da rimpiazzare, applicazioni che dovranno interagire col sistema da realizzare)
-    
-
 ## Elenco dei requisiti
     
 ## Glossario dei termini
-    
+
+| Entità            | Descrizione                | Sinonimi             |
+| ----------------- | -------------------------- | -------------------- |
+| Cliente           | Compra il prodotto         | Compratore           |
+| Vino              | Prodotto in vendita        | Prodotto             |
+| Carta di Credito  | Metodo di pagamento        | Carta                |
+| Carrello          | Anteprima dell'ordine      | Checkout             |
+| Spedizione        | Consegna del prodotto      | Invio                |
+| Ordine            | Acquisto del prodotto      | Richiesta            |
+| Ordine Confermato | Conferma di acquisto       | Richiesta confermata |
+| Ordine Rifiutato  | Annullamento dell'acquisto | Richiesta rifiutata  |
+| Recensione        | Feedback dell'utente       | Feedback             |
+| Personale         | Gestore degli acquisti     | Dipendenti           |
+| Trasportatore     | Gestore consegne           | Corriere             |
+| Magazzino         | Deposito dei vini          | Riserva              |
+| Pagamento         | Metodo di pagamento        | Versamento           |
+| Miscela           | Informazioni del vino      | Composto             |
+| Cantina           | Produzione del vino        | Bottiglieria         |
+
 ## Specifiche, assunzioni e vincoli d’integrità
     
 
@@ -93,18 +98,18 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 ## Dizionario dei Dati
     
 
-2. # Parte Quarta: Progettazione Logica
+# Parte Quarta: Progettazione Logica
+
+1. ## Schema E-R concettuale ristrutturato
     
-    1. ## Schema E-R concettuale ristrutturato
-        
-    2. ## Schema E-R logico
-        
-    3. ## Dizionario entità e relazioni
-        
+2. ## Schema E-R logico
+    
+3. ## Dizionario entità e relazioni
+    
 
 Descrizione delle varie componenti
 
-4. ## Indici di prestazione e carico applicativo
+## Indici di prestazione e carico applicativo
     
 
 - **Costo delle operazioni**
@@ -121,6 +126,5 @@ Per fare questa analisi è necessario conoscere:
 
   
 
-5. # Parte Quinta: Progettazione Fisica
-    
-    1. ## Schema fisico con indici
+# Parte Quinta: Progettazione Fisica
+1. ## Schema fisico con indici
