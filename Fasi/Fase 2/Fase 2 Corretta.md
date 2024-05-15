@@ -83,8 +83,13 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 | Cantina           | Produzione del vino        | Bottiglieria         |
 
 ## Specifiche, assunzioni e vincoli d’integrità
-    
-
+### Vincoli
+- L'ordine parte solo dopo il pagamento.
+- Tutto il vino viene da un solo fornitore.
+- Pagamento diretto, non a rate.
+- Ogni ordine è gestito da un solo dipendente dell'enoteca.
+- Si ipotizzano più magazzini.
+- Il cliente può scrivere al più una recensione per vino.
 # Parte Terza: Progettazione concettuale
     
 ## Diagramma E-R
