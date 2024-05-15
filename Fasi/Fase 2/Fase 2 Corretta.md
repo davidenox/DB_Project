@@ -1,8 +1,7 @@
 
-****Progetto*** **EnoMarket**
+***Progetto*** **EnoMarket**
 ***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone
 ***Corso di laurea:*** **Informatica**
-
 ***Data:*** **14/05/2024**
 
 # Parte Prima: Generalità
@@ -61,7 +60,25 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 
 # Parte seconda: Raccolta e analisi dei Requisiti
 ## Elenco dei requisiti
-    
+
+## Glossario delle Entità
+| Entità            | Descrizione                                       | Attributi                                                               | Relazioni coinvolte                              |
+| ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
+| Cliente           | Utente che intende acquistare il prodotto         | *E-mail*, Password,  Nome, Cognome, Data di Nascita, Indirizzo          | Consegna, Esegue, Associa, Scrive                |
+| Vino              | Prodotto in vendita                               | *Nome*, *Annata*, Descrizione, Tipologia, Prezzo                        | Conservato, Contenuto, Valuta, Produce, Composto |
+| Carta di credito  | Metodo di pagamento                               | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta | Associa                                          |
+| Carrello          | Resoconto dei prodotti che si vogliono acquistare | *N° Ordine*,*Prodotti*, *Quantità*                                      | Contenuto, Crea                                  |
+| Spedizione        | Metodo di consegna del prodotto                   | *N° Spedizione*                                                         | Organizza, Ritiro, Consegna                      |
+| Ordine            | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine                                                | Crea, Esegue                                     |
+| Ordine Confermato | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine                                                | Organizza                                        |
+| Ordine Rifiutato  | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine                                   | Rifiutato                                        |
+| Recensione        | Feedback dell'utente                              | *Autore*, *Data*, *Ordine*, Stelle, Commento                            | Scrive, Valuta                                   |
+| Personale         | Utente che gestisce l'azienda                     | *Ruolo*, Nome, Cognome                                                  | Rifiutato, Organizza                             |
+| Trasportatore     | Azienda che gestiscele consegne                   | *NomeAzienda*, NomeCorriere, N°Telefono                                 | Ritiro, Consegna                                 |
+| Magazzino         | Luogo in cui vengono gestiti i ritiri dei vini    | *Indirizzo*, Quantità, Data scadenza                                    | Ritiro, Conservato                               |
+| Pagamento         | Metodo per pagare gli ordini                      | *N°Pagamento*, Data, Importo, Conferma                                  | Esegue, Associa                                  |
+| Miscela           | Informazione aggiuntive del vino                  | *Uva*, *Quantità*, *Nome*, *Annata*                                     | Composto                                         |
+| Cantina           | Informazione di dove è stato prodotto il vino     | *Nome cantina*, Regione                                                 | Produce                                          |
 ## Glossario dei termini
 
 | Entità            | Descrizione                | Sinonimi             |
@@ -82,6 +99,22 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 | Miscela           | Informazioni del vino      | Composto             |
 | Cantina           | Produzione del vino        | Bottiglieria         |
 
+## Glossario delle Relazioni
+| Relazione  | Descrizione                                                           | Entità                                                     |
+| ---------- | --------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Associa    | L'associazione di una carta di credito ad un cliente per il pagamento | Carta di credito (1:1), Cliente (1:N), Pagamento (1:1)     |
+| Contenuto  | Prodotti all'interno del carrello                                     | Vino (0:N), Carrello (1:N)                                 |
+| Crea       | Creazione dell'ordine                                                 | Carrello (1:1), Ordine (1:1)                               |
+| Organizza  | Gestione dell'ordine da parte dell'azienda per la spedizione          | Ordine confermato (1:1), Personale (o:N), Spedizione (1:1) |
+| Consegna   | Operazione di consegna dell'ordine effettuato all'utente              | Corriere (1:N), Cliente (), Spedizione                     |
+| Produce    | Indica dov'è stato prodotto il vino                                   | Vino (1:1), Cantina (1:N)                                  |
+| Composto   | Indica cosa c'è all'interno del vino                                  | Vino (1:1), Miscela (1:1)                                  |
+| Ritiro     | Ritiro dell'ordine da parte del corriere in magazzino                 | Spedizione (1:N), Corriere (1:N), Magazzino(1:1)           |
+| Scrive     | Commento lasciato dal cliente                                         | Cliente (0:N), Recensione (1:1)                            |
+| Esegue     | Cliente che crea l'ordine da pagare                                   | Cliente (1:N), Pagamento (1:1), Ordine (1:1)               |
+| Valuta     | Modo per valutare la qualitò del vino                                 | Recensione (1:1), Vino (0:N)                               |
+| Conservato | Luogo dove viene conservato il vino da vendere                        | Magazzino (0:N), Vino (0:N)                                |
+| Rifiutato  | Ordine rifiutato                                                      | Ordine Rifiutato (1:1), Personale (0:N)                    |
 ## Specifiche, assunzioni e vincoli d’integrità
 ### Vincoli
 - L'ordine parte solo dopo il pagamento.
@@ -93,20 +126,35 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 # Parte Terza: Progettazione concettuale
     
 ## Diagramma E-R
-        
 
-- Schema scheletro
-    
-- Raffinamenti sucessivi
-    
+### Schema scheletro![[Pasted image 20240502150142.png]]
+Le entità principali del sistema sono le seguenti:
+- Cliente
+- Vino
+- Azinda
+- Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene venduto dall'_Azienda_. 
+
+### Raffinamenti 
+![[Pasted image 20240502151541.png]]
+
+Qui stiamo raffinando l'entità _Cliente_.
+Ad ogni _Cliente_ è associata una o più _Carte di Credito_ che gli permetterà di acquistare i prodotti. 
+
+![[Pasted image 20240502155452.png]]
+
+Qui stiamo raffinando l'entità _Ordine_.
+A questa entità _Ordine_ ha due entità figlie, _Ordine Completato_ e _Ordine Rifiutato_.
+Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo aver completato l'ordine. Una _Recensione_ appartiene a una solo _Ordine Completato_. 
+
 
 ## Dizionario dei Dati
     
 
 # Parte Quarta: Progettazione Logica
 
-1. ## Schema E-R concettuale ristrutturato
-    
+## Schema E-R concettuale ristrutturato
+![[Progetto_DB.drawio (2).pdf]]
+
 2. ## Schema E-R logico
     
 3. ## Dizionario entità e relazioni
