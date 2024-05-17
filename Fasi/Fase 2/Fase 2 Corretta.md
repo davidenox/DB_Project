@@ -1,11 +1,9 @@
-
 ***Progetto*** **EnoMarket**
 ***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone
 ***Corso di laurea:*** **Informatica**
-***Data:*** **14/05/2024**
-
 # Parte Prima: Generalità
 ## Descrizione generale del prodotto
+
 Il progetto mira alla creazione di un database per la gestione di un sito e-commerce dedicato alla vendita di vini. Questo database sarà il nucleo centrale del sistema informativo, supportando le operazioni quotidiane dell'e-commerce, dall'ordine da parte degli utenti alla spedizione del prodotto stesso. Il database si occuperà della gestione degli ordini, delle specifiche dei vini, della consegna dei prodotti e della raccolta delle recensioni da parte dei clienti riguardo la consegna e la qualità dei prodotti.
 ## Obiettivi del Progetto:
 
@@ -59,6 +57,7 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 - **Tracciabilità delle Spedizioni**: Sistema di tracciamento per monitorare il percorso delle spedizioni e fornire aggiornamenti ai clienti e agli operatori del magazzino.
 
 # Parte seconda: Raccolta e analisi dei Requisiti
+
 ## Elenco dei requisiti
 
 
@@ -74,7 +73,9 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 
 ## Diagramma E-R
 
-### Schema scheletro![[Pasted image 20240502150142.png]]
+### Schema scheletro
+
+![[Pasted image 20240502150142.png]]
 Le entità principali del sistema sono le seguenti:
 - Cliente
 - Vino
@@ -93,7 +94,6 @@ Qui stiamo raffinando l'entità _Ordine_.
 A questa entità _Ordine_ ha due entità figlie, _Ordine Completato_ e _Ordine Rifiutato_.
 Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo aver completato l'ordine. Una _Recensione_ appartiene a una solo _Ordine Completato_. 
 
-
 ## Dizionario dei Dati
 
 
@@ -102,9 +102,8 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 ## Schema E-R concettuale ristrutturato
 ![[Progetto_DB.drawio (2).pdf]]
 
-2. ## Schema E-R logico
-    
-3. ## Dizionario entità e relazioni
+## Schema E-R logico
+
 ## Glossario delle Entità
 | Entità           | Descrizione                                    | Attributi                                                               | Relazioni coinvolte                                       |
 | ---------------- | ---------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------- |
@@ -153,11 +152,6 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 | Contenere  | Luogo dove viene conservato il vino da vendere                        | Magazzini (1:N), Vini ***(1:1)***     |
 | Inviare    | Inviare l'ordine al cliente                                           | Spedizioni(1:1), Ordini(1:1)          |
 | Preferire  | Indica la preferenza dei clienti sui vini                             | Clienti(0:N), Vini(0:N)               |
-
-
-
-
-Descrizione delle varie componenti
 
 ## Indici di prestazione e carico applicativo
     
