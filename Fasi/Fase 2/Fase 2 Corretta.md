@@ -61,60 +61,7 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 # Parte seconda: Raccolta e analisi dei Requisiti
 ## Elenco dei requisiti
 
-## Glossario delle Entità
-| Entità            | Descrizione                                       | Attributi                                                               | Relazioni coinvolte                              |
-| ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------ |
-| Cliente           | Utente che intende acquistare il prodotto         | *E-mail*, Password,  Nome, Cognome, Data di Nascita, Indirizzo          | Consegna, Esegue, Associa, Scrive                |
-| Vino              | Prodotto in vendita                               | *Nome*, *Annata*, Descrizione, Tipologia, Prezzo                        | Conservato, Contenuto, Valuta, Produce, Composto |
-| Carta di credito  | Metodo di pagamento                               | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta | Associa                                          |
-| Carrello          | Resoconto dei prodotti che si vogliono acquistare | *N° Ordine*,*Prodotti*, *Quantità*                                      | Contenuto, Crea                                  |
-| Spedizione        | Metodo di consegna del prodotto                   | *N° Spedizione*                                                         | Organizza, Ritiro, Consegna                      |
-| Ordine            | Acquisto effettivo del prodotto                   | *N° Ordine*, Data Ordine                                                | Crea, Esegue                                     |
-| Ordine Confermato | Acquisto confermato del prodotto                  | *N° Ordine*, Data Ordine                                                | Organizza                                        |
-| Ordine Rifiutato  | Acquisto annullato del prodotto                   | Motivazione, *N° Ordine*, Data Ordine                                   | Rifiutato                                        |
-| Recensione        | Feedback dell'utente                              | *Autore*, *Data*, *Ordine*, Stelle, Commento                            | Scrive, Valuta                                   |
-| Personale         | Utente che gestisce l'azienda                     | *Ruolo*, Nome, Cognome                                                  | Rifiutato, Organizza                             |
-| Trasportatore     | Azienda che gestiscele consegne                   | *NomeAzienda*, NomeCorriere, N°Telefono                                 | Ritiro, Consegna                                 |
-| Magazzino         | Luogo in cui vengono gestiti i ritiri dei vini    | *Indirizzo*, Quantità, Data scadenza                                    | Ritiro, Conservato                               |
-| Pagamento         | Metodo per pagare gli ordini                      | *N°Pagamento*, Data, Importo, Conferma                                  | Esegue, Associa                                  |
-| Miscela           | Informazione aggiuntive del vino                  | *Uva*, *Quantità*, *Nome*, *Annata*                                     | Composto                                         |
-| Cantina           | Informazione di dove è stato prodotto il vino     | *Nome cantina*, Regione                                                 | Produce                                          |
-## Glossario dei termini
 
-| Entità            | Descrizione                | Sinonimi             |
-| ----------------- | -------------------------- | -------------------- |
-| Cliente           | Compra il prodotto         | Compratore           |
-| Vino              | Prodotto in vendita        | Prodotto             |
-| Carta di Credito  | Metodo di pagamento        | Carta                |
-| Carrello          | Anteprima dell'ordine      | Checkout             |
-| Spedizione        | Consegna del prodotto      | Invio                |
-| Ordine            | Acquisto del prodotto      | Richiesta            |
-| Ordine Confermato | Conferma di acquisto       | Richiesta confermata |
-| Ordine Rifiutato  | Annullamento dell'acquisto | Richiesta rifiutata  |
-| Recensione        | Feedback dell'utente       | Feedback             |
-| Personale         | Gestore degli acquisti     | Dipendenti           |
-| Trasportatore     | Gestore consegne           | Corriere             |
-| Magazzino         | Deposito dei vini          | Riserva              |
-| Pagamento         | Metodo di pagamento        | Versamento           |
-| Miscela           | Informazioni del vino      | Composto             |
-| Cantina           | Produzione del vino        | Bottiglieria         |
-
-## Glossario delle Relazioni
-| Relazione  | Descrizione                                                           | Entità                                                     |
-| ---------- | --------------------------------------------------------------------- | ---------------------------------------------------------- |
-| Associa    | L'associazione di una carta di credito ad un cliente per il pagamento | Carta di credito (1:1), Cliente (1:N), Pagamento (1:1)     |
-| Contenuto  | Prodotti all'interno del carrello                                     | Vino (0:N), Carrello (1:N)                                 |
-| Crea       | Creazione dell'ordine                                                 | Carrello (1:1), Ordine (1:1)                               |
-| Organizza  | Gestione dell'ordine da parte dell'azienda per la spedizione          | Ordine confermato (1:1), Personale (o:N), Spedizione (1:1) |
-| Consegna   | Operazione di consegna dell'ordine effettuato all'utente              | Corriere (1:N), Cliente (), Spedizione                     |
-| Produce    | Indica dov'è stato prodotto il vino                                   | Vino (1:1), Cantina (1:N)                                  |
-| Composto   | Indica cosa c'è all'interno del vino                                  | Vino (1:1), Miscela (1:1)                                  |
-| Ritiro     | Ritiro dell'ordine da parte del corriere in magazzino                 | Spedizione (1:N), Corriere (1:N), Magazzino(1:1)           |
-| Scrive     | Commento lasciato dal cliente                                         | Cliente (0:N), Recensione (1:1)                            |
-| Esegue     | Cliente che crea l'ordine da pagare                                   | Cliente (1:N), Pagamento (1:1), Ordine (1:1)               |
-| Valuta     | Modo per valutare la qualitò del vino                                 | Recensione (1:1), Vino (0:N)                               |
-| Conservato | Luogo dove viene conservato il vino da vendere                        | Magazzino (0:N), Vino (0:N)                                |
-| Rifiutato  | Ordine rifiutato                                                      | Ordine Rifiutato (1:1), Personale (0:N)                    |
 ## Specifiche, assunzioni e vincoli d’integrità
 ### Vincoli
 - L'ordine parte solo dopo il pagamento.
@@ -124,7 +71,7 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 - Si ipotizzano più magazzini.
 - Il cliente può scrivere al più una recensione per vino.
 # Parte Terza: Progettazione concettuale
-    
+
 ## Diagramma E-R
 
 ### Schema scheletro![[Pasted image 20240502150142.png]]
@@ -148,7 +95,7 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 
 
 ## Dizionario dei Dati
-    
+
 
 # Parte Quarta: Progettazione Logica
 
@@ -158,7 +105,57 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 2. ## Schema E-R logico
     
 3. ## Dizionario entità e relazioni
-    
+## Glossario delle Entità
+| Entità           | Descrizione                                    | Attributi                                                               | Relazioni coinvolte                                       |
+| ---------------- | ---------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------- |
+| Clienti          | Utente che intende acquistare il prodotto      | *E-mail*, Password,  Nome, Cognome, Data di Nascita, Indirizzo          | Preferire, Eseguire, Associare, Scrivere                  |
+| Vini             | Prodotto in vendita                            | *Nome*, *Annata*, Descrizione, Tipologia, Prezzo                        | Preferire, Avere, Contenere, Comporre, Produrre, Valutare |
+| Carte di credito | Metodo di pagamento                            | *Numero carta*, Circuito, CVV, Data scadenza, Nome carta, Cognome carta | Associare                                                 |
+| Spedizioni       | Metodo di consegna del prodotto                | *N° Spedizione*, Data Consegna, Data Ritiro, Stato                      | Effettuare, Inviare                                       |
+| Ordini           | Acquisto effettivo del prodotto                | *N° Ordine*, Data Ordine, Stato Ordine, Indirizzo                       | Eseguire, Inviare, Preparare, Avere                       |
+| Recensioni       | Feedback dell'utente                           | *ID_Recensione*, Data, Stelle, Commento                                 | Scrivere, Valutare                                        |
+| Personale        | Utente che gestisce l'azienda                  | *ID_Personale*, Ruolo, Nome, Cognome                                    | Preparare                                                 |
+| Corrieri         | Azienda che gestiscele consegne                | *Partita Iva*, Intestazione                                             | Effettuare                                                |
+| Magazzini        | Luogo in cui vengono gestiti i ritiri dei vini | *ID_Magazzino*, Indirizzo, Capacità Max                                 | Contenere                                                 |
+| Miscele          | Informazione aggiuntive del vino               | *Nome*, Descrizione                                                     | Comporre, Creare                                          |
+| Cantine          | Informazione di dove è stato prodotto il vino  | *Partita Iva*, Intestazione, Regione                                    | Produrre                                                  |
+| Uve              | Ingredienti per la produzione dei vini         | *Varietà*, *Provenienza*                                                | Creare                                                    |
+
+## Glossario dei termini
+| Entità           | Descrizione            | Sinonimi      |
+| ---------------- | ---------------------- | ------------- |
+| Clienti          | Comprano il prodotto   | Compratori    |
+| Vini             | Prodotti in vendita    | Prodotti      |
+| Carte di Credito | Metodo di pagamento    | Carte         |
+| Spedizioni       | Consegna dei prodotti  | Invio         |
+| Ordini           | Acquisto dei prodotti  | Richieste     |
+| Recensioni       | Feedback dell'utente   | Feedback      |
+| Personale        | Gestore degli acquisti | Dipendenti    |
+| Corrieri         | Gestore consegne       | Trasportatori |
+| Magazzini        | Depositi dei vini      | Riserve       |
+| Miscele          | Informazioni del vino  | Composti      |
+| Cantine          | Produzione del vino    | Bottiglierie  |
+| Uve              | Ingrediente per i vini | Materie Prime |
+
+## Glossario delle Relazioni
+
+| Relazione  | Descrizione                                                           | Entità                                |
+| ---------- | --------------------------------------------------------------------- | ------------------------------------- |
+| Associare  | L'associazione di una carta di credito ad un cliente per il pagamento | Carte di credito (1:1), Clienti(1:N), |
+| Creare     | Creazione dei prodotti                                                | Uve (1:N), Miscele (1:N)              |
+| Preparare  | Gestione dell'ordine da parte del personale                           | Ordini  (1:1), Personale (o:N)        |
+| Effettuare | Operazione di consegna dell'ordine effettuato all'utente              | Corrieri (1:N),  Spedizioni(1:1)      |
+| Produrre   | Indica dov'è stato prodotto il vino                                   | Vini (1:N), Cantina (1:N)             |
+| Comporre   | Indica cosa c'è all'interno del vino                                  | Vino (1:1), Miscela (1:N)             |
+| Scrivere   | Commento lasciato dal cliente                                         | Clienti (0:N), Recensione (1:1)       |
+| Eseguire   | Cliente che crea l'ordine da pagare                                   | Clienti (1:N), Ordini(1:1)            |
+| Valutare   | Modo per valutare la qualitò del vino                                 | Recensione (1:1), Vini (0:N)          |
+| Contenere  | Luogo dove viene conservato il vino da vendere                        | Magazzini (1:N), Vini ***(1:1)***     |
+| Inviare    | Inviare l'ordine al cliente                                           | Spedizioni(1:1), Ordini(1:1)          |
+| Preferire  | Indica la preferenza dei clienti sui vini                             | Clienti(0:N), Vini(0:N)               |
+
+
+
 
 Descrizione delle varie componenti
 
