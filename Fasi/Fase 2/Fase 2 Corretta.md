@@ -98,6 +98,8 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 
 
 # Parte Quarta: Progettazione Logica
+## Schema Logico
+![[Logico.png]]
 
 ## Schema E-R concettuale ristrutturato
 ![[Progetto_DB.drawio (2).pdf]]

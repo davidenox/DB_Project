@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase 2/Fase 2 Corretta.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 2/Fase 2 Corretta.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 2/Fase 2 Corretta.md",
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 2/Fase 2 Corretta.md"
+                "file": "Fasi/Fase 2/Fase Concettuale/Schema Logico.md"
               }
             }
           },
@@ -156,8 +156,14 @@
   },
   "active": "af831d3626636aaf",
   "lastOpenFiles": [
-    "Fasi/Fase 2/Fase Due.md",
+    "Logico-1.pdf",
+    "Logico.pdf",
+    "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
+    "Logico2(1).drawio",
+    "README.md",
     "Fasi/Fase 2/Fase 2 Corretta.md",
+    "Fasi/Immagini/Logico.png",
+    "Fasi/Fase 2/Fase Due.md",
     "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 2/Fase Concettuale/pdf/Progetto_DB.drawio (2).pdf",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
@@ -174,8 +180,6 @@
     "Roba bocciata/Torneo ESPORT/Progettazione Concettuale/ER",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
     "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
-    "Roba bocciata/Torneo ESPORT/Progettazione Concettuale",
-    "Roba bocciata/Torneo ESPORT/Img",
     "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Fase Uno.md",
     "Fasi/Immagini/Pasted image 20240502155452.png",
@@ -186,7 +190,6 @@
     "ER.md",
     "Progettazione logica.md",
     "Img/Pasted image 20240328153745.png",
-    "README.md",
     "Fasi/Fase Uno.md",
     "Fase Uno.md"
   ]
