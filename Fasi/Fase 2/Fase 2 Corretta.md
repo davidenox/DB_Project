@@ -57,10 +57,6 @@ Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli ge
 - **Tracciabilità delle Spedizioni**: Sistema di tracciamento per monitorare il percorso delle spedizioni e fornire aggiornamenti ai clienti e agli operatori del magazzino.
 
 # Parte seconda: Raccolta e analisi dei Requisiti
-
-## Elenco dei requisiti
-
-
 ## Specifiche, assunzioni e vincoli d’integrità
 ### Vincoli
 - L'ordine parte solo dopo il pagamento.
@@ -103,8 +99,6 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 
 ## Schema E-R concettuale ristrutturato
 ![[Progetto_DB.drawio (2).pdf]]
-
-## Schema E-R logico
 
 ## Glossario delle Entità
 | Entità           | Descrizione                                    | Attributi                                                               | Relazioni coinvolte                                       |
