@@ -95,10 +95,27 @@ Troviamo una relazione che permette di avere una e una sola _Recensione_ dopo av
 
 # Parte Quarta: Progettazione Logica
 ## Schema Logico
-![[Logico.png]]
+![[Logico_Finale.drawio.pdf]]
 
+Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie _così_
+- Clienti (**E-mail**, Nome_Cliente, Cognome_Cliente, Password, Data_Nascita, Indirizzo)
+- Carta di Credito (**N°Carta**, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, _E-mail_)
+- Personale (**ID_Personale**, Ruolo, Nome_Personale, Cognome_Personale)
+- Ordini (**N° Ordine**, Data Ordine, Stato Ordine, Indirizzo, _ID_Personale_, _E-mail_ )
+- Spedizioni (**N° Spedizione**, Data Consegna, Data Ritiro, Stato, _P.Iva_Corriere_, _N° Ordine_)
+- Corrieri (**P.Iva_Corriere**, Intestazione)
+- Recensioni (**ID_Recensioni**, Data_Recensioni, Stelle, Commento, _E-mail_, _Nome_Vino_, _Annata_) 
+- Vini (**Nome_Vino**, **Annata**, Descrizione, Tipologia, Prezzo, _Nome_Miscela_)
+- Contenere (_N° Ordine_, _Nome_Vino_, _Annata_, N°Prodotti)
+- Produrre (_Annata_, _Nome_Vino_, _P.Iva_Cantina_)
+- Cantine (**P.Iva_Cantina**, Intestazione, Regione)
+- Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantità)
+- Magazzini (**ID_Magazzino**, Indirizzo)
+- Uve (**Varietà Uva**, **Provenienza**)
+- Creare (**Varietà Uva**, **Provenienza**, Percentuale)
+- Miscela (**Nome_Miscela**, Descrizione)
 ## Schema E-R concettuale ristrutturato
-![[Progetto_DB.drawio (2).pdf]]
+![[Progetto_DB_Finale.drawio.pdf]]
 
 ## Glossario delle Entità
 | Entità           | Descrizione                                    | Attributi                                                               | Relazioni coinvolte                                       |
