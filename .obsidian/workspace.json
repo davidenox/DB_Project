@@ -8,17 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "67b04f3e9cca9dd4",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Documentazione/Fase Uno.pdf"
-              }
-            }
-          },
-          {
-            "id": "1f252eea97378f13",
+            "id": "af831d3626636aaf",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -29,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -80,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "6c39f1351ceb0013",
@@ -153,53 +143,49 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:Apri selezione rapida": false,
+      "graph:Apri vista grafo": false,
+      "canvas:Crea nuova lavagna": false,
+      "daily-notes:Apri nota del giorno": false,
+      "templates:Inserisci modello": false,
+      "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "b426d025edcfdb9d",
+  "active": "af831d3626636aaf",
   "lastOpenFiles": [
-    "Progetto_DB_Finale.drawio.pdf",
-    "Logico_Finale.pdf",
+    "Logico_Finalee.drawio.pdf",
+    "Progetto_DB_Finale.drawio-1.pdf",
     "Logico_Finale.drawio.pdf",
-    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+    "Logico_Finale.pdf",
+    "Progetto_DB_Finale.drawio.pdf",
     "Logico2(1).drawio",
     "Fasi/Immagini/Logico.png",
     "Fasi/Fase 2/Fase Concettuale/pdf/Logico-1.pdf",
     "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
-    "Fasi/Fase 2/Fase Concettuale/pdf/Progetto_DB.drawio (2).pdf",
-    "Fasi/Fase 2/Fase Concettuale/pdf",
-    "Fasi/Fase 2/Fase 2 Corretta.md",
-    "Progetto_DB.drawio 2.pdf",
-    "Cose da migliorare.md",
-    "Documentazione/Fase Uno.pdf",
     "Fasi/Fase 2/Fase Due.md",
+    "Fasi/Fase 2/Fase 2 Corretta.md",
+    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
+    "Fasi/Fase 2/Fase Concettuale/pdf/Progetto_DB.drawio (2).pdf",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
-    "Documentazione/Schema_Scheletro.drawio.pdf",
-    "Documentazione/Schema_ER.drawio.pdf",
-    "Fasi/Fase 1/Fase Uno.md",
-    "Fasi/Immagini/Pasted image 20240502155452.png",
-    "Pasted image 20240502155452.png",
-    "Fasi/Immagini/Pasted image 20240502151541.png",
-    "Fasi/Schema Scheletro/Scheletro.md",
-    "Fasi/Immagini/Pasted image 20240502150142.png",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
-    "Pasted image 20240502150142.png",
-    "Fasi/bozza fase 2.md",
     "Roba bocciata/bozza fase 2.md",
+    "Fasi/Fase 2/Fase Concettuale/pdf",
+    "Cose da migliorare.md",
+    "Schema_ER.drawio-2.pdf",
+    "Documentazione/Fase Uno.pdf",
+    "Fasi/bozza fase 2.md",
     "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
     "Roba bocciata/Progettazione logica.md",
     "Roba bocciata/Fase Uno.md",
-    "Fasi/Progettazione logica.md",
+    "Fasi/Immagini/Pasted image 20240502155452.png",
+    "Fasi/Immagini/Pasted image 20240502151541.png",
+    "Fasi/Immagini/Pasted image 20240502150142.png",
+    "Fasi/Fase 1/Fase Uno.md",
     "conflict-files-obsidian-git.md",
     "ER.md",
     "Progettazione logica.md",
