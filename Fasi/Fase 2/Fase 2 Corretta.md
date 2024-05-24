@@ -114,6 +114,12 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 - Uve (**Varietà Uva**, **Provenienza**)
 - Creare (**Varietà Uva**, **Provenienza**, Percentuale)
 - Miscela (**Nome_Miscela**, Descrizione)
+
+### Normalizzazione
+1. Le tuple del nostro schema possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
+2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
+3. Gli attributi non primi delle nostre entità dipendono in maniera non transitiva dalla chiave primaria completa $\implies$ 3NF è soddisfatta.
+4. Le entità sono state decomposte in maniera da ottenere il massimo numero possibile di BCNF.
 ## Schema E-R concettuale ristrutturato
 ![[Progetto_DB_Finale.drawio.pdf]]
 
