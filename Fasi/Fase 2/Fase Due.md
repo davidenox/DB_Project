@@ -1,8 +1,9 @@
 ***Progetto*** **EnoMarket**
-***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone
+***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone**
 ***Corso di laurea:*** **Informatica**
 ***Data:*** **26/05/2024**
 # Parte Prima: Generalità
+
 ## Descrizione generale del prodotto
 
 Il progetto mira alla creazione di un database per la gestione di un sito e-commerce dedicato alla vendita di vini. Questo database sarà il nucleo centrale del sistema informativo, supportando le operazioni quotidiane dell'e-commerce, dall'ordine da parte degli utenti alla spedizione del prodotto stesso. Il database si occuperà della gestione degli ordini, delle specifiche dei vini, della consegna dei prodotti e della raccolta delle recensioni da parte dei clienti riguardo la consegna e la qualità dei prodotti.
@@ -14,6 +15,7 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
     - Registrazione degli utenti con dati personali, credenziali di accesso e preferenze.
     - Registrazione dei metodi di pagamento dei clienti
     - Storico degli acquisti e tracciamento degli ordini.
+
 3. **Processamento degli Ordini**:
     - Sistema per la creazione, la modifica e la cancellazione degli ordini.
     - Tracciabilità degli ordini dal momento della creazione fino alla consegna.
@@ -100,7 +102,7 @@ Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un 
 ### Raffinamenti 
 1. Raffinazione *Clienti*:
 
-![[Pasted image 20240526150730.png|center|300]]
+![[Pasted image 20240526150730.png|center|100]]
 
 Qui si raffina l'entità _Cliente_:
 - Ad ogni _Cliente_ è associata una o più _Carte di Credito_ che gli permetterà di acquistare i prodotti;
@@ -110,7 +112,7 @@ Qui si raffina l'entità _Cliente_:
 
 2. Raffinazione *Vini*:
 
-![[Pasted image 20240526151600.png|center|300]]
+![[Pasted image 20240526151600.png|center|200]]
 
 Qui si raffina l'entità *Vini*:
 - I *Vini* saranno composti da *Miscele* create dalle diverse varietà di *Uve*;
@@ -120,7 +122,7 @@ Qui si raffina l'entità *Vini*:
 
 3. Raffinazione *Ordini*:
 
-![[Pasted image 20240526152640.png|center|700]]
+![[Pasted image 20240526152640.png|center|500]]
 
 Qui si raffina l'entità *Ordini*:
 - Il *Personale* si occuperà della preparazione degli *Ordini*;
@@ -128,8 +130,11 @@ Qui si raffina l'entità *Ordini*:
 - *Spedizioni* che verranno effettuate dai *Corrieri*.
 
 # Parte Quarta: Progettazione Logica
+
 ## Schema Logico
+
 ![[Pasted image 20240526145832.png|center]]
+
 
 Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
 - Clienti (**E-mail**, Nome_Cliente, Cognome_Cliente, Password, Data_Nascita, Indirizzo)
@@ -148,16 +153,26 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 - Uve (**Varietà Uva**, **Provenienza**)
 - Creare (**Varietà Uva**, **Provenienza**, Percentuale)
 - Miscela (**Nome_Miscela**, Descrizione)
+
 ### Normalizzazione
 
 1. Le tuple del diagramma possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
 2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
 3. Gli attributi non primi delle nostre entità dipendono in maniera non transitiva dalla chiave primaria completa $\implies$ 3NF è soddisfatta.
 4. Le entità sono state decomposte in maniera da ottenere il massimo numero possibile di BCNF.
-## Schema E-R concettuale ristrutturato
-![[Progetto_DB_Finale.drawio-1.pdf]]
 
-## DIzionario Entità e Relazioni
+----
+
+
+
+
+
+
+
+## Schema E-R concettuale ristrutturato
+![[Pasted image 20240526172852.png|center]]
+
+## Dizionario Entità e Relazioni
 ### Glossario delle Entità
 | Entità           | Descrizione                                                       | Attributi                                                                   | Relazioni coinvolte                                            |
 | ---------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------- |
