@@ -1,6 +1,7 @@
 ***Progetto*** **EnoMarket**
 ***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone
 ***Corso di laurea:*** **Informatica**
+***Data:*** **26/05/2024**
 # Parte Prima: Generalità
 ## Descrizione generale del prodotto
 
@@ -18,13 +19,16 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
     - Tracciabilità degli ordini dal momento della creazione fino alla consegna.
     - Gestione dei pagamenti e delle transazioni finanziarie.
 4. **Integrazione con Sistemi Esterni**:
-    - Integrazione con corri
-Specificare sinteticamente, per punti, gli obiettivi del prodotto (sia quelli generali che quelli più specifici), separando quelli principali da quelli secondari. Indicare anche le priorità dei vari obiettivi.
-eri per la gestione delle spedizioni.
+    - Integrazione con corrieri per la gestione delle spedizioni.
 5. **Analisi e Reportistica**:
     - Generazione di recensioni sulle vendite e sulle performance dei prodotti.
     - Analisi dei comportamenti degli utenti per migliorare l'esperienza di acquisto e le strategie di marketing.
 ## Utenti
+
+Gli utenti principali del DB sono i seguenti:
+- *Clienti*;
+- *Personale*;
+- *Corrieri*.
 ### Clienti
 
 **Profilo**: I clienti sono gli utenti finali che visitano il sito per acquistare vini. Possono essere appassionati di vini, collezionisti, ristoratori o semplici consumatori occasionali.
@@ -46,6 +50,7 @@ eri per la gestione delle spedizioni.
 - **Gestione delle Scorte**: Monitoraggio accurato delle quantità in magazzino e notifica automatica per il riordino dei prodotti.
 - **Processo degli Ordini**: Accesso agli ordini in tempo reale per preparare le spedizioni e aggiornare lo stato degli ordini.
 - **Logistica e Spedizioni**: Coordinamento con i corrieri e generazione di etichette di spedizione.
+
 ### Corrieri
 **Profilo**: I corrieri sono i partner logistici responsabili della consegna dei prodotti acquistati dai clienti sul sito e-commerce. Possono essere aziende di spedizioni esterne contrattate per gestire le consegne.
 
@@ -91,7 +96,7 @@ Le entità principali del sistema sono le seguenti:
 - Cliente
 - Vino
 - Azinda
-- Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene venduto dall'_Azienda_. 
+Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene venduto dall'_Azienda_. 
 ### Raffinamenti 
 1. Raffinazione *Clienti*:
 
@@ -126,7 +131,7 @@ Qui si raffina l'entità *Ordini*:
 ## Schema Logico
 ![[Pasted image 20240526145832.png|center]]
 
-Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie _così_
+Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
 - Clienti (**E-mail**, Nome_Cliente, Cognome_Cliente, Password, Data_Nascita, Indirizzo)
 - Carta di Credito (**N°Carta**, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, _E-mail_)
 - Personale (**ID_Personale**, Ruolo, Nome_Personale, Cognome_Personale)
@@ -145,7 +150,7 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 - Miscela (**Nome_Miscela**, Descrizione)
 ### Normalizzazione
 
-1. Le tuple del nostro schema possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
+1. Le tuple del diagramma possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
 2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
 3. Gli attributi non primi delle nostre entità dipendono in maniera non transitiva dalla chiave primaria completa $\implies$ 3NF è soddisfatta.
 4. Le entità sono state decomposte in maniera da ottenere il massimo numero possibile di BCNF.
@@ -154,20 +159,20 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 ## DIzionario Entità e Relazioni
 ### Glossario delle Entità
-| Entità           | Descrizione                                    | Attributi                                                                   | Relazioni coinvolte                                            |
-| ---------------- | ---------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Clienti          | Utente che intende acquistare il prodotto      | *E-mail*, Password,  Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo | Preferire, Eseguire, Associare, Scrivere                       |
-| Vini             | Prodotto in vendita                            | *Nome_Vino*, *Annata*, Descrizione, Tipologia, Prezzo                       | Preferire, Conservare, Contenere, Comporre, Produrre, Valutare |
-| Carte di credito | Metodo di pagamento                            | *N° Carta*, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta         | Associare                                                      |
-| Spedizioni       | Metodo di consegna del prodotto                | *N° Spedizione*, Data_Consegna, Data_Ritiro, Stato                          | Effettuare, Inviare                                            |
-| Ordini           | Acquisto effettivo del prodotto                | *N° Ordine*, Data_Ordine, Stato_Ordine, Indirizzo_Ordine                    | Eseguire, Inviare, Preparare, Contenere                        |
-| Recensioni       | Feedback dell'utente                           | *ID_Recensione*, Data_Recensione, Stelle, Commento                          | Scrivere, Valutare                                             |
-| Personale        | Utente che gestisce l'azienda                  | *ID_Personale*, Ruolo, Nome_Personale, Cognome_Personale                    | Preparare                                                      |
-| Corrieri         | Azienda che gestiscele consegne                | *P.IVA_Corriere*, Intestazione                                              | Effettuare                                                     |
-| Magazzini        | Luogo in cui vengono gestiti i ritiri dei vini | *ID_Magazzino*, Indirizzo                                                   | Conservare                                                     |
-| Miscele          | Informazioni aggiuntive del vino               | *Nome_Miscela*, Descrizione                                                 | Comporre, Creare                                               |
-| Cantine          | Informazione di dove è stato prodotto il vino  | *P.IVA_Cantine*, Intestazione, Regione                                      | Produrre                                                       |
-| Uve              | Ingredienti per la produzione dei vini         | *Varietà*, *Provenienza*                                                    | Creare                                                         |
+| Entità           | Descrizione                                                       | Attributi                                                                   | Relazioni coinvolte                                            |
+| ---------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Clienti          | Utente che intende acquistare il prodotto                         | *E-mail*, Password,  Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo | Preferire, Eseguire, Associare, Scrivere                       |
+| Vini             | Prodotto in vendita                                               | *Nome_Vino*, *Annata*, Descrizione, Tipologia, Prezzo                       | Preferire, Conservare, Contenere, Comporre, Produrre, Valutare |
+| Carte di credito | Metodo di pagamento                                               | *N° Carta*, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta         | Associare                                                      |
+| Spedizioni       | Metodo di consegna del prodotto                                   | *N° Spedizione*, Data_Consegna, Data_Ritiro, Stato                          | Effettuare, Inviare                                            |
+| Ordini           | Acquisto effettivo del prodotto                                   | *N° Ordine*, Data_Ordine, Stato_Ordine, Indirizzo_Ordine                    | Eseguire, Inviare, Preparare, Contenere                        |
+| Recensioni       | Feedback dell'utente                                              | *ID_Recensione*, Data_Recensione, Stelle, Commento                          | Scrivere, Valutare                                             |
+| Personale        | Utente che gestisce l'azienda                                     | *ID_Personale*, Ruolo, Nome_Personale, Cognome_Personale                    | Preparare                                                      |
+| Corrieri         | Azienda esterna che gestisce le consegne                          | *P.IVA_Corriere*, Intestazione                                              | Effettuare                                                     |
+| Magazzini        | Luogo in cui vengono gestiti i ritiri e la conservazione dei vini | *ID_Magazzino*, Indirizzo                                                   | Conservare                                                     |
+| Miscele          | Informazioni aggiuntive del vino in base alle uve utilizzate      | *Nome_Miscela*, Descrizione                                                 | Comporre, Creare                                               |
+| Cantine          | Informazione di dove è stato prodotto il vino                     | *P.IVA_Cantine*, Intestazione, Regione                                      | Produrre                                                       |
+| Uve              | Ingredienti per la produzione dei vini                            | *Varietà*, *Provenienza*                                                    | Creare                                                         |
 
 ### Glossario delle Relazioni
 
