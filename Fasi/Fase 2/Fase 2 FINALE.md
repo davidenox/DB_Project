@@ -143,8 +143,8 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 - Uve (**Varietà Uva**, **Provenienza**)
 - Creare (**Varietà Uva**, **Provenienza**, Percentuale)
 - Miscela (**Nome_Miscela**, Descrizione)
-
 ### Normalizzazione
+
 1. Le tuple del nostro schema possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
 2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
 3. Gli attributi non primi delle nostre entità dipendono in maniera non transitiva dalla chiave primaria completa $\implies$ 3NF è soddisfatta.
@@ -186,23 +186,3 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Inviare    | Inviare l'ordine al cliente                                           | Spedizioni(1:1), Ordini(1:1)          |
 | Preferire  | Indica la preferenza dei clienti sui vini                             | Clienti(0:N), Vini(0:N)               |
 | Contenere  | Vini presenti in un ordine                                            | Vini(0:N), Ordine(1:N)                |
-
-## Indici di prestazione e carico applicativo
-    
-
-- **Costo delle operazioni**
-    
-- **Occupazione di memoria**
-    
-
-Per fare questa analisi è necessario conoscere:
-
-- **Volume dei dati** (occorrenze, dimensioni degli attributi)‏
-    
-- **Caratteristiche delle operazioni** (tipo, frequenza, dati coinvolti)‏
-    
-
-  
-
-# Parte Quinta: Progettazione Fisica
-1. ## Schema fisico con indici
