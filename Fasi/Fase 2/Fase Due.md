@@ -134,7 +134,7 @@ Qui si raffina l'entità *Ordini*:
 # Parte Quarta: Progettazione Logica
 
 ## Schema Logico
-![[Logico_Finale(1).jpg]]
+![[Logico_Definitivo.drawio.png|center|750]]
 
 
 Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
@@ -177,9 +177,9 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 ## Schema E-R concettuale ristrutturato
 
+![[ER_Definitivo.drawio.pdf]]
 
 
-![[Pasted image 20240526172852.png|center]]
 
 ## Dizionario Entità e Relazioni
 ### Glossario delle Entità
