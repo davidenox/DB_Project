@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "3247989c958ba250",
+        "id": "1de6665c227d260e",
         "type": "tabs",
         "children": [
           {
-            "id": "57625f27b15d51b4",
+            "id": "af831d3626636aaf",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Documentazione/Schema_Scheletro.drawio.pdf"
+                "file": "Fasi/Fase 2/Fase Due.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentazione/Schema_Scheletro.drawio.pdf",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Documentazione/Schema_Scheletro.drawio.pdf",
+                "file": "Fasi/Fase 2/Fase Due.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentazione/Schema_Scheletro.drawio.pdf"
+                "file": "Fasi/Fase 2/Fase Due.md"
               }
             }
           },
@@ -152,39 +154,41 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "4b4063c61c456e68",
+  "active": "af831d3626636aaf",
   "lastOpenFiles": [
+    "Logico_Finale(1).jpg",
+    "ER_Corretto 1.jpg",
+    "ER_Corretto.jpg",
+    "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
+    "Roba bocciata/Progettazione logica.md",
+    "Roba bocciata/Fase Uno.pdf",
+    "Roba bocciata/Fase Uno.md",
+    "Roba bocciata/bozza fase 2.md",
+    "Roba bocciata/Torneo ESPORT/SchemaER.pdf",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
+    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
+    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 2/Fase Due.md",
-    "Fasi/Immagini/Pasted image 20240526172852.png",
+    "Fasi/Fase 2/Fase 2 Corretta.md",
+    "Fasi/Immagini/logico_definitivo.jpg",
     "Fasi/Immagini/Progetto_DB_Finale.drawio-1.pdf",
-    "Documentazione/ER_Finale.drawio.pdf",
+    "Fasi/Immagini/Pasted image 20240526172852.png",
     "Fasi/Immagini/Pasted image 20240526171421.png",
-    "Documentazione/Fase Due.pdf",
-    "Cose da migliorare.md",
     "Fasi/Immagini/Pasted image 20240526152640.png",
     "Fasi/Immagini/Pasted image 20240526151600.png",
     "Fasi/Immagini/Pasted image 20240526150730.png",
     "Fasi/Immagini/Pasted image 20240526145832.png",
-    "Fasi/Immagini/logico_definitivo.jpg",
+    "Documentazione/Fase Due.pdf",
+    "Documentazione/ER_Finale.drawio.pdf",
     "Logico_Finalee.drawio.pdf",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
-    "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
+    "Progetto_DB_Finale.drawio-1.pdf",
     "Logico_Finale.drawio.pdf",
     "Logico_Finale.pdf",
     "Progetto_DB_Finale.drawio.pdf",
-    "Logico2(1).drawio",
     "Fasi/Immagini/Logico.png",
-    "Fasi/Fase 2/Fase Concettuale/pdf/Logico-1.pdf",
-    "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
-    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
-    "Fasi/Fase 2/Fase Concettuale/pdf/Progetto_DB.drawio (2).pdf",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
-    "Roba bocciata/bozza fase 2.md",
+    "Cose da migliorare.md",
     "Fasi/bozza fase 2.md",
-    "Roba bocciata/Torneo ESPORT/Img/Pasted image 20240328153745.png",
-    "Roba bocciata/Progettazione logica.md",
-    "Roba bocciata/Fase Uno.md",
-    "Fasi/Immagini/Pasted image 20240502155452.png",
     "Fasi/Fase 1/Fase Uno.md",
     "conflict-files-obsidian-git.md",
     "ER.md",

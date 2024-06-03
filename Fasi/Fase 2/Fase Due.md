@@ -66,20 +66,22 @@ Gli utenti principali del DB sono i seguenti:
 # Parte seconda: Raccolta e analisi dei Requisiti
 ## Glossario dei termini
 
-| Entità           | Descrizione            | Sinonimi      |
-| ---------------- | ---------------------- | ------------- |
-| Clienti          | Comprano il prodotto   | Compratori    |
-| Vini             | Prodotti in vendita    | Prodotti      |
-| Carte di Credito | Metodo di pagamento    | Carte         |
-| Spedizioni       | Consegna dei prodotti  | Invio         |
-| Ordini           | Acquisto dei prodotti  | Richieste     |
-| Recensioni       | Feedback dell'utente   | Feedback      |
-| Personale        | Gestore degli acquisti | Dipendenti    |
-| Corrieri         | Gestore consegne       | Trasportatori |
-| Magazzini        | Depositi dei vini      | Riserve       |
-| Miscele          | Informazioni del vino  | Composti      |
-| Cantine          | Produzione del vino    | Bottiglierie  |
-| Uve              | Ingrediente per i vini | Materie Prime |
+| Entità           | Descrizione                    | Sinonimi      |
+| ---------------- | ------------------------------ | ------------- |
+| Clienti          | Comprano il prodotto           | Compratori    |
+| Vini             | Prodotti in vendita            | Prodotti      |
+| Carte di Credito | Metodo di pagamento            | Carte         |
+| Spedizioni       | Consegna dei prodotti          | Invio         |
+| Ordini           | Acquisto dei prodotti          | Richieste     |
+| Recensioni       | Feedback dell'utente           | Feedback      |
+| Personale        | Gestore degli acquisti         | Dipendenti    |
+| Corrieri         | Gestore consegne               | Trasportatori |
+| Magazzini        | Depositi dei vini              | Riserve       |
+| Miscele          | Informazioni del vino          | Composti      |
+| Cantine          | Produzione del vino            | Bottiglierie  |
+| Uve              | Ingrediente per i vini         | Materie Prime |
+| Procedimento     | Procedimento per produrre vini | Metodo        |
+| Premio           | Nome premio vinto              | Trofeo        |
 
 ## Specifiche, assunzioni e vincoli d’integrità
 #### Vincoli
@@ -97,7 +99,7 @@ Gli utenti principali del DB sono i seguenti:
 Le entità principali del sistema sono le seguenti:
 - Cliente
 - Vino
-- Azinda
+- Azienda
 Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene venduto dall'_Azienda_. 
 ### Raffinamenti 
 1. Raffinazione *Clienti*:
@@ -132,8 +134,7 @@ Qui si raffina l'entità *Ordini*:
 # Parte Quarta: Progettazione Logica
 
 ## Schema Logico
-
-![[Pasted image 20240526145832.png|center]]
+![[Logico_Finale(1).jpg]]
 
 
 Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
@@ -147,12 +148,17 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 - Vini (**Nome_Vino**, **Annata**, Descrizione, Tipologia, Prezzo, _Nome_Miscela_)
 - Contenere (_N° Ordine_, _Nome_Vino_, _Annata_, N°Prodotti)
 - Produrre (_Annata_, _Nome_Vino_, _P.Iva_Cantina_)
-- Cantine (**P.Iva_Cantina**, Intestazione, Regione)
+- Cantine (**P.Iva_Cantina**, Intestazione, Regione, Storia)
 - Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantità)
 - Magazzini (**ID_Magazzino**, Indirizzo)
 - Uve (**Varietà Uva**, **Provenienza**)
 - Creare (**Varietà Uva**, **Provenienza**, Percentuale)
 - Miscela (**Nome_Miscela**, Descrizione)
+- Premio (**Nome_Premio**, Associazione, Tipologia)
+- Assegnare (_Nome_Premio_, _P.IVA_cantine_)
+- Ricevere (_Nome_Vino_, _Annata_, _Nome_Premio_)
+- Usare (_Nome_Metodo_, _P.IVA_Cantine_)
+
 
 ### Normalizzazione
 
@@ -170,6 +176,9 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 
 ## Schema E-R concettuale ristrutturato
+
+
+
 ![[Pasted image 20240526172852.png|center]]
 
 ## Dizionario Entità e Relazioni
@@ -186,8 +195,10 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Corrieri         | Azienda esterna che gestisce le consegne                          | *P.IVA_Corriere*, Intestazione                                              | Effettuare                                                     |
 | Magazzini        | Luogo in cui vengono gestiti i ritiri e la conservazione dei vini | *ID_Magazzino*, Indirizzo                                                   | Conservare                                                     |
 | Miscele          | Informazioni aggiuntive del vino in base alle uve utilizzate      | *Nome_Miscela*, Descrizione                                                 | Comporre, Creare                                               |
-| Cantine          | Informazione di dove è stato prodotto il vino                     | *P.IVA_Cantine*, Intestazione, Regione                                      | Produrre                                                       |
+| Cantine          | Informazione di dove è stato prodotto il vino                     | *P.IVA_Cantine*, Intestazione, Regione, Storia                              | Usare, Ricevere                                                |
 | Uve              | Ingredienti per la produzione dei vini                            | *Varietà*, *Provenienza*                                                    | Creare                                                         |
+| Procedimento     | Passi per produrre il vino                                        | *Nome_Metodo*, Descrizione, Invecchiamento                                  | Produrre, Usare                                                |
+| Premio           | Nome del premio che il vino e cantina hanno vinto                 | *Nome_Premio*, Associazione                                                 |                                                                |
 
 ### Glossario delle Relazioni
 
@@ -206,3 +217,6 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Inviare    | Inviare l'ordine al cliente                                           | Spedizioni(1:1), Ordini(1:1)          |
 | Preferire  | Indica la preferenza dei clienti sui vini                             | Clienti(0:N), Vini(0:N)               |
 | Contenere  | Vini presenti in un ordine                                            | Vini(0:N), Ordine(1:N)                |
+| Usare      | Indica come viene utilizzata la cantina                               | Cantine(1:N), Procedimento(0:N)       |
+| Ricevere   | Ricevere il premio vinto alla cantina                                 | Cantine(0:N), Premio Cantina(0:N)     |
+| Assegnare  | Assegnare il premio al vino                                           | Premio Vino(0:N), Vino(0:N)           |
