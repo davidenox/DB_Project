@@ -198,7 +198,8 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Cantine          | Informazione di dove è stato prodotto il vino                     | *P.IVA_Cantine*, Intestazione, Regione, Storia                              | Usare, Ricevere                                                |
 | Uve              | Ingredienti per la produzione dei vini                            | *Varietà*, *Provenienza*                                                    | Creare                                                         |
 | Procedimento     | Passi per produrre il vino                                        | *Nome_Metodo*, Descrizione, Invecchiamento                                  | Produrre, Usare                                                |
-| Premio           | Nome del premio che il vino e cantina hanno vinto                 | *Nome_Premio*, Associazione                                                 |                                                                |
+| Premio Vino      | Nome del vino che ha vinto                                        | *Nome_Premio*, Associazione                                                 | Assegnare                                                      |
+| Premio Cantina   | Nome della cantina che ha vinto un premio                         | *Nome_Premio*, Associazione                                                 | Ricevere                                                       |
 
 ### Glossario delle Relazioni
 
