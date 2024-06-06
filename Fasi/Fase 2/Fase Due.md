@@ -134,7 +134,7 @@ Qui si raffina l'entità *Ordini*:
 # Parte Quarta: Progettazione Logica
 
 ## Schema Logico
-![[Logico_Definitivo.drawio.png|center|750]]
+![[Logico_Definitivo.drawio.png|center|600]]
 
 
 Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
