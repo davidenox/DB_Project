@@ -177,8 +177,7 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 ## Schema E-R concettuale ristrutturato
 
-![[ER_Definitivo.drawio.pdf]]
-
+![[ER_Definitivo.drawio.png|center|600]]
 
 
 ## Dizionario Entità e Relazioni

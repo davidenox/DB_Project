@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "6c39f1351ceb0013",
@@ -143,8 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,6 +156,8 @@
   },
   "active": "57625f27b15d51b4",
   "lastOpenFiles": [
+    "ER_Definitivo.drawio.png",
+    "Fasi/Fase 2/Fase Due.md",
     "Documentazione/ER_Definitivo.drawio.pdf",
     "Documentazione/Logico_Definitivo.drawio.png",
     "Logico_Finale(1).jpg",
@@ -166,7 +166,6 @@
     "Documentazione/Fase Due.pdf",
     "Documentazione/ER_Finale.drawio.pdf",
     "Documentazione/Schema_Scheletro.drawio.pdf",
-    "Fasi/Fase 2/Fase Due.md",
     "Fasi/Immagini/Pasted image 20240526172852.png",
     "Fasi/Immagini/Progetto_DB_Finale.drawio-1.pdf",
     "Fasi/Immagini/Pasted image 20240526171421.png",
@@ -174,7 +173,6 @@
     "Fasi/Immagini/Pasted image 20240526152640.png",
     "Fasi/Immagini/Pasted image 20240526151600.png",
     "Fasi/Immagini/Pasted image 20240526150730.png",
-    "Fasi/Immagini/Pasted image 20240526145832.png",
     "Logico_Finalee.drawio.pdf",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
@@ -182,7 +180,6 @@
     "Logico_Finale.pdf",
     "Progetto_DB_Finale.drawio.pdf",
     "Logico2(1).drawio",
-    "Fasi/Fase 2/Fase Concettuale/pdf/Logico-1.pdf",
     "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
     "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
