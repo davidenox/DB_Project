@@ -11,11 +11,9 @@
             "id": "57625f27b15d51b4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md",
-                "mode": "source",
-                "source": false
+                "file": "Documentazione/Logico_Definitivo.drawio.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md",
+                "file": "Documentazione/Logico_Definitivo.drawio.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md",
+                "file": "Documentazione/Logico_Definitivo.drawio.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 2/Fase Due.md"
+                "file": "Documentazione/Logico_Definitivo.drawio.png"
               }
             }
           },
@@ -156,8 +154,10 @@
   },
   "active": "57625f27b15d51b4",
   "lastOpenFiles": [
-    "ER_Definitivo.drawio.png",
     "Fasi/Fase 2/Fase Due.md",
+    "EnoMarketDB/table.sql",
+    "EnoMarketDB",
+    "ER_Definitivo.drawio.png",
     "Documentazione/ER_Definitivo.drawio.pdf",
     "Documentazione/Logico_Definitivo.drawio.png",
     "Logico_Finale(1).jpg",
@@ -178,8 +178,6 @@
     "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
     "Logico_Finale.drawio.pdf",
     "Logico_Finale.pdf",
-    "Progetto_DB_Finale.drawio.pdf",
-    "Logico2(1).drawio",
     "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
     "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
