@@ -134,18 +134,17 @@ Qui si raffina l'entità *Ordini*:
 # Parte Quarta: Progettazione Logica
 
 ## Schema Logico
-![[Logico_Definitivo.drawio.png|center|600]]
-
+![[Logico_Definitivo2.drawio.png]]
 
 Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
-- Clienti (**E-mail**, Nome_Cliente, Cognome_Cliente, Password, Data_Nascita, Indirizzo)
+- Clienti (**E-mail**, Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo)
 - Carta di Credito (**N°Carta**, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, _E-mail_)
 - Personale (**ID_Personale**, Ruolo, Nome_Personale, Cognome_Personale)
 - Ordini (**N° Ordine**, Data Ordine, Stato Ordine, Indirizzo, _ID_Personale_, _E-mail_ )
-- - Corrieri (**P.Iva_Corriere**, Intestazione)
+- Corrieri (**P.Iva_Corriere**, Intestazione)
 - Spedizioni (**N° Spedizione**, Data Consegna, Data Ritiro, Stato, _P.Iva_Corriere_, _N° Ordine_)
 - Recensioni (**ID_Recensioni**, Data_Recensioni, Stelle, Commento, _E-mail_, _Nome_Vino_, _Annata_) 
-- - Miscela (**Nome_Miscela**, Descrizione)
+- Miscela (**Nome_Miscela**, Descrizione)
 - Vini (**Nome_Vino**, **Annata**, Descrizione, Tipologia, Prezzo, _Nome_Miscela_)
 - Contenere (_N° Ordine_, _Nome_Vino_, _Annata_, N°Prodotti)
 - Cantine (**P.Iva_Cantina**, Intestazione, Regione, Storia)
