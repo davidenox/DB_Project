@@ -3,8 +3,8 @@ CREATE TABLE Clienti (
     Email VARCHAR(50) NOT NULL,
     Nome_Cliente VARCHAR(50) NOT NULL,
     Cognome_Cliente VARCHAR(50) NOT NULL,
-    Data_Nascita DATE NOT NULL,
-    Indirizzo VARCHAR(50) NOT NULL,
+    Data_Nascita DATE NOT NULL,
+    Indirizzo VARCHAR(50) NOT NULL,
     PRIMARY KEY (Email)
 );
 
