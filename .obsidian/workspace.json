@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Codice/Implementazione MYSQL.md",
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Codice/Implementazione MYSQL.md",
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Codice/Implementazione MYSQL.md",
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Codice/Implementazione MYSQL.md"
+                "file": "Fasi/Fase 3/Fase Tre.md"
               }
             }
           },
@@ -156,13 +156,13 @@
   },
   "active": "57625f27b15d51b4",
   "lastOpenFiles": [
+    "Fasi/Codice/Implementazione MYSQL.md",
     "Logico_Definitivo2.drawio 1.png",
     "Fasi/Fase 3/Fase Tre.md",
     "Fasi/Fase 3",
     "EnoMarketDB/Insert_Manuali.sql",
     "Logico_Definitivo2.drawio.png",
     "conflict-files-obsidian-git.md",
-    "Fasi/Codice/Implementazione MYSQL.md",
     "Documentazione/Logico_Definitivo.drawio.png",
     "Fasi/Codice",
     "Fasi/Fase 2/Fase Due.md",
