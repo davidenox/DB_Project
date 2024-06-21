@@ -1,179 +1,157 @@
-CREATE TABLE Magazzini(
-    ID_Magazzino int not null,
-    Indirizzo not null,
-    PRIMARY KEY (ID_Magazzino)
-);
 
-CREATE TABLE Uve(
-    Varietà_Uva varchar(50) not null,
-    Provenienza varchar(50) not null,
-    PRIMARY KEY (Varietà_Uva, Provenienza)
-);
-
-CREATE TABLE Miscele(
-    Nome_Miscela varchar(50) not null,
-    Descrizione not null,
-    PRIMARY KEY (Nome_Miscela)
-);
-
-CREATE TABLE Metodo(
-    Nome_Metodo varchar(50) not null,
-    Descrizione not null,
-    Invecchiamento not null,
-    PRIMARY KEY (Nome_Metodo)
-)
-
-CREATE TABLE Premio(
-    Nome_Premio varchar(50) not null,
-    Associazione not null,
-    Tipologia not null,
-    PRIMARY KEY (Nome_Premio)
-);
-
-CREATE TABLE Clienti(
-    Email varchar(50) not null,
-    Nome_cliente not null,
-    Cognome_cliente not null,
-    Password not null,
-    Data_Nascita date not null,
-    Indirizzo not null,
+CREATE TABLE Clienti (
+    Email VARCHAR(50) NOT NULL,
+    Nome_Cliente VARCHAR(50) NOT NULL,
+    Cognome_Cliente VARCHAR(50) NOT NULL,
+    Data_Nascita DATE NOT NULL,
+    Indirizzo VARCHAR(50) NOT NULL,
     PRIMARY KEY (Email)
 );
 
-CREATE TABLE Cantine(
-    P_Iva_Cantine int not null,
-    Intestazione not null,
-    Regione not null, 
-    Storia not null,
-    PRIMARY KEY (P_Iva_Cantine)
-);
-
-CREATE TABLE Personale(
-    ID_Personale int not null,
-    Ruolo not null,
-    Nome_Personale not null,
-    Cognome_Personale not null,
+CREATE TABLE Personale (
+    ID_Personale VARCHAR(50) NOT NULL,
+    Ruolo VARCHAR(50),
+    Nome_Personale VARCHAR(50) NOT NULL,
+    Cognome_Personale VARCHAR(50) NOT NULL,
     PRIMARY KEY (ID_Personale)
 );
 
-CREATE TABLE Corrieri(
-    P_IVA_Corriere int not null,
-    Intestazione not null,
-    PRIMARY KEY (P_IVA_Corriere)
+CREATE TABLE Corrieri (
+    P_Iva_Corriere INT NOT NULL,
+    Intestazione VARCHAR(50),
+    PRIMARY KEY (P_Iva_Corriere)
 );
 
--- Qui finiscono le tabelle di entità senza FK e iniziano le miste (PK e FK)
-
-CREATE TABLE Vini(
-    Nome_Vino varchar(50) not null,
-    Annata date not null,
-    Descrizione not null,
-    Tipologia not null,
-    Prezzo int not null,
-    Storia_Vino not null,
-    Nome_Metodo not null,
-    Nome_Miscela not null,
-    PRIMARY KEY (Nome_Vino, Annata),
-    FOREIGN KEY (Nome_Metodo) REFERENCES Metodo(Nome_Metodo),
-    FOREIGN KEY (Nome_Miscela) REFERENCES Miscele(Nome_Miscela)
+CREATE TABLE Miscela (
+    Nome_Miscela VARCHAR(50) NOT NULL,
+    Descrizione VARCHAR(200),
+    PRIMARY KEY (Nome_Miscela)
 );
 
-CREATE TABLE Carta_Di_Credito(
-    N_Carta int not null,
-    Circuito not null,
-    CVV int not null,
-    Data_Scadenza date not null,
-    Nome_Carta not null,
-    Cognome_Carta not null,
-    Email not null,
-    PRIMARY KEY (N_Carta),
+CREATE TABLE Cantine (
+    P_IVA_Cantina INT NOT NULL,
+    Intestazione VARCHAR(50) NOT NULL,
+    Regione VARCHAR(50),
+    Storia VARCHAR(200),
+    PRIMARY KEY (P_IVA_Cantina)
+);
+
+CREATE TABLE Magazzini (
+    ID_Magazzino INT NOT NULL,
+    Indirizzo VARCHAR(50) NOT NULL,
+    PRIMARY KEY (ID_Magazzino)
+);
+
+CREATE TABLE Uve (
+    Varieta_Uva VARCHAR(50),
+    Provenienza VARCHAR(50),
+    PRIMARY KEY (Varieta_Uva, Provenienza)
+);
+
+CREATE TABLE Premio (
+    Nome_Premio VARCHAR(50) NOT NULL,
+    Associazione VARCHAR(50),
+    Tipologia VARCHAR(50)
+    PRIMARY KEY (Nome_Premio)
+);
+
+CREATE TABLE Metodi (
+    Nome_Metodo VARCHAR(50) NOT NULL,
+    Descrizione VARCHAR(200),
+    Invecchiamento VARCHAR(200)
+    PRIMARY KEY (Nome_Metodo)
+);
+
+-- Iniziano primary e foreign
+
+CREATE TABLE Carta_di_Credito (
+    Num_Carta INT NOT NULL,
+    Circuito VARCHAR(15) NOT NULL,
+    CVV INT NOT NULL,
+    Data_Scadenza DATE NOT NULL,
+    Nome_Carta VARCHAR(50) NOT NULL,
+    Cognome_Carta VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Num_Carta),
     FOREIGN KEY (Email) REFERENCES Clienti(Email)
 );
 
-CREATE TABLE Recensioni(
-    ID_Recensione int not null,
-    Data_Recensione date not null,
-    Stelle int not null,
-    Commento not null,
-    Email not null,
-    Nome_Vino not null,
-    Annata date not null,
-    PRIMARY KEY (ID_Recensione),
-    FOREIGN KEY (Email) REFERENCES Clienti(Email),
-    FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata)
+CREATE TABLE Ordini (
+    Num_Ordine INT NOT NULL,
+    Data_Ordine DATE NOT NULL,
+    Stato_Ordine VARCHAR(50) NOT NULL,
+    Indirizzo VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Num_Ordine),
+    FOREIGN KEY (ID_Personale) REFERENCES Personale(ID_Personale),
+    FOREIGN KEY (Email) REFERENCES Clienti(Email)
 );
 
-CREATE TABLE Ordini(
-    N_Ordine int not null,
-    Data_Ordine date not null,
-    Stato_Ordine not null,
-    Indirizzo not null,
-    Email not null,
-    ID_Personale int not null,
-    PRIMARY KEY (N_Ordine),
-    FOREIGN KEY (Email) REFERENCES Clienti(Email),
-    FOREIGN KEY (ID_Personale) REFERENCES Personale(ID_Personale)
+CREATE TABLE Spedizioni (
+    Num_Spedizione INT NOT NULL,
+    Data_Consegna DATE NOT NULL,
+    Data_Ritiro DATE NOT NULL,
+    Stato VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Num_Spedizione),
+    FOREIGN KEY (P_Iva_Corriere) REFERENCES Corrieri(P_Iva_Corriere),
+    FOREIGN KEY (Num_Ordine) REFERENCES (Ordini)
 );
 
-CREATE TABLE Spedizioni(
-    N_Spedizione int not null,
-    Data_Consegna date not null,
-    Data_Ritiro date not null,
-    Stato not null,
-    N_Ordine int not null,
-    P_IVA_Corriere int not null,
-    PRIMARY KEY (N_Spedizione),
-    FOREIGN KEY (N_Ordine) REFERENCES Ordini(N_Ordine),
-    FOREIGN KEY (P_IVA_Corriere) REFERENCES Corrieri(P_IVA_Corriere)
-),
-
--- Qui finiscono le tabelle delle entità ed iniziano le tabelle delle relazioni con attributi
-
-CREATE TABLE Conservare(
-    ID_Magazzino int not null,
-    Nome_Vino not null,
-    Annata date not null,
-    Quantita int not null,
-    FOREIGN KEY ID_Magazzino REFERENCES Magazzini(ID_Magazzino),
-    FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata)
-)
-
-CREATE TABLE Creare(
-    Varietà_Uva not null,
-    Provenienza not null,
-    Nome_Miscela not null,
-    Percentuale int not null,
-    FOREIGN KEY (Varietà_Uva, Provenienza) REFERENCES Uve(Varietà_Uva, Provenienza),
+CREATE TABLE Vini (
+    Nome_Vino VARCHAR(50) NOT NULL,
+    Annata DATE NOT NULL,
+    Descrizione VARCHAR(200),
+    Tipologia VARCHAR(50),
+    Prezzo DECIMAL (10,2) NOT NULL,
+    PRIMARY KEY (Nome_Vino, Annata),
     FOREIGN KEY (Nome_Miscela) REFERENCES Miscela(Nome_Miscela)
 );
 
-CREATE TABLE Usare(
-    Nome_Metodo not null,
-    P_Iva_Cantine int not null,
-    FOREIGN KEY (Nome_Metodo) REFERENCES Metodo(Nome_Metodo),
-    FOREIGN KEY (P_Iva_Cantine) REFERENCES Cantine(P_Iva_Cantine)
+CREATE TABLE Recensioni (
+    ID_Recensione INT NOT NULL,
+    Data_Recensione DATE NOT NULL,
+    Stelle INT NOT NULL,
+    Commento VARCHAR(200),
+    PRIMARY KEY (ID_Recensioni),
+    FOREIGN KEY (Email) REFERENCES Clienti(Email),
+    FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata)
 );
 
-CREATE TABLE Ricevere(
-    Annata not null,
-    Nome_Vino not null,
-    Nome_Premio not null,
-    FOREIGN KEY (Annata, Nome_Vino) REFERENCES Vini(Annata, Nome_Vino),
+CREATE TABLE Contenere (
+    Num_Prodotti INT NOT NULL,
+    FOREIGN KEY (Num_Ordine) REFERENCES Ordini(Num_Ordine),
+    FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata),
+);
+
+CREATE TABLE Produrre (
+    Num_Bottiglie INT NOT NULL,
+    FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata),
+    FOREIGN KEY (P_IVA_Cantina) REFERENCES Cantine(P_IVA_Cantina)
+);
+
+CREATE TABLE Conservare (
+    Quantita INT NOT NULL,
+    FOREIGN KEY (ID_Magazzino) REFERENCES Magazzini(ID_Magazzino),
+    FOREIGN KEY (Vini) REFERENCES Vini (Nome_Vino, Annata)
+);
+
+CREATE TABLE Creare (
+    Percentuale INT NOT NULL,
+    FOREIGN KEY (Varieta_Uva, Provenienza) REFERENCES Uve(Varieta_Uva, Provenienza),
+    FOREIGN KEY (Nome_Miscela) REFERENCES Miscela(Nome_Miscela)
+);
+
+CREATE TABLE Assegnare (
+    Data_Assegnazione DATA NOT NULL,
+    FOREIGN KEY (Nome_Premio) REFERENCES Premio(Nome_Premio),
+    FOREIGN KEY (P_IVA_Cantina) REFERENCES Cantine(P_IVA_Cantina)
+);
+
+CREATE TABLE Ricevere (
+    Data_Ricezione DATA NOT NULL,
+    FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata),
     FOREIGN KEY (Nome_Premio) REFERENCES Premio(Nome_Premio)
 );
 
-CREATE TABLE Contenere(
-    N_Ordine int not null,
-    Annata not null,
-    Nome_Vino not null,
-    N_Prodotti int not null,
-    FOREIGN KEY (N_Ordine) REFERENCES Ordini(N_Ordine),
-    FOREIGN KEY (Annata, Nome_Vino) REFERENCES Vini(Annata, Nome_Vino)
-)
-
-CREATE TABLE Assegnare(
-    Nome_Premio not null,
-    P_Iva_Cantine not null,
-    FOREIGN KEY (Nome_Premio) REFERENCES Premio(Nome_Premio),
-    FOREIGN KEY (P_Iva_Cantine) REFERENCES Cantine(P_Iva_Cantine)
+CREATE TABLE Usare (
+    FOREIGN KEY (Nome_Metodo) REFERENCES Metodi(Nome_Metodo),
+    FOREIGN KEY (P_IVA_Cantina_) REFERENCES Cantine(P_IVA_Cantina)
 );
