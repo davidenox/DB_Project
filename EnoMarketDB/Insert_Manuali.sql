@@ -20,7 +20,7 @@ INSERT INTO Carta_di_Credito (Num_Carta, Circuito, CVV, Data_Scadenza, Nome_Cart
 ("7890123456789012", "Visa", "345", "2023-08", "Roberto", "Greco", "roberto.greco@example.com"),
 ("8901234567890123", "MasterCard", "678", "2026-02", "Martina", "Bruno", "martina.bruno@example.com"),
 ("9012345678901234", "American Express", "901", "2025-04", "Paolo", "Conti", "paolo.conti@example.com"),
-("1234567890123456", "Visa", "456", "2024-10", "Chiara", "Gallo", "chiara.gallo@example.com")
+("1234567890123459", "Visa", "456", "2024-10", "Chiara", "Gallo", "chiara.gallo@example.com");
 
 INSERT INTO Personale (ID_Personale, Ruolo, Nome_Personale, Cognome_Personale) VALUES
 ("PERS001234", "Manager", "Luca", "Rossi"),
@@ -70,7 +70,7 @@ INSERT INTO Spedizioni (Num_Spedizione, Data_Consegna, Data_Ritiro, Stato, P_Iva
 ("SPED2023062801", "2023-06-29", "2023-06-28", "In transito", "90123456789", "ORD2023062801"),
 ("SPED2023062802", "2023-06-30", "2023-06-28", "In transito", "12345678901", "ORD2023062802");
 
-INSERT INTO Recensioni (ID_Recensioni, Data_Recensioni, Stelle, Commento, _Email_, _Nome_Vino_, _Annata_)VALUES
+INSERT INTO Recensioni (ID_Recensione, Data_Recensione, Stelle, Commento, Email, Nome_Vino, Annata)VALUES
 (1234567890, "2023-06-24", 5, "Vino eccellente, ottimo rapporto qualita-prezzo.", "cliente1@example.com", "Chianti Classico", 2019),
 (2345678901, "2023-06-25", 4, "Buon vino, un po' leggero per i miei gusti.", "cliente2@example.com", "Barolo", 2015),
 (3456789012, "2023-06-26", 5, "Vino meraviglioso, lo consiglio a tutti gli amanti del rosso.", "cliente3@example.com", "Brunello di Montalcino", 2016),
@@ -80,7 +80,7 @@ INSERT INTO Recensioni (ID_Recensioni, Data_Recensioni, Stelle, Commento, _Email
 (7890123456, "2023-06-30", 5, "Vino fantastico, lo adoro!", "cliente7@example.com", "Montepulciano d'Abruzzo", 2019),
 (8901234567, "2023-07-01", 4, "Piacevole sorpresa, molto buono.", "cliente8@example.com", "Aglianico del Vulture", 2017),
 (9012345678, "2023-07-02", 5, "Il miglior vino che abbia mai assaggiato.", "cliente9@example.com", "Primitivo di Manduria", 2018),
-(1234567890, "2023-07-03", 3, "Non è male, ma non è eccezionale.", "cliente10@example.com", "Valpolicella Classico", 2019);
+(1234567899, "2023-07-03", 3, "Non è male, ma non è eccezionale.", "cliente10@example.com", "Valpolicella Classico", 2019);
 
 INSERT INTO Vini (Nome_Vino, Annata, Descrizione, Tipologia, Prezzo) VALUES
 ("Barolo", 2016, "Elegante vino rosso piemontese, robusto e strutturato.", "Rosso", 45.90),
@@ -94,7 +94,7 @@ INSERT INTO Vini (Nome_Vino, Annata, Descrizione, Tipologia, Prezzo) VALUES
 ("Rosato Salento", 2020, "Vino rosato pugliese, fresco e aromatico, con note di frutti di bosco.", "Rosato", 13.25),
 ("Moscato di Asti", 2024, "Vino dolce e aromatico del Piemonte, dal profumo intenso di fiori e frutta.", "Dolce", 14.70);
 
-INSERT INTO Contenere (_Num_Ordine_, _Nome_Vino_, _Annata_, Num_Prodotti) VALUES
+INSERT INTO Contenere (Num_Ordine, Nome_Vino, Annata, Num_Prodotti) VALUES
 ("ORD2023062401", "Chianti Classico", 2019, 21),
 ("ORD2023062402", "Barolo", 2015, 11),
 ("ORD2023062501", "Brunello di Montalcino", 2016, 3),
@@ -118,7 +118,7 @@ INSERT INTO Cantine (P_Iva_Cantina, Intestazione, Regione, Storia) VALUES
 ("89012345678", "Mastroberardino", "Campania", "Mastroberardino è una cantina storica che ha contribuito a salvare dall' estinzione molti vitigni autoctoni campani."),
 ("90123456789", "Cantina di Montalcino", "Toscana", "Cantina di Montalcino è famosa per la produzione di Brunello di Montalcino, uno dei vini italiani più apprezzati.");
 
-INSERT INTO Produrre (_Annata_, _Nome_Vino_, _P_Iva_Cantina_, Num_Bottiglie) VALUES
+INSERT INTO Produrre (Annata, Nome_Vino, P_Iva_Cantina, Num_Bottiglie) VALUES
 (2019, "Chianti Classico", "01234567890", 5000),
 (2015, "Barolo", "12345678901", 3000),
 (2016, "Brunello di Montalcino", "23456789012", 4000),
@@ -142,7 +142,7 @@ INSERT INTO Magazzini (ID_Magazzino, Indirizzo) VALUES
 ("MAG9012345", "Via Manzoni 8"),
 ("MAG1234567", "Lungomare Marconi 4");
 
-INSERT INTO Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantita) VALUES
+INSERT INTO Conservare (ID_Magazzino, Nome_Vino, Annata, Quantita) VALUES
 ("MAG1234567A", "Chianti Classico", 2019, 500),
 ("MAG2345678B", "Barolo", 2015, 300),
 ("MAG3456789C", "Brunello di Montalcino", 2016, 400),
@@ -154,7 +154,7 @@ INSERT INTO Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantita) VALUES
 ("MAG9012345I", "Primitivo di Manduria", 2018, 500),
 ("MAG0123456J", "Valpolicella Classico", 2019, 300);
 
-INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUES
+INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, Nome_Miscela) VALUES
 ("Sangiovese", "Toscana", 60, "Blend_001"),
 ("Merlot", "Toscana", 40, "Blend_001"),
 ("Nebbiolo", "Piemonte", 70, "Cuvee_Rosso"),
@@ -166,19 +166,19 @@ INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUE
 ("Rondinella", "Veneto", 30, "Nobile_Rosso"),
 ("Molinara", "Veneto", 20, "Nobile_Rosso");
 
-INSERT INTO Uve (Nome_Uva, Nazione, Regione) VALUES
-("Nebbiolo", "Italia", "Piemonte"),
-("Sangiovese", "Italia", "Toscana"),
-("Corvina", "Italia", "Veneto"),
-("Montepulciano", "Italia", "Abruzzo"),
-("Chardonnay", "Francia", "Borgogna"),
-("Merlot", "Francia", "Bordeaux"),
-("Cabernet Sauvignon", "Francia", "Bordeaux"),
-("Syrah", "Francia", "Rodano"),
-("Pinot Noir", "Francia", "Borgogna"),
-("Riesling", "Germania", "Renania-Palatinato");
+INSERT INTO Uve (Varieta_Uva , Provenienza) VALUES
+("Nebbiolo", "Italia"),
+("Sangiovese", "Italia"),
+("Corvina", "Italia"),
+("Montepulciano", "Italia"),
+("Chardonnay", "Francia"),
+("Merlot", "Francia"),
+("Cabernet Sauvignon", "Francia"),
+("Syrah", "Francia"),
+("Pinot Noir", "Francia"),
+("Riesling", "Germania");
 
-INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUES
+INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, Nome_Miscela) VALUES
 ("Sangiovese", "Toscana", 60, "Blend_001"),
 ("Merlot", "Toscana", 40, "Blend_001"),
 ("Nebbiolo", "Piemonte", 70, "Cuvee_Rosso"),
@@ -202,7 +202,7 @@ INSERT INTO Premio (Nome_Premio, Associazione, Tipologia) VALUES
 ("Premio del Pubblico", "Decanter", "Scelta del Pubblico"),
 ("Gran Medaglia", "Bibenda", "Miglior Vino Italiano");
 
-INSERT INTO Assegnare (_Nome_Premio_, _P_Iva_Cantine_, Data_Assegnazione) VALUES
+INSERT INTO Assegnare (Nome_Premio, P_Iva_Cantina, Data_Assegnazione) VALUES
 ("Gran Premio del Vino", "01234567890", "2023-01-15"),
 ("Medaglia d'Oro", "12345678901", "2023-02-10"),
 ("Trofeo del Barolo", "23456789012", "2023-03-05"),
@@ -214,7 +214,7 @@ INSERT INTO Assegnare (_Nome_Premio_, _P_Iva_Cantine_, Data_Assegnazione) VALUES
 ("Premio del Pubblico", "89012345678", "2023-09-12"),
 ("Gran Medaglia", "90123456789", "2023-10-03");
 
-INSERT INTO Ricevere (_Nome_Vino_, _Annata_, _Nome_Premio_, Data_Ricezione) VALUES
+INSERT INTO Ricevere (Nome_Vino, Annata, Nome_Premio, Data_Ricezione) VALUES
 ("Chianti Classico", 2019, "Gran Premio del Vino", "2023-01-15"),
 ("Barolo", 2015, "Medaglia d'Oro", "2023-02-10"),
 ("Brunello di Montalcino", 2016, "Trofeo del Barolo", "2023-03-05"),
@@ -226,7 +226,7 @@ INSERT INTO Ricevere (_Nome_Vino_, _Annata_, _Nome_Premio_, Data_Ricezione) VALU
 ("Primitivo di Manduria", 2018, "Premio del Pubblico", "2023-09-12"),
 ("Valpolicella Classico", 2019, "Gran Medaglia", "2023-10-03");
 
-INSERT INTO Metodo (Nome_Metodo, Descrizione, Invecchiamento) VALUES
+INSERT INTO Metodi (Nome_Metodo, Descrizione, Invecchiamento) VALUES
 ("Metodo Classico", "Tecnica tradizionale di spumantizzazione con rifermentazione in bottiglia.", 24),
 ("Metodo Charmat", "Metodo di spumantizzazione con fermentazione in autoclave.", 6),
 ("Appassimento", "Processo di essiccazione delle uve prima della vinificazione per concentrare gli zuccheri.", 12),
@@ -238,7 +238,7 @@ INSERT INTO Metodo (Nome_Metodo, Descrizione, Invecchiamento) VALUES
 ("Metodo Anfora", "Fermentazione e invecchiamento del vino in anfore di terracotta.", 12),
 ("Macération Carbonique", "Fermentazione intracellulare delle uve intere, utilizzata soprattutto per il Beaujolais.", 1);
 
-INSERT INTO Usare (_Nome_Metodo_, _P_Iva_Cantine_) VALUES
+INSERT INTO Usare (Nome_Metodo, P_Iva_Cantine) VALUES
 ("Metodo Classico", "01234567890"),
 ("Metodo Charmat", "12345678901"),
 ("Appassimento", "23456789012"),
