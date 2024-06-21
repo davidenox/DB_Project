@@ -1,4 +1,4 @@
-INSERT INTO Clienti (E_mail, Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo) VALUES
+INSERT INTO Clienti (Email, Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo) VALUES
 ("mario.rossi@example.com", "Mario", "Rossi", "1980-05-15", "Via Roma 1"),
 ("laura.bianchi@example.com", "Laura", "Bianchi", "1992-09-20", "Via Verdi 5"),
 ("luigi.verdi@example.com", "Luigi", "Russo", "1975-03-10", "Corso Italia 12"),
@@ -10,7 +10,7 @@ INSERT INTO Clienti (E_mail, Nome_Cliente, Cognome_Cliente, Data_Nascita, Indiri
 ("chiara.gallo@example.com", "Chiara", "Gallo", "1987-08-07", "Via Manzoni 4"),
 ("paolo.conti@example.com", "Paolo", "Conti", "1984-12-22", "Piazza Duomo 6");
 
-INSERT INTO Carta_di_Credito (Num_Carta, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, E_mail) VALUES
+INSERT INTO Carta_di_Credito (Num_Carta, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, Email) VALUES
 ("1234567890123456", "Visa", "123", "2025-06", "Mario", "Rossi", "mario.rossi@example.com"),
 ("2345678901234567", "MasterCard", "456", "2024-09", "Laura", "Bianchi", "laura.bianchi@example.com"),
 ("3456789012345678", "American Express", "789", "2023-12", "Luigi", "Verdi", "luigi.verdi@example.com"),
@@ -34,7 +34,7 @@ INSERT INTO Personale (ID_Personale, Ruolo, Nome_Personale, Cognome_Personale) V
 ("PERS009012", "Addetto Vendite", "Giovanni", "Gallo"),
 ("PERS010123", "Addetto Vendite", "Anna", "Conti");
 
-INSERT INTO Ordini (Num_Ordine, Data_Ordine, Stato_Ordine, Indirizzo, ID_Personale, E-mail) VALUES
+INSERT INTO Ordini (Num_Ordine, Data_Ordine, Stato_Ordine, Indirizzo, ID_Personale, Email) VALUES
 ("ORD2023062401", "2023-06-24", "In corso", "Via Roma 1", "PERS001234", "mario.rossi@example.com"),
 ("ORD2023062402", "2023-06-24", "In corso", "Via Roma 1", "PERS002345", "mario.rossi@example.com"),
 ("ORD2023062501", "2023-06-25", "In attesa", "Via Roma 1", "PERS003456", "mario.rossi@example.com"),
@@ -70,13 +70,13 @@ INSERT INTO Spedizioni (Num_Spedizione, Data_Consegna, Data_Ritiro, Stato, P_Iva
 ("SPED2023062801", "2023-06-29", "2023-06-28", "In transito", "90123456789", "ORD2023062801"),
 ("SPED2023062802", "2023-06-30", "2023-06-28", "In transito", "12345678901", "ORD2023062802");
 
-INSERT INTO Recensioni (ID_Recensioni, Data_Recensioni, Stelle, Commento, _E-mail_, _Nome_Vino_, _Annata_)VALUES
-(1234567890, "2023-06-24", 5, "Vino eccellente, ottimo rapporto qualità-prezzo.", "cliente1@example.com", "Chianti Classico", 2019),
+INSERT INTO Recensioni (ID_Recensioni, Data_Recensioni, Stelle, Commento, _Email_, _Nome_Vino_, _Annata_)VALUES
+(1234567890, "2023-06-24", 5, "Vino eccellente, ottimo rapporto qualita-prezzo.", "cliente1@example.com", "Chianti Classico", 2019),
 (2345678901, "2023-06-25", 4, "Buon vino, un po' leggero per i miei gusti.", "cliente2@example.com", "Barolo", 2015),
 (3456789012, "2023-06-26", 5, "Vino meraviglioso, lo consiglio a tutti gli amanti del rosso.", "cliente3@example.com", "Brunello di Montalcino", 2016),
 (4567890123, "2023-06-27", 3, "Meh, niente di speciale.", "cliente4@example.com", "Amarone della Valpolicella", 2017),
 (5678901234, "2023-06-28", 5, "Superbo vino, davvero eccezionale!", "cliente5@example.com", "Barbera d'Alba", 2018),
-(6789012345, "2023-06-29", 4, "Buon rapporto qualità-prezzo.", "cliente6@example.com", "Nebbiolo d'alba", 2020),
+(6789012345, "2023-06-29", 4, "Buon rapporto qualita-prezzo.", "cliente6@example.com", "Nebbiolo d'alba", 2020),
 (7890123456, "2023-06-30", 5, "Vino fantastico, lo adoro!", "cliente7@example.com", "Montepulciano d'Abruzzo", 2019),
 (8901234567, "2023-07-01", 4, "Piacevole sorpresa, molto buono.", "cliente8@example.com", "Aglianico del Vulture", 2017),
 (9012345678, "2023-07-02", 5, "Il miglior vino che abbia mai assaggiato.", "cliente9@example.com", "Primitivo di Manduria", 2018),
@@ -107,11 +107,11 @@ INSERT INTO Contenere (_Num_Ordine_, _Nome_Vino_, _Annata_, Num_Prodotti) VALUES
 ("ORD2023062802", "Valpolicella Classico", 2019, 2);
 
 INSERT INTO Cantine (P_Iva_Cantina, Intestazione, Regione, Storia) VALUES
-("01234567890", "Cantina Sociale di Alba", "Piemonte", "Fondata nel 1920, la Cantina Sociale di Alba è nota per la produzione di vini di alta qualità."),
+("01234567890", "Cantina Sociale di Alba", "Piemonte", "Fondata nel 1920, la Cantina Sociale di Alba è nota per la produzione di vini di alta qualita."),
 ("12345678901", "Tenuta San Guido", "Toscana", "Tenuta San Guido è famosa per il suo vino Sassicaia, uno dei più prestigiosi vini italiani."),
 ("23456789012", "Marchesi Antinori", "Toscana", "Marchesi Antinori è una delle cantine più antiche d'Italia, con una storia che risale al 1385."),
 ("34567890123", "Cantina di Negrar", "Veneto", "La Cantina di Negrar produce alcuni dei migliori Amarone della Valpolicella."),
-("45678901234", "Cantine Ferrari", "Trentino-Alto Adige", "Cantine Ferrari è rinomata per la produzione di spumanti metodo classico di alta qualità."),
+("45678901234", "Cantine Ferrari", "Trentino-Alto Adige", "Cantine Ferrari è rinomata per la produzione di spumanti metodo classico di alta qualita."),
 ("56789012345", "Cantina di Soave", "Veneto", "Cantina di Soave è una delle cooperative vinicole più grandi e rispettate d'Italia."),
 ("67890123456", "Planeta", "Sicilia", "Planeta è una delle cantine più innovative della Sicilia, conosciuta per i suoi vini bianchi e rossi."),
 ("78901234567", "Feudi di San Gregorio", "Campania", "Feudi di San Gregorio è un' azienda leader nella produzione di vini del Sud Italia."),
@@ -142,7 +142,7 @@ INSERT INTO Magazzini (ID_Magazzino, Indirizzo) VALUES
 ("MAG9012345", "Via Manzoni 8"),
 ("MAG1234567", "Lungomare Marconi 4");
 
-INSERT INTO Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantità) VALUES
+INSERT INTO Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantita) VALUES
 ("MAG1234567A", "Chianti Classico", 2019, 500),
 ("MAG2345678B", "Barolo", 2015, 300),
 ("MAG3456789C", "Brunello di Montalcino", 2016, 400),
@@ -154,7 +154,7 @@ INSERT INTO Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantità) VALUES
 ("MAG9012345I", "Primitivo di Manduria", 2018, 500),
 ("MAG0123456J", "Valpolicella Classico", 2019, 300);
 
-INSERT INTO Creare (Varietà_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUES
+INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUES
 ("Sangiovese", "Toscana", 60, "Blend_001"),
 ("Merlot", "Toscana", 40, "Blend_001"),
 ("Nebbiolo", "Piemonte", 70, "Cuvee_Rosso"),
@@ -178,7 +178,7 @@ INSERT INTO Uve (Nome_Uva, Nazione, Regione) VALUES
 ("Pinot Noir", "Francia", "Borgogna"),
 ("Riesling", "Germania", "Renania-Palatinato");
 
-INSERT INTO Creare (Varietà_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUES
+INSERT INTO Creare (Varieta_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALUES
 ("Sangiovese", "Toscana", 60, "Blend_001"),
 ("Merlot", "Toscana", 40, "Blend_001"),
 ("Nebbiolo", "Piemonte", 70, "Cuvee_Rosso"),
@@ -191,11 +191,11 @@ INSERT INTO Creare (Varietà_Uva, Provenienza, Percentuale, _Nome_Miscela_) VALU
 ("Molinara", "Veneto", 20, "Nobile_Rosso");
 
 INSERT INTO Premio (Nome_Premio, Associazione, Tipologia) VALUES
-("Gran Premio del Vino", "Associazione Italiana Sommelier", "Qualità"),
+("Gran Premio del Vino", "Associazione Italiana Sommelier", "Qualita"),
 ("Medaglia d'Oro", "Consorzio Vino Chianti", "Eccellenza"),
 ("Trofeo del Barolo", "Associazione Enologi Italiani", "Miglior Vino Rosso"),
 ("Premio Brunello", "Consorzio del Brunello di Montalcino", "Miglior Annata"),
-("Stella d'Argento", "Gambero Rosso", "Rapporto Qualità-Prezzo"),
+("Stella d'Argento", "Gambero Rosso", "Rapporto Qualita-Prezzo"),
 ("Coppa del Vino", "Slow Wine", "Vino Sostenibile"),
 ("Premio d'Onore", "Vinitaly", "Innovazione"),
 ("Sigillo d'Eccellenza", "Wine Spectator", "Critica Internazionale"),
