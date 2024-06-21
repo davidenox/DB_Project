@@ -56,7 +56,7 @@ INSERT INTO Corrieri (P_Iva_Corriere, Intestazione) VALUES
 ("78901234567", "Logistica Rapida & Sicura"),
 ("89012345678", "Trasporti Semplici S.r.l."),
 ("90123456789", "Spedizioni Veloci S.p.A."),
-("12345678901", "Logistica Puntuale S.r.l.");
+("12345678903", "Logistica Puntuale S.r.l.");
 
 INSERT INTO Spedizioni (Num_Spedizione, Data_Consegna, Data_Ritiro, Stato, P_Iva_Corriere, Num_Ordine) VALUES 
 ("SPED2023062401", "2023-06-24", "2023-06-23", "In transito", "12345678901", "ORD2023062401"),
