@@ -249,3 +249,15 @@ INSERT INTO Usare (Nome_Metodo, P_Iva_Cantine) VALUES
 ("Affinamento in Barrique", "78901234567"),
 ("Metodo Anfora", "89012345678"),
 ("Macération Carbonique", "90123456789");
+
+INSERT INTO Miscela (Nome_Miscela, Descrizione) VALUES 
+('Blend_001', 'Una miscela toscana di Sangiovese e Merlot con note fruttate e speziate.'),
+('Cuvee_Rosso', 'Un cuvée piemontese di Nebbiolo e Barbera con un carattere complesso e raffinato.'),
+('Super_Tuscan', 'Un Super Tuscan che combina Cabernet Sauvignon, Sangiovese e Merlot per un vino robusto e corposo.'),
+('Nobile_Rosso', 'Un nobile rosso veneto con Corvina, Rondinella e Molinara, perfetto per occasioni speciali.'),
+('Blend_002', 'Una miscela unica con varietà segrete, dal gusto sorprendente e raffinato.'),
+('Cuvee_Bianco', 'Un cuvée bianco aromatico e fresco, ideale per cene estive.'),
+('Riserva_Speciale', 'Una riserva speciale invecchiata con un gusto robusto e maturo.'),
+('Passito_Dolce', 'Un passito dolce con note di miele e albicocca, perfetto per dessert.'),
+('Frizzante_Vivace', 'Un vino frizzante vivace e rinfrescante, ideale per aperitivi.'),
+('Novello_Giovane', 'Un vino novello giovane e fresco, perfetto per ogni occasione.');
