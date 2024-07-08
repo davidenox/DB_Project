@@ -95,16 +95,16 @@ Gli utenti principali del DB sono i seguenti:
 ## Diagramma E-R
 ### Schema scheletro
 
-![[Pasted image 20240502150142.png]]
+![[scheletro.jpg]]
+
 Le entità principali del sistema sono le seguenti:
 - Cliente
 - Vino
-- Azienda
-Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene venduto dall'_Azienda_. 
+- Corriere
+Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene spedito dal _Corriere_. 
 ### Raffinamenti 
 1. Raffinazione *Clienti*:
-
-![[Pasted image 20240526150730.png|center|100]]
+   ![[Pasted image 20240708155053.png]]
 
 Qui si raffina l'entità _Cliente_:
 - Ad ogni _Cliente_ è associata una o più _Carte di Credito_ che gli permetterà di acquistare i prodotti;
@@ -113,8 +113,8 @@ Qui si raffina l'entità _Cliente_:
 ----
 
 2. Raffinazione *Vini*:
-
-![[Pasted image 20240526151600.png|center|200]]
+   
+![[raffinazione2.jpg]]
 
 Qui si raffina l'entità *Vini*:
 - I *Vini* saranno composti da *Miscele* create dalle diverse varietà di *Uve*;
@@ -124,7 +124,7 @@ Qui si raffina l'entità *Vini*:
 
 3. Raffinazione *Ordini*:
 
-![[Pasted image 20240526152640.png|center|500]]
+![[Pasted image 20240708155019.png]]
 
 Qui si raffina l'entità *Ordini*:
 - Il *Personale* si occuperà della preparazione degli *Ordini*;
@@ -137,8 +137,8 @@ Qui si raffina l'entità *Ordini*:
 ![[Logico_Definitivo2.drawio.png]]
 
 Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
-- Clienti (**E-mail**, Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo)
-- Carta di Credito (**N°Carta**, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, _E-mail_)
+- Clienti (**ID_Cliente**, Nome, Cognome, Data_Nascita)
+- Carta di Credito (**ID_Carta**, Numero_Carta, CVV, Scadenza, Nome_Carta, Cognome_Carta, _E-mail_)
 - Personale (**ID_Personale**, Ruolo, Nome_Personale, Cognome_Personale)
 - Ordini (**N° Ordine**, Data Ordine, Stato Ordine, Indirizzo, _ID_Personale_, _E-mail_ )
 - Corrieri (**P.Iva_Corriere**, Intestazione)
@@ -176,50 +176,51 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 
 ## Schema E-R concettuale ristrutturato
-
-![[ER_Definitivo.drawio.png|center|600]]
-
+![[Last_ER3.jpg]]
 
 ## Dizionario Entità e Relazioni
 ### Glossario delle Entità
-| Entità           | Descrizione                                                       | Attributi                                                                   | Relazioni coinvolte                                            |
-| ---------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Clienti          | Utente che intende acquistare il prodotto                         | *E-mail*, Password,  Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo | Preferire, Eseguire, Associare, Scrivere                       |
-| Vini             | Prodotto in vendita                                               | *Nome_Vino*, *Annata*, Descrizione, Tipologia, Prezzo                       | Preferire, Conservare, Contenere, Comporre, Produrre, Valutare |
-| Carte di credito | Metodo di pagamento                                               | *N° Carta*, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta         | Associare                                                      |
-| Spedizioni       | Metodo di consegna del prodotto                                   | *N° Spedizione*, Data_Consegna, Data_Ritiro, Stato                          | Effettuare, Inviare                                            |
-| Ordini           | Acquisto effettivo del prodotto                                   | *N° Ordine*, Data_Ordine, Stato_Ordine, Indirizzo_Ordine                    | Eseguire, Inviare, Preparare, Contenere                        |
-| Recensioni       | Feedback dell'utente                                              | *ID_Recensione*, Data_Recensione, Stelle, Commento                          | Scrivere, Valutare                                             |
-| Personale        | Utente che gestisce l'azienda                                     | *ID_Personale*, Ruolo, Nome_Personale, Cognome_Personale                    | Preparare                                                      |
-| Corrieri         | Azienda esterna che gestisce le consegne                          | *P.IVA_Corriere*, Intestazione                                              | Effettuare                                                     |
-| Magazzini        | Luogo in cui vengono gestiti i ritiri e la conservazione dei vini | *ID_Magazzino*, Indirizzo                                                   | Conservare                                                     |
-| Miscele          | Informazioni aggiuntive del vino in base alle uve utilizzate      | *Nome_Miscela*, Descrizione                                                 | Comporre, Creare                                               |
-| Cantine          | Informazione di dove è stato prodotto il vino                     | *P.IVA_Cantine*, Intestazione, Regione, Storia                              | Usare, Ricevere                                                |
-| Uve              | Ingredienti per la produzione dei vini                            | *Varietà*, *Provenienza*                                                    | Creare                                                         |
-| Procedimento     | Passi per produrre il vino                                        | *Nome_Metodo*, Descrizione, Invecchiamento                                  | Produrre, Usare                                                |
-| Premio Vino      | Nome del vino che ha vinto                                        | *Nome_Premio*, Associazione                                                 | Assegnare                                                      |
-| Premio Cantina   | Nome della cantina che ha vinto un premio                         | *Nome_Premio*, Associazione                                                 | Ricevere                                                       |
+| Entità           | Descrizione                                          | Attributi                                                                       | Relazioni coinvolte                                                               |
+| ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Clienti          | Utente che intende acquistare il prodotto            | *ID_Cliente*,  Nome, Cognome, Data_Nascita                                      | Risiedere, Effettuare, Collegare, Scrivere, Preferire                             |
+| Vini             | Prodotto in vendita                                  | *ID_Vino*, Anno, Nome,  Biologico, Gradazione, Prezzo, Solfiti                  | Contenere, Produrre, Valutare, Elenca, Appartenere, Assegnare, Preferire, Compone |
+| Carte di credito | Metodo di pagamento                                  | *ID_Carta*, CVV, Scadenza, Nome_Carta, Cognome_Carta,  Tipo_Carta, Numero_Carta | Collegare, Pagamenti                                                              |
+| Spedizioni       | Metodo di consegna del prodotto                      | *ID_Spedizione*, Data_Spedizione, Data_Consegna, Stato_Spedizione               | Organizzare, Formare                                                              |
+| Ordini           | Acquisto effettivo del prodotto                      | *ID_Ordine*, Data_Ordine, Stato                                                 | Formare, Effettuare, Pagamenti, Associare, Descrizione                            |
+| Recensioni       | Feedback dell'utente                                 | *ID_Recensione*, Data_Recensione, Voto, Commento                                | Scrivere, Valutare                                                                |
+| Produttori       | Colui che produce il vino                            | *ID_Produttore*, Nome,  Partita_IVA                                             | Produrre, Sede, Ricevere                                                          |
+| Corrieri         | Azienda esterna che gestisce le consegne             | *ID_Corriere*, Nome                                                             | Organizzare                                                                       |
+| Magazzini        | Luogo in cui viene gestita la conservazione dei vini | *ID_Magazzino*, Nome                                                            | Contenere                                                                         |
+| Tipi di Vino     | Informazioni aggiuntive del vino in base al tipo     | *Nome*                                                                          | Appartenere                                                                       |
+| Lista Prodotti   | Informazione dei prodotti                            | *ID_Lista*, Quantità                                                            | Associare, Elenca                                                                 |
+| Uve              | Ingredienti per la produzione dei vini               | *ID_Uva*, Nome, Descrizione                                                     | Comporre                                                                          |
+| Premi            | Premio assegnati                                     | *ID_Premio*, Nome, Descrizione                                                  | Assegnare, Ricevere                                                               |
+| Indirizzi        | Indirizzo della sede e del cliente                   | *ID_Indirizzo*, Via, Civico, CAP, Città, Provincia, Nazione                     | Risiedere, Sede, Destinazione                                                     |
+
 
 ### Glossario delle Relazioni
 
-| Relazione  | Descrizione                                                           | Entità                                |
-| ---------- | --------------------------------------------------------------------- | ------------------------------------- |
-| Associare  | L'associazione di una carta di credito ad un cliente per il pagamento | Carte di credito (1:1), Clienti(1:N), |
-| Creare     | Creazione dei prodotti                                                | Uve (1:N), Miscele (1:N)              |
-| Preparare  | Gestione dell'ordine da parte del personale                           | Ordini  (1:1), Personale (o:N)        |
-| Effettuare | Operazione di consegna dell'ordine effettuato all'utente              | Corrieri (1:N),  Spedizioni(1:1)      |
-| Produrre   | Indica dov'è stato prodotto il vino                                   | Vini (1:N), Cantina (1:N)             |
-| Comporre   | Indica cosa c'è all'interno del vino                                  | Vino (1:1), Miscela (1:N)             |
-| Scrivere   | Commento lasciato dal cliente                                         | Clienti (0:N), Recensione (1:1)       |
-| Eseguire   | Cliente che crea l'ordine da pagare                                   | Clienti (1:N), Ordini(1:1)            |
-| Valutare   | Modo per valutare la qualitò del vino                                 | Recensione (1:1), Vini (1:N)          |
-| Conservare | Luogo dove viene conservato il vino da vendere                        | Magazzini (1:N), Vini (1:N)           |
-| Inviare    | Inviare l'ordine al cliente                                           | Spedizioni(1:1), Ordini(1:1)          |
-| Preferire  | Indica la preferenza dei clienti sui vini                             | Clienti(0:N), Vini(0:N)               |
-| Contenere  | Vini presenti in un ordine                                            | Vini(0:N), Ordine(1:N)                |
-| Usare      | Indica come viene utilizzata la cantina                               | Cantine(1:N), Procedimento(0:N)       |
-| Ricevere   | Ricevere il premio vinto alla cantina                                 | Cantine(0:N), Premio Cantina(0:N)     |
-| Assegnare  | Assegnare il premio al vino                                           | Premio Vino(0:N), Vino(0:N)           |
+| Relazione    | Descrizione                                           | Entità                              |
+| ------------ | ----------------------------------------------------- | ----------------------------------- |
+| Associare    | L'associazione di una lista dei prodotti ad un ordine | Ordini (1:1), Lista_Prodotti(1:N),  |
+| Effettuare   | Effettuare l'ordine da parte dei clienti              | Ordini (1:1),  Clienti(0:N)         |
+| Produrre     | Indica chi ha prodotto il vino                        | Vini (1:1), Produttori (0:N)        |
+| Compone      | Indica cosa c'è all'interno del vino                  | Vini (1:N), Uve (0:N)               |
+| Scrivere     | Commento lasciato dal cliente                         | Clienti (0:N), Recensione (1:1)     |
+| Valutare     | Modo per valutare la qualitò del vino                 | Recensione (1:1), Vini (0:N)        |
+| Contenere    | Luogo dove viene conservato il vino                   | Magazzini (0:N), Vini (1:N)         |
+| Formare      | Preparare l'ordine da spedire                         | Spedizioni(1:N), Ordini(1:1)        |
+| Preferire    | Indica la preferenza dei clienti sui vini             | Clienti(0:N), Vini(0:N)             |
+| Assegnare    | Assegnare il premio vinto al vino                     | Vini(0:N), Premi(1:N)               |
+| Ricevere     | Ricevere il premio al produttore                      | Premio(1:N), Produttori(0:N)        |
+| Sede         | Luogo dove si trova la sede                           | Produttori(1:1), Indirizzi(1:1)     |
+| Elenca       | Elenca i vini presenti nella lista                    | Lista_Prodotti(1:N), Vini(0:N)      |
+| Destinazione | Luogo di consegna dell'ordine                         | Ordini(1:1), Indirizzi(0:N)         |
+| Organizzare  | Corriere organizza la spedizione                      | Corrieri(0:N), Spedizioni(0:N)      |
+| Pagamenti    | Pagamento degli ordini tramite carta                  | Carta di Credito(1:N), Ordini(0:N)  |
+| Collegare    | Carta collegata ad un cliente                         | Carta di Credito(1:1), Clienti(1:N) |
+| Appartenere  | Un vino appartiene ad un tipo                         | Vini(1:1), Tipi di Vino(1:N)        |
+| Risiedere    | Luogo in cui un cliente abita                         | Clienti(1:1), Indirizzi(1:N)        |
 
 ## Carico Applicativo
 ### Tabella dei Volumi 
@@ -739,7 +740,69 @@ Inoltre, si è definito un terzo utente che ha accesso solamente a delle view i
 Le view sono tabelle che non memorizzano dati, esse condividono lo stesso spazio delle tabelle originali. Spesso vengono assegnate ad altri utenti con specifici campi oscurati anche se il loro utilizzo inappropriato può portare all’inconsistenza del database.
 
 ### Views
+```Mysql
+  
 
+CREATE VIEW Dettagli_Cliente AS SELECT
+c.Id_Cliente,
+c.Nome,
+c.Cognome,
+c.Data_di_nascita,
+i.Via,
+i.CAP,
+i.Città,
+i.Provincia,
+i.Nazione
+FROM
+Clienti c
+JOIN Indirizzi i ON
+c.Id_Indirizzo = i.Id_Indirizzo;
+
+-- Fornisce una vista completa dei dettagli contenente solo i vini rossi
+
+CREATE VIEW Vini_Rossi AS SELECT
+vini.Id_Vino,
+vini.Nome AS Nome_Vino,
+produttori.Nome AS Nome_Produttore,
+vini.Anno,
+vini.Solfiti,
+vini.Biologico,
+vini.Prezzo
+FROM
+Vini
+INNER JOIN Produttori ON vini.Id_Produttore = produttori.Id_Produttore
+WHERE
+tipologia = "Rosso";
+
+-- Fornisce una vista completa dei dettagli contenente solo i vini bianchi
+
+
+CREATE VIEW Vini_Bianchi AS SELECT
+vini.Id_Vino,
+vini.Nome AS Nome_Vino,
+produttori.Nome AS Nome_Produttore,
+vini.Anno,
+vini.Solfiti,
+vini.Biologico,
+vini.Prezzo
+FROM
+Vini
+INNER JOIN Produttori ON vini.Id_Produttore = produttori.Id_Produttore
+WHERE tipologia = "Bianco";
+
+-- Fornisce una vista dei 10 vini più venduti
+  
+CREATE VIEW Vini_più_venduti AS
+SELECT vini.Id_Vino,
+vini.Nome,
+SUM( vini.Prezzo * Lista_Prodotti.Quantità) AS Totale_Venduto
+FROM vini
+INNER JOIN Lista_Prodotti ON vini.Id_Vino = Lista_Prodotti.Id_Vino
+INNER JOIN ordini ON Lista_Prodotti.Id_Ordine = ordini.Id_Ordine
+GROUP BY vini.Id_Vino
+ORDER BY Totale_Venduto DESC
+LIMIT 10;
+```
 ## Creazione Utenti
 
 Poiché il progetto rappresenta una realtà aziendale di una società, abbiamo creato 3 classi di utenti in ordine decrescente di grado di privilegi. Un manager è colui che gestisce il database e quindi ha tutti i diritti. Il personale ha il diritto di inserire nuove tuple e di effettuare query ai fini lavorativi.  
