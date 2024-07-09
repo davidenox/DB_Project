@@ -4,21 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1de6665c227d260e",
+        "id": "3247989c958ba250",
         "type": "tabs",
         "children": [
           {
-            "id": "422a17fe9c328197",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Fasi/Immagini/Pasted image 20240526151600.png"
-              }
-            }
-          },
-          {
-            "id": "6416416c7336e7e6",
+            "id": "57625f27b15d51b4",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -29,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -80,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "6c39f1351ceb0013",
@@ -166,44 +154,43 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "6416416c7336e7e6",
+  "active": "57625f27b15d51b4",
   "lastOpenFiles": [
+    "EnoMarketDB/Views.sql",
+    "EnoMarketDB/Tables.sql",
+    "EnoMarketDB/Scripts",
+    "EnoMarketDB/Queries.sql",
+    "EnoMarketDB/Insert.sql",
+    "scheletro.jpg",
     "raffinazione2.jpg",
-    "Last_ER3.jpg",
     "Pasted image 20240708155319.png",
-    "Fasi/Immagini/Pasted image 20240526151600.png",
-    "Fasi/Fase 3/Fase Tre.md",
     "Pasted image 20240708155053.png",
     "Pasted image 20240708155019.png",
-    "Fasi/Immagini/Pasted image 20240526150730.png",
-    "Fasi/Immagini/Pasted image 20240526145832.png",
-    "Fasi/Immagini/Pasted image 20240502151541.png",
-    "Fasi/Immagini/Pasted image 20240502150142.png",
-    "Fasi/Immagini/Pasted image 20240502155452.png",
-    "Documentazione/Schema_Scheletro.drawio.pdf",
-    "python/queryBuilder.py",
-    "python",
-    "EnoMarketDB/Insert_Manuali.sql",
-    "conflict-files-obsidian-git.md",
-    "Fasi/Fase 2/Fase Due.md",
-    "Fasi/Fase 3/Senza nome",
-    "Fasi/Fase 3",
-    "Fasi/Fase 2/Fase Concettuale/pdf/Progetto_DB.drawio (2).pdf",
-    "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
-    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
-    "Fasi/Fase 2/Fase Concettuale/pdf/Logico-1.pdf",
-    "Documentazione/Fase Due.pdf",
-    "Fasi/Fase 3",
+    "Last_ER3.jpg",
+    "Last_ER.jpg",
     "Fasi/Codice/Implementazione MYSQL.md",
-    "Roba bocciata/Progettazione logica.md",
-    "Roba bocciata/Fase Uno.md",
-    "Roba bocciata/bozza fase 2.md",
+    "Logico_Definitivo2.drawio 1.png",
+    "Fasi/Fase 3/Fase Tre.md",
+    "Fasi/Fase 3",
+    "EnoMarketDB/Insert_Manuali.sql",
+    "Logico_Definitivo2.drawio.png",
+    "conflict-files-obsidian-git.md",
+    "Documentazione/Logico_Definitivo.drawio.png",
+    "Fasi/Codice",
+    "Fasi/Fase 2/Fase Due.md",
+    "EnoMarketDB/table.sql",
+    "EnoMarketDB",
+    "Documentazione/ER_Definitivo.drawio.pdf",
+    "Cose da migliorare.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",
-    "Fasi/Fase 2/Fase 2 Corretta.md",
+    "Fasi/Fase 2/Fase Concettuale/Schema Logico.md",
+    "Fasi/Fase 2/Fase Concettuale/Schema ER.md",
     "Fasi/Fase 2/Schema Scheletro/Scheletro.md",
-    "Cose da migliorare.md",
+    "Roba bocciata/bozza fase 2.md",
     "Fasi/bozza fase 2.md",
+    "Roba bocciata/Progettazione logica.md",
+    "Roba bocciata/Fase Uno.md",
     "Fasi/Fase 1/Fase Uno.md",
     "ER.md",
     "Progettazione logica.md",
