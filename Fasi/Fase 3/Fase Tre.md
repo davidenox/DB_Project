@@ -29,7 +29,7 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
 
 Gli utenti principali del DB sono i seguenti:
 - *Clienti*;
-- *Personale*;
+- *Produttori*;
 - *Corrieri*.
 ### Clienti
 
@@ -43,9 +43,9 @@ Gli utenti principali del DB sono i seguenti:
 - **Gestione degli Ordini**: Visualizzazione dello stato degli ordini, storico degli acquisti, e aggiornamenti sulle spedizioni.
 - **Personalizzazione**: Raccomandazioni personalizzate basate sui precedenti acquisti e preferenze.
 
-### Personale
+### Produttori
 
-**Profilo**: Il personale gestisce l'inventario fisico, preparando gli ordini per la spedizione e monitorando le scorte.
+**Profilo**: I produttori gestiscono l'inventario fisico, preparando gli ordini per la spedizione e monitorando le scorte.
 
 **Obiettivi/Bisogni**:
 
@@ -83,15 +83,18 @@ Gli utenti principali del DB sono i seguenti:
 | Premi            | Nome premio vinto      | Riconoscimenti |
 
 ## Specifiche, assunzioni e vincoli d’integrità
+
 #### Vincoli
-- L'ordine parte solo dopo il pagamento.
-- Tutto il vino viene da un solo fornitore.
-- Pagamento diretto, non a rate.
-- Ogni ordine è gestito da un solo dipendente dell'enoteca.
-- Si ipotizzano più magazzini.
-- Il cliente può scrivere al più una recensione per vino.
+
+- Il cliente viene inserito solo se maggiorenne;
+- I voti delle recensioni vanno da 0 a 10;
+- Un premio non può essere assegnato prima che il vino venga prodotto;
+- DA FINIRE
 # Parte Terza: Progettazione concettuale
 ## Diagramma E-R
+
+![[DiagrammaER.png|center]]
+
 ### Schema scheletro
 
 ![[scheletro.jpg]]
@@ -106,7 +109,7 @@ Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un 
    ![[Pasted image 20240708155053.png]]
 
 Qui si raffina l'entità _Cliente_:
-- Ad ogni _Cliente_ è associata una o più _Carte di Credito_ che gli permetterà di acquistare i prodotti;
+- Ad ogni _Cliente_ è collegata una o più _Carte di Credito_ che gli permetterà di acquistare i prodotti;
 - Il *Cliente*, al termine dell'acquisto e della consegna, può lasciare una *Recensione* riguardo il servizio di consegna e riguardo la qualità del prodotto acquistato.
  
 ----
@@ -116,66 +119,59 @@ Qui si raffina l'entità _Cliente_:
 ![[raffinazione2.jpg]]
 
 Qui si raffina l'entità *Vini*:
-- I *Vini* saranno composti da *Miscele* create dalle diverse varietà di *Uve*;
-- Essi verranno prodotti in delle *Cantine* e conservate in dei *Magazzini* in attesa di un ordine e di una seguente spedizione.
+- I *Vini* saranno composti da *Uve*  e creeranno diversi *Tipi di vino*;
+- Essi verranno prodotti dai *Produttori* e conservate in dei *Magazzini* in attesa di un ordine e di una seguente spedizione.
+- Ai vini migliori verranno assegnati dei *Premi* in base alle loro *Recensioni* ed al loro numero di acquisti
 
 ----
 
 3. Raffinazione *Ordini*:
 
-![[Pasted image 20240708155019.png]]
+![[Pasted image 20240710140309.png|center]]
 
 Qui si raffina l'entità *Ordini*:
-- Il *Personale* si occuperà della preparazione degli *Ordini*;
-- Gli *Ordini* verranno inviati tramite delle *Spedizioni*;
-- *Spedizioni* che verranno effettuate dai *Corrieri*.
+- Gli ordini sono associati a delle *liste dei prodotti*;
+- Successivamente gli ordini andranno a formare delle *Spedizioni* che verranno organizzate e consegnate dai *Corrieri*
 
 # Parte Quarta: Progettazione Logica
-DA RIVEDERE
+
 ## Schema Logico
-![[Logico_Definitivo2.drawio.png]]
 
-Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in _corsivo_
-- Clienti (**ID_Cliente**, Nome, Cognome, Data_Nascita)
-- Carta di Credito (**ID_Carta**, Numero_Carta, CVV, Scadenza, Nome_Carta, Cognome_Carta, _E-mail_)
-- Personale (**ID_Personale**, Ruolo, Nome_Personale, Cognome_Personale)
-- Ordini (**N° Ordine**, Data Ordine, Stato Ordine, Indirizzo, _ID_Personale_, _E-mail_ )
-- Corrieri (**P.Iva_Corriere**, Intestazione)
-- Spedizioni (**N° Spedizione**, Data Consegna, Data Ritiro, Stato, _P.Iva_Corriere_, _N° Ordine_)
-- Recensioni (**ID_Recensioni**, Data_Recensioni, Stelle, Commento, _E-mail_, _Nome_Vino_, _Annata_) 
-- Miscela (**Nome_Miscela**, Descrizione)
-- Vini (**Nome_Vino**, **Annata**, Descrizione, Tipologia, Prezzo, _Nome_Miscela_)
-- Contenere (_N° Ordine_, _Nome_Vino_, _Annata_, N°Prodotti)
-- Cantine (**P.Iva_Cantina**, Intestazione, Regione, Storia)
-- Produrre (_Annata_, _Nome_Vino_, _P.Iva_Cantina_, Num_Bottiglie)
-- Magazzini (**ID_Magazzino**, Indirizzo)
-- Conservare (_ID_Magazzino_, _Nome_Vino_, _Annata_, Quantità)
-- Uve (**Varietà Uva**, **Provenienza**)
-- Creare (**Varietà Uva**, **Provenienza**, Percentuale, _Nome_Miscela_)
-- Premio (**Nome_Premio**, Associazione, Tipologia)
-- Assegnare (_Nome_Premio_, _P.IVA_cantine_, Data_Assegnazione)
-- Ricevere (_Nome_Vino_, _Annata_, _Nome_Premio_, Data_Ricezione)
-- Metodo (**Nome_Metodo**, Descrizione, Invecchiamento)
-- Usare (_Nome_Metodo_, _P.IVA_Cantine_)
+![[SchemaLogico.png|center]]
 
+Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondarie in *corsivo*:
 
+- **Magazzini** (**Id_Magazzino**, Nome, *Id_Indirizzo*)
+- **Contenere** (**Id_Magazzino**, **Id_Vino**, Quantità_Rimanente)
+- **Indirizzi** (**Id_Indirizzo**, Via, Civico, CAP, Città, Provincia, Nazione)
+- **Produttori** (**Id_Produttore**, Nome, Partita_IVA, *Id_Indirizzo*)
+- **Vini** (**Id_Vino**, Nome, Anno, Soffitti, Biologico, Gradazione, Prezzo, *Tipologia*, *Id_Produttore*)
+- **Tipi_di_Vino** (**Nome**)
+- **Preferire** (**Id_Vino**, **Id_Cliente**)
+- **Assegnare** (**Id_Vino**, **Id_Premio**, Data_Assegnazione)
+- **Premi** (**Id_Premio**, Nome, Organizzazione)
+- **Ricevere** (**Id_Premio**, **Id_Produttore**, Data_Ricezione)
+- **Recensire** (**Id_Vino**, **Id_Cliente**, Voto, Commento, Data_Recensione)
+- **Clienti** (**Id_Cliente**, Nome, Cognome, Data_di_nascita, *Id_Indirizzo*)
+- **Ordini** (**Id_Ordine**, Stato, Data_Ordine, *Id_Indirizzo*, *Id_Clienti*)
+- **Pagamenti** (**Id_Ordine**, **Id_Carta**)
+- **Carte_di_Credito** (**Id_Carta**, Numero_Carta, Tipo_Carta, Scadenza, CVV, Nome_Carta, Cognome_Carta, *Id_Clienti*)
+- **Spedizioni** (**Id_Spedizione**, Data_Spedizione, Data_Consegna, Stato_Spedizione, *Id_Corriere*, *Id_Ordine*)
+- **Corrieri** (**Id_Corriere**, Nome)
+- **Uve** (**Id_Uva**, Nome, Descrizione)
+- **Compone** (**Id_Vino**, **Id_Uva**, Percentuale)
+- **Lista_Prodotti** (**Id_Lista**, Quantità, *Id_Vino*, *ID_Ordine*)
 ### Normalizzazione
 
 1. Le tuple del diagramma possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
 2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
 3. Gli attributi non primi delle nostre entità dipendono in maniera non transitiva dalla chiave primaria completa $\implies$ 3NF è soddisfatta.
-4. Le entità sono state decomposte in maniera da ottenere il massimo numero possibile di BCNF.
+4. Le entità sono state decomposte in maniera da otteçnere il massimo numero possibile di BCNF.
 
 ----
 
-
-
-
-
-
-
 ## Schema E-R concettuale ristrutturato
-DA FARE
+![[DiagrammaER 1.png|center]]
 ## Dizionario Entità e Relazioni
 ### Glossario delle Entità
 | Entità           | Descrizione                                          | Attributi                                                                       | Relazioni coinvolte                                                               |
@@ -214,7 +210,7 @@ DA FARE
 | Sede         | Luogo dove si trova la sede                           | Produttori(1:1), Indirizzi(1:1)     |
 | Elenca       | Elenca i vini presenti nella lista                    | Lista_Prodotti(1:N), Vini(0:N)      |
 | Destinazione | Luogo di consegna dell'ordine                         | Ordini(1:1), Indirizzi(0:N)         |
-| Organizzare  | Corriere organizza la spedizione                      | Corrieri(0:N), Spedizioni(0:N)      |
+| Organizzare  | Corriere organizza la spedizione                      | Corrieri(0:N), Spedizioni(1:1)      |
 | Pagamenti    | Pagamento degli ordini tramite carta                  | Carta di Credito(1:N), Ordini(0:N)  |
 | Collegare    | Carta collegata ad un cliente                         | Carta di Credito(1:1), Clienti(1:N) |
 | Appartenere  | Un vino appartiene ad un tipo                         | Vini(1:1), Tipi di Vino(1:N)        |
@@ -241,7 +237,6 @@ DA FARE
 | Premio Vino      | E         |        |
 | Premio Cantina   | E         |        |
 ### Volume dei dati
-
 
 | Concetto         | Dimensione Record | Volume |
 | ---------------- | ----------------- | ------ |

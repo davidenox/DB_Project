@@ -206,7 +206,7 @@ END //
 
 -- Riporta in range i voti minori di 0 o maggiori di 10
 CREATE TRIGGER VerificaVoto
-BEFORE INSERT ON Recensioni
+BEFORE INSERT ON Recensire
 FOR EACH ROW
 BEGIN
     IF NEW.Voto < 0 THEN 

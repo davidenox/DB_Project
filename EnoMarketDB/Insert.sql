@@ -134,8 +134,8 @@ INSERT INTO Pagamenti (Id_Ordine, Id_Carta, Data_Pagamento) VALUES
 (9, 9, '2023-09-09 18:30:00'),
 (10, 10, '2023-10-10 19:30:00');
 
--- Insert into Preferiti
-INSERT INTO Preferiti (Id_Cliente, Id_Vino) VALUES
+-- Insert into Preferire
+INSERT INTO Preferire (Id_Cliente, Id_Vino) VALUES
 (1, 1),
 (2, 2),
 (3, 3),
@@ -147,8 +147,8 @@ INSERT INTO Preferiti (Id_Cliente, Id_Vino) VALUES
 (9, 9),
 (10, 10);
 
--- Insert into Recensioni
-INSERT INTO Recensioni (Id_Cliente, Id_Vino, Voto, Commento, Data_recensione) VALUES
+-- Insert into Recensire
+INSERT INTO Recensire (Id_Cliente, Id_Vino, Voto, Commento, Data_recensione) VALUES
 (1, 1, 8, 'Ottimo vino!', '2023-01-10 10:00:00'),
 (2, 2, 9, 'Fantastico!', '2023-02-10 11:00:00'),
 (3, 3, 7, 'Buono.', '2023-03-10 12:00:00'),
