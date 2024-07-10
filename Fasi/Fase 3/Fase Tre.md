@@ -1357,21 +1357,29 @@ Le operazioni primitive sono:
 
 Esistono altre operazioni da esse derivabili, tra cui l’intersezione insiemistica ( $\bigcap$ ). 
 Di seguito troviamo alcune query sul nostro database scritte in Algebra Relazionale:
+
+- _Restituisce i vini che rispettano alcuni parametri presi in input (annata, prezzo, tipologia)_
+In algebra relazionale sarà:
+$$ \sigma_{vini.Tipologia='Rosso'\land vini.Prezzo\leq20\land vini.Anno>2015​}(Vini)$$
+
+- _Restituisce i 10 vini più premiati dalla critica_
+  In algebra relazionale sarà:
+  $$\rho_{10}​(\tau_{Num_Premi DESC}​(\gamma_{vini.IdVino,vini.Nome;COUNT(assegnare.Id_Premio)→NumPremi}​(\pi_{vini.IdVino,vini.Nome,assegnare.IdPremio}​(Vini⋈_{vini.IdVino=assegnare.IdVino​}assegnare))))$$
+
+
+- _Visualizza tutti gli ordini effettuati da un cliente specifico_
+  In algebra relazionale sarà:
+$$\pi_{IdOrdine,Stato,DataOrdine}​(\sigma_{IdCliente=1}​(Ordini))$$
+
+- _Trova i vini con una media di voti superiore a 8_
+  In algebra relazionale sarà:
+$$\sigma_{MediaVoti>8}​(\gamma_{Vini.Nome;AVG(Recensioni.Voto)→MediaVoti}​(\pi_{Vini.Nome,Recensioni.Voto}​(Vini⋈_{Vini.IdVino=Recensioni.IdVino}​Recensioni)))$$
 ## Calcolo Relazionale
 Il calcolo relazionale è un linguaggio query non procedurale ma dichiarativo. Invece dell’algebra, utilizza il calcolo dei predicati matematici del primo ordine in notazione logica. L’output di una query è una relazione che contiene solo tuple che soddisfano le formule logiche espresse. Il potere espressivo del calcolo relazionale è dunque equivalente a quello dell’algebra relazionale. Versioni:
 1. Calcolo relazionale sui domini  
 2. Calcolo relazionale sulle tuple con dichiarazione di range
 
 Di seguito sono alcune query espresse tramite il calcolo relazionale sulle tuple con dichiarazione di range:
-
-## Sicurezza
-In un database aziendale devono essere presenti diverse tipologie di utenti con diversi diritti, nella nostra modellizzazione della realtà, infatti, abbiamo definito 2 classi di utenti:
-- un manager che ha tutti i diritti  
-- gli addetti vendite, i direttori commerciali che possono aggiungere righe e fare query
-
-Inoltre, si è definito un terzo utente che ha accesso solamente a delle view in modalità lettura, questo perché non gli si vuole dare accesso alle tabelle originali per questioni di sicurezza. Ovviamente la creazione di questo ultimo utente ha il solo fine dimostrativo e non sarebbe effettivamente inserito in un progetto reale.
-
-Le view sono tabelle che non memorizzano dati, esse condividono lo stesso spazio delle tabelle originali. Spesso vengono assegnate ad altri utenti con specifici campi oscurati anche se il loro utilizzo inappropriato può portare all’inconsistenza del database.
 
 ### Views
 ```Mysql
@@ -1437,11 +1445,3 @@ GROUP BY vini.Id_Vino
 ORDER BY Totale_Venduto DESC
 LIMIT 10;
 ```
-## Creazione Utenti
-
-Poiché il progetto rappresenta una realtà aziendale di una società, abbiamo creato 3 classi di utenti in ordine decrescente di grado di privilegi. Un manager è colui che gestisce il database e quindi ha tutti i diritti. Il personale ha il diritto di inserire nuove tuple e di effettuare query ai fini lavorativi.  
-Infine, abbiamo creato anche un generico utente autorizzato solo ad interrogare le view esistenti.
-
-1. Manager: ha tutti i diritti
-2. Personale: può fare query e inserire tuple
-3. Creazione di un utente che ha solo diritto di eseguire le view sopra scritte
