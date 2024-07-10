@@ -11,11 +11,9 @@
             "id": "57625f27b15d51b4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md",
-                "mode": "source",
-                "source": false
+                "file": "Scarti/ER_Definitivo.drawio.pdf"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md",
+                "file": "Scarti/ER_Definitivo.drawio.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md",
+                "file": "Scarti/ER_Definitivo.drawio.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md"
+                "file": "Scarti/ER_Definitivo.drawio.pdf"
               }
             }
           },
@@ -154,33 +152,32 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "57625f27b15d51b4",
+  "active": "4b4063c61c456e68",
   "lastOpenFiles": [
+    "Scarti/Logico_Definitivo.drawio.png",
+    "Scarti/Schema_Scheletro.drawio.pdf",
+    "Scarti/Logico_Definitivo2.drawio.png",
+    "Fasi/Fase 3/Fase Tre.md",
+    "Scarti",
     "EnoMarketDB/Views.sql",
     "EnoMarketDB/Tables.sql",
     "EnoMarketDB/Scripts",
     "EnoMarketDB/Queries.sql",
     "EnoMarketDB/Insert.sql",
-    "scheletro.jpg",
-    "raffinazione2.jpg",
-    "Pasted image 20240708155319.png",
-    "Pasted image 20240708155053.png",
-    "Pasted image 20240708155019.png",
+    "Scarti/scheletro.jpg",
+    "Scarti/raffinazione2.jpg",
+    "Scarti/Pasted image 20240708155319.png",
+    "Scarti/Pasted image 20240708155053.png",
+    "Scarti/Pasted image 20240708155019.png",
     "Last_ER3.jpg",
-    "Last_ER.jpg",
+    "Scarti/Last_ER.jpg",
     "Fasi/Codice/Implementazione MYSQL.md",
-    "Logico_Definitivo2.drawio 1.png",
-    "Fasi/Fase 3/Fase Tre.md",
+    "Scarti/Logico_Definitivo2.drawio 1.png",
     "Fasi/Fase 3",
     "EnoMarketDB/Insert_Manuali.sql",
-    "Logico_Definitivo2.drawio.png",
     "conflict-files-obsidian-git.md",
-    "Documentazione/Logico_Definitivo.drawio.png",
     "Fasi/Codice",
     "Fasi/Fase 2/Fase Due.md",
-    "EnoMarketDB/table.sql",
-    "EnoMarketDB",
-    "Documentazione/ER_Definitivo.drawio.pdf",
     "Cose da migliorare.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Ordine.md",
     "Fasi/Fase 2/Raffinazioni/Raffinazione Cliente.md",

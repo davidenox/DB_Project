@@ -101,7 +101,7 @@ CREATE TABLE Pagamenti (
     FOREIGN KEY (Id_Ordine) REFERENCES Ordini(Id_Ordine)
 );
 
-CREATE TABLE Preferiti (
+CREATE TABLE Preferire (
     Id_Cliente INT,
     Id_Vino INT,
     PRIMARY KEY (Id_Cliente, Id_Vino),
@@ -109,7 +109,7 @@ CREATE TABLE Preferiti (
     FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino)
 );
 
-CREATE TABLE Recensioni (
+CREATE TABLE Recensire (
     Id_Cliente INT,
     Id_Vino INT,
     Voto INT NOT NULL,
@@ -176,6 +176,18 @@ CREATE TABLE Contenere (
     PRIMARY KEY (Id_Magazzino, Id_Vino),
     FOREIGN KEY (Id_Magazzino) REFERENCES Magazzini(Id_Magazzino),
     FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino)
+);
+
+CREATE TABLE Spedizioni (
+    Id_Spedizione INT NOT NULL AUTO_INCREMENT,
+    Id_Ordine INT NOT NULL,
+    Id_Corriere INT NOT NULL,
+    Data_Spedizione DATETIME NOT NULL,
+    Data_Consegna DATETIME,
+    Stato_Spedizione VARCHAR(50) NOT NULL,
+    PRIMARY KEY (Id_Spedizione),
+    FOREIGN KEY (Id_Ordine) REFERENCES Ordini(Id_Ordine),
+    FOREIGN KEY (Id_Corriere) REFERENCES Corrieri(Id_Corriere)
 );
 
 DELIMITER //
