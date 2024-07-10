@@ -268,197 +268,192 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 ### Creazione delle Tabelle
 
 ```MySQL
-CREATE TABLE Clienti (
-Email VARCHAR(50) NOT NULL,
-Nome_Cliente VARCHAR(50) NOT NULL,
-Cognome_Cliente VARCHAR(50) NOT NULL,
-Data_Nascita DATE NOT NULL,
-Indirizzo VARCHAR(50) NOT NULL,
-PRIMARY KEY (Email)
-);
-
-CREATE TABLE Personale (
-ID_Personale VARCHAR(50) NOT NULL,
-Ruolo VARCHAR(50),
-Nome_Personale VARCHAR(50) NOT NULL,
-Cognome_Personale VARCHAR(50) NOT NULL,
-PRIMARY KEY (ID_Personale)
-);
-
 CREATE TABLE Corrieri (
-P_Iva_Corriere INT NOT NULL,
-Intestazione VARCHAR(50),
-PRIMARY KEY (P_Iva_Corriere)
+Id_Corriere INT NOT NULL AUTO_INCREMENT,
+Nome VARCHAR(100) NOT NULL,
+PRIMARY KEY (Id_Corriere)
 );
 
-CREATE TABLE Miscela (
-Nome_Miscela VARCHAR(50) NOT NULL,
-Descrizione VARCHAR(200),
-PRIMARY KEY (Nome_Miscela)
+CREATE TABLE Indirizzi (
+Id_Indirizzo INT NOT NULL AUTO_INCREMENT,
+Via TEXT NOT NULL,
+Civico INT NOT NULL,
+CAP INT NOT NULL,
+Città VARCHAR(50) NOT NULL,
+Provincia VARCHAR(50) NOT NULL,
+Nazione VARCHAR(50) NOT NULL,
+PRIMARY KEY (Id_Indirizzo)
 );
 
-CREATE TABLE Cantine (
-P_IVA_Cantina INT NOT NULL,
-Intestazione VARCHAR(50) NOT NULL,
-Regione VARCHAR(50),
-Storia VARCHAR(200),
-PRIMARY KEY (P_IVA_Cantina)
-);
+CREATE TABLE Clienti (
+Id_Cliente INT NOT NULL AUTO_INCREMENT,
+Nome VARCHAR(50) NOT NULL,
+Cognome VARCHAR(50) NOT NULL,
+Data_di_nascita DATE NOT NULL,
+Id_Indirizzo INT,
+PRIMARY KEY (Id_Cliente),
+FOREIGN KEY (Id_Indirizzo) REFERENCES Indirizzi(Id_Indirizzo)
+);  
 
-CREATE TABLE Magazzini (
-ID_Magazzino VARCHAR(100) NOT NULL,
-Indirizzo VARCHAR(50) NOT NULL,
-PRIMARY KEY (ID_Magazzino)
-);
-
-CREATE TABLE Uve (
-Varieta_Uva VARCHAR(50),
-Provenienza VARCHAR(50),
-PRIMARY KEY (Varieta_Uva, Provenienza)
-);
-
-CREATE TABLE Premio (
-Nome_Premio VARCHAR(50) NOT NULL,
-Associazione VARCHAR(50),
-Tipologia VARCHAR(50),
-PRIMARY KEY (Nome_Premio)
-);
-
-CREATE TABLE Metodi (
-Nome_Metodo VARCHAR(50) NOT NULL,
-Descrizione VARCHAR(200),
-Invecchiamento VARCHAR(200),
-PRIMARY KEY (Nome_Metodo)
-);
-
--- Iniziano primary e foreign
-
-CREATE TABLE Carta_di_Credito (
-Num_Carta VARCHAR(16) NOT NULL,
-Circuito VARCHAR(25) NOT NULL,
-CVV INT NOT NULL,
-Data_Scadenza VARCHAR(50) NOT NULL,
+CREATE TABLE Carte_di_Credito (
+Id_Carta INT NOT NULL AUTO_INCREMENT,
+Numero_Carta VARCHAR(20) NOT NULL,
+Tipo_Carta VARCHAR(50) NOT NULL,
+Scadenza DATE NOT NULL,
+CVV VARCHAR(4) NOT NULL,
 Nome_Carta VARCHAR(50) NOT NULL,
 Cognome_Carta VARCHAR(50) NOT NULL,
-Email VARCHAR(50),
-PRIMARY KEY (Num_Carta),
-FOREIGN KEY (Email) REFERENCES Clienti(Email)
-);
-  
-CREATE TABLE Ordini (
-Num_Ordine VARCHAR(100) NOT NULL,
-Data_Ordine VARCHAR(50) NOT NULL,
-Stato_Ordine VARCHAR(50) NOT NULL,
-Indirizzo VARCHAR(50) NOT NULL,
-ID_Personale VARCHAR(50),
-Email VARCHAR(50),
-PRIMARY KEY (Num_Ordine),
-FOREIGN KEY (ID_Personale) REFERENCES Personale(ID_Personale),
-FOREIGN KEY (Email) REFERENCES Clienti(Email)
+Id_Cliente INT NOT NULL,
+PRIMARY KEY (Id_Carta),
+FOREIGN KEY (Id_Cliente) REFERENCES Clienti(Id_Cliente)
 );
 
-CREATE TABLE Spedizioni (
-Num_Spedizione VARCHAR(50) NOT NULL,
-Data_Consegna DATE NOT NULL,
-Data_Ritiro DATE NOT NULL,
-Stato VARCHAR(50) NOT NULL,
-P_Iva_Corriere INT,
-Num_Ordine VARCHAR(100),
-PRIMARY KEY (Num_Spedizione),
-FOREIGN KEY (P_Iva_Corriere) REFERENCES Corrieri(P_Iva_Corriere),
-FOREIGN KEY (Num_Ordine) REFERENCES Ordini(Num_Ordine)
+CREATE TABLE Produttori (
+Id_Produttore INT NOT NULL AUTO_INCREMENT,
+Nome VARCHAR(50) NOT NULL,
+Partita_IVA BIGINT NOT NULL,
+Id_Indirizzo INT,
+PRIMARY KEY (Id_Produttore),
+FOREIGN KEY (Id_Indirizzo) REFERENCES Indirizzi(Id_Indirizzo)
 );
-
+ 
+CREATE TABLE Tipi_di_Vino (
+Nome VARCHAR(50) NOT NULL,
+PRIMARY KEY (Nome)
+);
+ 
 CREATE TABLE Vini (
-Nome_Vino VARCHAR(50) NOT NULL,
-Annata INT NOT NULL,
-Descrizione VARCHAR(200),
+Id_Vino INT NOT NULL AUTO_INCREMENT,
+Nome VARCHAR(50) NOT NULL,
+Anno INT NOT NULL,
+Solfiti BOOLEAN,
+Biologico BOOLEAN,
 Tipologia VARCHAR(50),
-Prezzo DECIMAL (10,2) NOT NULL,
-Nome_Miscela VARCHAR(50),
-PRIMARY KEY (Nome_Vino, Annata),
-FOREIGN KEY (Nome_Miscela) REFERENCES Miscela(Nome_Miscela)
+Gradazione DECIMAL(4,2) NOT NULL,
+Id_Produttore INT,
+Prezzo DECIMAL(10,2) NOT NULL,
+PRIMARY KEY (Id_Vino),
+FOREIGN KEY (Id_Produttore) REFERENCES Produttori(Id_Produttore),
+FOREIGN KEY (Tipologia) REFERENCES Tipi_di_Vino(Nome)
+);
+
+CREATE TABLE Ordini (
+Id_Ordine INT NOT NULL AUTO_INCREMENT,
+Id_Cliente INT,
+Stato VARCHAR(50),
+Id_Indirizzo INT NOT NULL,
+Data_Ordine DATETIME NOT NULL,
+PRIMARY KEY (Id_Ordine),
+FOREIGN KEY (Id_Cliente) REFERENCES Clienti(Id_Cliente),
+FOREIGN KEY (Id_Indirizzo) REFERENCES Indirizzi(Id_Indirizzo)
 );
   
-CREATE TABLE Recensioni (
-ID_Recensione INT NOT NULL,
-Data_Recensione DATE NOT NULL,
-Stelle INT NOT NULL,
-Commento VARCHAR(200),
-Email VARCHAR(50),
-Nome_Vino VARCHAR(50),
-Annata INT,
-PRIMARY KEY (ID_Recensione),
-FOREIGN KEY (Email) REFERENCES Clienti(Email),
-FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata)
+CREATE TABLE Lista_Prodotti (
+Id_Lista INT NOT NULL AUTO_INCREMENT,
+Id_Vino INT,
+Id_Ordine INT,
+Quantità INT NOT NULL,
+PRIMARY KEY (Id_Lista),
+FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino),
+FOREIGN KEY (Id_Ordine) REFERENCES Ordini(Id_Ordine)
 );
   
-CREATE TABLE Contenere (
-Num_Prodotti INT NOT NULL,
-Num_Ordine Varchar(100),
-Nome_Vino VARCHAR(50),
-Annata INT,
-FOREIGN KEY (Num_Ordine) REFERENCES Ordini(Num_Ordine),
-FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata)
+CREATE TABLE Pagamenti (
+Id_Ordine INT,
+Id_Carta INT,
+Data_Pagamento DATETIME NOT NULL,
+PRIMARY KEY (Id_Ordine, Id_Carta),
+FOREIGN KEY (Id_Carta) REFERENCES Carte_di_Credito(Id_Carta),
+FOREIGN KEY (Id_Ordine) REFERENCES Ordini(Id_Ordine)
+);
+  
+CREATE TABLE Preferire (
+Id_Cliente INT,
+Id_Vino INT,
+PRIMARY KEY (Id_Cliente, Id_Vino),
+FOREIGN KEY (Id_Cliente) REFERENCES Clienti(Id_Cliente),
+FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino)
 );
 
-CREATE TABLE Produrre (
-Num_Bottiglie INT NOT NULL,
-Nome_Vino VARCHAR(50),
-Annata INT,
-P_IVA_Cantina INT,
-FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata),
-FOREIGN KEY (P_IVA_Cantina) REFERENCES Cantine(P_IVA_Cantina)
+CREATE TABLE Recensire (
+Id_Cliente INT,
+Id_Vino INT,
+Voto INT NOT NULL,
+Commento TEXT,
+Data_recensione DATETIME NOT NULL,
+PRIMARY KEY (Id_Cliente, Id_Vino),
+FOREIGN KEY (Id_Cliente) REFERENCES Clienti(Id_Cliente),
+FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino)
 );
-
-CREATE TABLE Conservare (
-Quantita INT NOT NULL,
-ID_Magazzino Varchar(100),
-Nome_Vino VARCHAR(50),
-Annata INT,
-FOREIGN KEY (ID_Magazzino) REFERENCES Magazzini(ID_Magazzino),
-FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini (Nome_Vino, Annata)
-);
-
-CREATE TABLE Creare (
-Percentuale INT NOT NULL,
-Varieta_Uva VARCHAR(50),
-Nome_Miscela VARCHAR(50),
-Provenienza VARCHAR(50),
-FOREIGN KEY (Varieta_Uva, Provenienza) REFERENCES Uve(Varieta_Uva, Provenienza),
-FOREIGN KEY (Nome_Miscela) REFERENCES Miscela(Nome_Miscela)
+  
+CREATE TABLE Premi (
+Id_Premio INT NOT NULL AUTO_INCREMENT,
+Nome VARCHAR(50),
+Organizzazione VARCHAR(50),
+PRIMARY KEY (Id_Premio)
 );
   
 CREATE TABLE Assegnare (
-Data_Assegnazione VARCHAR(50) NOT NULL,
-Nome_Premio VARCHAR(50),
-P_IVA_Cantina INT,
-FOREIGN KEY (Nome_Premio) REFERENCES Premio(Nome_Premio),
-FOREIGN KEY (P_IVA_Cantina) REFERENCES Cantine(P_IVA_Cantina)
+Id_Premio INT,
+Id_Vino INT,
+Data_Assegnazione DATE NOT NULL,
+PRIMARY KEY (Id_Premio, Id_Vino),
+FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino),
+FOREIGN KEY (Id_Premio) REFERENCES Premi(Id_Premio)
 );
   
 CREATE TABLE Ricevere (
+Id_Premio INT,
+Id_Produttore INT,
 Data_Ricezione DATE NOT NULL,
-Nome_Vino VARCHAR(50),
-Annata INT,
-Nome_Premio VARCHAR(50),
-FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata),
-FOREIGN KEY (Nome_Premio) REFERENCES Premio(Nome_Premio)
-);
-
-CREATE TABLE Usare (
-Nome_Metodo VARCHAR(50),
-P_IVA_Cantina INT,
-FOREIGN KEY (Nome_Metodo) REFERENCES Metodi(Nome_Metodo),
-FOREIGN KEY (P_IVA_Cantina) REFERENCES Cantine(P_IVA_Cantina)
+PRIMARY KEY (Id_Premio, Id_Produttore),
+FOREIGN KEY (Id_Produttore) REFERENCES Produttori(Id_Produttore),
+FOREIGN KEY (Id_Premio) REFERENCES Premi(Id_Premio)
 );
   
-CREATE TABLE Preferiti (
-Email VARCHAR(50),
-Nome_Vino VARCHAR(50),
-Annata INT,
-FOREIGN KEY (Email) REFERENCES Clienti(Email),
-FOREIGN KEY (Nome_Vino, Annata) REFERENCES Vini(Nome_Vino, Annata)
+CREATE TABLE Uve (
+Id_Uva INT NOT NULL AUTO_INCREMENT,
+Nome VARCHAR(50),
+Descrizione TEXT,
+PRIMARY KEY (Id_Uva)
+);
+  
+CREATE TABLE Compone (
+Id_Vino INT,
+Id_Uva INT,
+Percentuale INT NOT NULL,
+PRIMARY KEY (Id_Vino, Id_Uva),
+FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino),
+FOREIGN KEY (Id_Uva) REFERENCES Uve(Id_Uva)
+);
+  
+CREATE TABLE Magazzini (
+Id_Magazzino INT NOT NULL AUTO_INCREMENT,
+Id_Indirizzo INT,
+Nome VARCHAR(50),
+PRIMARY KEY (Id_Magazzino),
+FOREIGN KEY (Id_Indirizzo) REFERENCES Indirizzi(Id_Indirizzo)
+);
+  
+CREATE TABLE Contenere (
+Id_Magazzino INT NOT NULL,
+Id_Vino INT NOT NULL,
+Quantità_Rimanente INT NOT NULL,
+PRIMARY KEY (Id_Magazzino, Id_Vino),
+FOREIGN KEY (Id_Magazzino) REFERENCES Magazzini(Id_Magazzino),
+FOREIGN KEY (Id_Vino) REFERENCES Vini(Id_Vino)
+);
+  
+CREATE TABLE Spedizioni (
+Id_Spedizione INT NOT NULL AUTO_INCREMENT,
+Id_Ordine INT NOT NULL,
+Id_Corriere INT NOT NULL,
+Data_Spedizione DATETIME NOT NULL,
+Data_Consegna DATETIME,
+Stato_Spedizione VARCHAR(50) NOT NULL,
+PRIMARY KEY (Id_Spedizione),
+FOREIGN KEY (Id_Ordine) REFERENCES Ordini(Id_Ordine),
+FOREIGN KEY (Id_Corriere) REFERENCES Corrieri(Id_Corriere)
 );
 ```
 
@@ -468,239 +463,836 @@ I trigger fanno parte del DDL (Data Definition Manipulation), essi seguono il pr
 2. Ativarsi per ogni istruzione DML
 Nello specifico in MySQL i trigger operano a livello di riga e si ammette un solo trigger per tabella. Osserviamo inoltre che questi vengono usati per mantenere constraint di ogni tipo, in primis il vincolo di integrità referenziale. Quelli di seguito sono una serie di trigger di esempio necessari per mantenere una serie di vincoli nel nostro database. 
 
+```MySQL
+
+-- Permette l'inserimento di un cliente solo se è maggiorenne.
+
+CREATE TRIGGER VerificaMaggiorenne
+BEFORE INSERT ON Clienti
+FOR EACH ROW
+BEGIN
+DECLARE msg VARCHAR(255);
+IF TIMESTAMPDIFF(YEAR, NEW.Data_di_nascita, CURDATE()) < 18 THEN
+SET msg = CONCAT('Inserimento negato, il cliente ', NEW.Nome, ' ', NEW.Cognome, ' non è maggiorenne.');
+SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = msg;
+END IF;
+END //
+  
+-- Riporta in range i voti minori di 0 o maggiori di 10
+
+CREATE TRIGGER VerificaVoto
+BEFORE INSERT ON Recensire
+FOR EACH ROW
+BEGIN
+IF NEW.Voto < 0 THEN
+SET NEW.Voto = 0;
+ELSEIF NEW.Voto > 10 THEN
+SET NEW.Voto = 10;
+END IF;
+END //
+  
+-- Evita che un premio possa essere assegnato prima che il vino sia prodotto
+
+CREATE TRIGGER VerificaDataPremio
+BEFORE INSERT ON Assegnare
+FOR EACH ROW
+BEGIN
+DECLARE AnnoVino INT;
+SELECT Anno INTO AnnoVino
+FROM Vini
+WHERE Id_Vino = NEW.Id_Vino;
+IF YEAR(NEW.Data_Assegnazione) < AnnoVino THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = "La data di assegnazione del premio non può precedere la data di produzione del vino.";
+END IF;
+END //
+
+```
+
+
 ---
 
 ## Inserimenti 
-Di seguito vengono riportati alcuni estratti di query per l'inserimento, presi dallo script di creazione automatica delle query
-
-### Clienti  
-
-```MySQL
-INSERT INTO Clienti (Email, Nome_Cliente, Cognome_Cliente, Data_Nascita, Indirizzo) VALUES
-("mario.rossi@example.com", "Mario", "Rossi", "1980-05-15", "Via Roma 1"),
-("laura.bianchi@example.com", "Laura", "Bianchi", "1992-09-20", "Via Verdi 5"),
-("luigi.verdi@example.com", "Luigi", "Russo", "1975-03-10", "Corso Italia 12"),
-("anna.ferrari@example.com", "Anna", "Ferrari", "1988-07-02", "Via Garibaldi 8"),
-("giovanni.esposito@example.com", "Giovanni", "Esposito", "1983-11-30", "Largo Mazzini 3"),
-("elena.marino@example.com", "Elena", "Marino", "1995-02-18", "Piazza Colombo 7"),
-("roberto.greco@example.com", "Roberto", "Greco", "1982-04-25", "Via Cavour 15"),
-("martina.bruno@example.com", "Martina", "Bruno", "1990-06-12", "Via Dante 20"),
-("chiara.gallo@example.com", "Chiara", "Gallo", "1987-08-07", "Via Manzoni 4"),
-("paolo.conti@example.com", "Paolo", "Conti", "1984-12-22", "Piazza Duomo 6");
-```
----
-### Vini   
+Di seguito vengono riportati gli inserimenti per popolare il DB
+### Indirizzi
 
 ```MySQL
-INSERT INTO Vini (Nome_Vino, Annata, Descrizione, Tipologia, Prezzo) VALUES
-("Barolo", 2016, "Elegante vino rosso piemontese, robusto e strutturato.", "Rosso", 45.90),
-("Chianti Classico", 2018, "Vino toscano dal carattere fruttato e speziato.", "Rosso", 24.50),
-("Amarone della Valpolicella", 2015, "Vino corposo e complesso, con note di frutta secca e spezie.", "Rosso", 65.80),
-("Montepulciano di Abruzzo", 2020, "Vino rosso dal gusto morbido e vellutato, con sentori di frutti rossi.", "Rosso", 18.75),
-("Prosecco", 2023, "Spumante italiano fresco e fruttato, perfetto come aperitivo.", "Spumante", 12.90),
-("Vermentino di Sardegna", 2019, "Vino bianco aromatico, con note di agrumi e fiori bianchi.", "Bianco", 15.40),
-("Pinot Grigio", 2021, "Vino bianco fresco e leggero, dal bouquet floreale e fruttato.", "Bianco", 11.80),
-("Lambrusco", 2022, "Frizzante rosso emiliano, dal gusto vivace e piacevolmente fruttato.", "Frizzante", 9.95),
-("Rosato Salento", 2020, "Vino rosato pugliese, fresco e aromatico, con note di frutti di bosco.", "Rosato", 13.25),
-("Moscato di Asti", 2024, "Vino dolce e aromatico del Piemonte, dal profumo intenso di fiori e frutta.", "Dolce", 14.70);
+INSERT INTO Indirizzi (Via, Civico, CAP, Città, Provincia, Nazione) VALUES
+
+('Via Roma', 1, 10100, 'Torino', 'TO', 'Italia'),
+
+('Via Milano', 2, 20100, 'Milano', 'MI', 'Italia'),
+
+('Via Napoli', 3, 80100, 'Napoli', 'NA', 'Italia'),
+
+('Via Firenze', 4, 50100, 'Firenze', 'FI', 'Italia'),
+
+('Via Venezia', 5, 30100, 'Venezia', 'VE', 'Italia'),
+
+('Via Bari', 6, 70100, 'Bari', 'BA', 'Italia'),
+
+('Via Bologna', 7, 40100, 'Bologna', 'BO', 'Italia'),
+
+('Via Genova', 8, 16100, 'Genova', 'GE', 'Italia'),
+
+('Via Palermo', 9, 90100, 'Palermo', 'PA', 'Italia'),
+
+('Via Cagliari', 10, 09100, 'Cagliari', 'CA', 'Italia'),
+
+('Via Trieste', 11, 60100, 'Ancona', 'AN', 'Italia'),
+
+('Via Torino', 12, 10100, 'Torino', 'TO', 'Italia'),
+
+('Via Verona', 13, 37100, 'Verona', 'VR', 'Italia'),
+
+('Via Padova', 14, 35100, 'Padova', 'PD', 'Italia'),
+
+('Via Perugia', 15, 06100, 'Perugia', 'PG', 'Italia'),
+
+('Via Potenza', 16, 85100, 'Potenza', 'PZ', 'Italia'),
+
+('Via Catanzaro', 17, 88100, 'Catanzaro', 'CZ', 'Italia'),
+
+('Via Reggio Calabria', 18, 89100, 'Reggio Calabria', 'RC', 'Italia'),
+
+("Via L'Aquila", 19, 67100, "L'Aquila", 'AQ', 'Italia'),
+
+('Via Campobasso', 20, 86100, 'Campobasso', 'CB', 'Italia');
 ```
----
+
+### Corrieri
+
+```MySQL
+INSERT INTO Corrieri (Nome) VALUES
+
+('DHL'),
+
+('FedEx'),
+
+('UPS'),
+
+('TNT'),
+
+('GLS'),
+
+('SDA'),
+
+('Nexive'),
+
+('Bartolini'),
+
+('Poste Italiane'),
+
+('TNT Express');
+```
+
+### Clienti
+
+```MySQL
+INSERT INTO Clienti (Nome, Cognome, Data_di_nascita, Id_Indirizzo) VALUES
+
+('Mario', 'Rossi', '1980-01-01', 1),
+
+('Luigi', 'Verdi', '1990-02-02', 2),
+
+('Anna', 'Bianchi', '2000-03-03', 3),
+
+('Carla', 'Neri', '1975-04-04', 4),
+
+('Giovanni', 'Gialli', '1985-05-05', 5),
+
+('Paolo', 'Blu', '1995-06-06', 6),
+
+('Sara', 'Rosa', '2001-07-07', 7),
+
+('Luca', 'Marrone', '1988-08-08', 8),
+
+('Elena', 'Arancio', '1999-09-09', 9),
+
+('Davide', 'Viola', '1992-10-10', 10);
+```
+
 ### Carte di Credito
 
 ```MySQL
-INSERT INTO Carta_di_Credito (Num_Carta, Circuito, CVV, Data_Scadenza, Nome_Carta, Cognome_Carta, Email) VALUES
-("1234567890123456", "Visa", "123", "2025-06", "Mario", "Rossi", "mario.rossi@example.com"),
-("2345678901234567", "MasterCard", "456", "2024-09", "Laura", "Bianchi", "laura.bianchi@example.com"),
-("3456789012345678", "American Express", "789", "2023-12", "Luigi", "Verdi", "luigi.verdi@example.com"),
-("4567890123456789", "Visa", "234", "2026-03", "Anna", "Ferrari", "anna.ferrari@example.com"),
-("5678901234567890", "MasterCard", "567", "2025-07", "Giovanni", "Esposito", "giovanni.esposito@example.com"),
-("6789012345678901", "American Express", "890", "2024-11", "Elena", "Russo", "elena.russo@example.com"),
-("7890123456789012", "Visa", "345", "2023-08", "Roberto", "Greco", "roberto.greco@example.com"),
-("8901234567890123", "MasterCard", "678", "2026-02", "Martina", "Bruno", "martina.bruno@example.com"),
-("9012345678901234", "American Express", "901", "2025-04", "Paolo", "Conti", "paolo.conti@example.com"),
-("1234567890123459", "Visa", "456", "2024-10", "Chiara", "Gallo", "chiara.gallo@example.com");
+INSERT INTO Carte_di_Credito (Numero_Carta, Tipo_Carta, Scadenza, CVV, Nome_Carta, Cognome_Carta, Id_Cliente) VALUES
+
+('1234567890123456', 'Visa', '2025-01-01', '123', 'Mario', 'Rossi', 1),
+
+('2345678901234567', 'Mastercard', '2026-02-02', '234', 'Luigi', 'Verdi', 2),
+
+('3456789012345678', 'American Express', '2027-03-03', '345', 'Anna', 'Bianchi', 3),
+
+('4567890123456789', 'Discover', '2028-04-04', '456', 'Carla', 'Neri', 4),
+
+('5678901234567890', 'Visa', '2029-05-05', '567', 'Giovanni', 'Gialli', 5),
+
+('6789012345678901', 'Mastercard', '2030-06-06', '678', 'Paolo', 'Blu', 6),
+
+('7890123456789012', 'American Express', '2031-07-07', '789', 'Sara', 'Rosa', 7),
+
+('8901234567890123', 'Discover', '2032-08-08', '890', 'Luca', 'Marrone', 8),
+
+('9012345678901234', 'Visa', '2033-09-09', '901', 'Elena', 'Arancio', 9),
+
+('0123456789012345', 'Mastercard', '2034-10-10', '012', 'Davide', 'Viola', 10);
 ```
----
-### Spedizioni  
+
+### Produttori
 
 ```MySQL
-INSERT INTO Spedizioni (Num_Spedizione, Data_Consegna, Data_Ritiro, Stato, P_Iva_Corriere, Num_Ordine) VALUES
-("SPED2023062401", "2023-06-24", "2023-06-23", "In transito", "12345678901", "ORD2023062401"),
-("SPED2023062402", "2023-06-25", "2023-06-23", "In transito", "23456789012", "ORD2023062402"),
-("SPED2023062501", "2023-06-26", "2023-06-25", "Consegnato", "34567890123", "ORD2023062501"),
-("SPED2023062502", "2023-06-27", "2023-06-25", "In transito", "45678901234", "ORD2023062502"),
-("SPED2023062601", "2023-06-27", "2023-06-26", "In transito", "56789012345", "ORD2023062601"),
-("SPED2023062602", "2023-06-28", "2023-06-26", "In transito", "67890123456", "ORD2023062602"),
-("SPED2023062701", "2023-06-28", "2023-06-27", "Consegnato", "78901234567", "ORD2023062701"),
-("SPED2023062702", "2023-06-29", "2023-06-27", "In transito", "89012345678", "ORD2023062702"),
-("SPED2023062801", "2023-06-29", "2023-06-28", "In transito", "90123456789", "ORD2023062801"),
-("SPED2023062802", "2023-06-30", "2023-06-28", "In transito", "12345678901", "ORD2023062802");
+INSERT INTO Produttori (Nome, Partita_IVA, Id_Indirizzo) VALUES
+
+('Cantina Sociale', 12345678901, 11),
+
+('Vigneti Rossi', 23456789012, 12),
+
+('Azienda Agricola Bianchi', 34567890123, 13),
+
+('Vinicola Neri', 45678901234, 14),
+
+('Enoteca Gialli', 56789012345, 15),
+
+('Cantine Blu', 67890123456, 16),
+
+('Viticoltori Rosa', 78901234567, 17),
+
+('Azienda Marrone', 89012345678, 18),
+
+('Vini Arancio', 90123456789, 19),
+
+('Vinicola Viola', 10123456780, 20);
 ```
----
-### Ordini  
+
+### Tipi di Vino
 
 ```MySQL
-INSERT INTO Ordini (Num_Ordine, Data_Ordine, Stato_Ordine, Indirizzo, ID_Personale, Email) VALUES
-("ORD2023062401", "2023-06-24", "In corso", "Via Roma 1", "PERS001234", "mario.rossi@example.com"),
-("ORD2023062402", "2023-06-24", "In corso", "Via Roma 1", "PERS002345", "mario.rossi@example.com"),
-("ORD2023062501", "2023-06-25", "In attesa", "Via Roma 1", "PERS003456", "mario.rossi@example.com"),
-("ORD2023062502", "2023-06-25", "Completato", "Via Verdi 5", "PERS004567", "laura.bianchi@example.com"),
-("ORD2023062601", "2023-06-26", "In corso", "Via Verdi 5", "PERS005678", "laura.bianchi@example.com"),
-("ORD2023062602", "2023-06-26", "In attesa", "Via Verdi 15", "PERS006789", "laura.bianchi@example.com"),
-("ORD2023062701", "2023-06-27", "Completato", "Piazza Duomo 2", "PERS007890", "elena.marino@example.com"),
-("ORD2023062702", "2023-06-27", "In corso", "Corso Vittorio Emanuele 20", "PERS008901", "cliente8@example.com"),
-("ORD2023062801", "2023-06-28", "In corso", "Via Manzoni 8", "PERS009012", "martina.bruno@example.com"),
-("ORD2023062802", "2023-06-28", "In attesa", "Lungomare Marconi 4", "PERS010123", "chiara.gallo@example.com");
+INSERT INTO Tipi_di_Vino (Nome) VALUES
+
+('Rosso'),
+
+('Bianco'),
+
+('Rosato'),
+
+('Spumante');
 ```
----
-### Recensioni
+
+### Vini
 
 ```MySQL
-INSERT INTO Recensioni (ID_Recensione, Data_Recensione, Stelle, Commento, Email, Nome_Vino, Annata)VALUES
-(1234567890, "2023-06-24", 5, "Vino eccellente, ottimo rapporto qualita-prezzo.", "cliente1@example.com", "Chianti Classico", 2019),
-(2345678901, "2023-06-25", 4, "Buon vino, un po' leggero per i miei gusti.", "cliente2@example.com", "Barolo", 2015),
-(3456789012, "2023-06-26", 5, "Vino meraviglioso, lo consiglio a tutti gli amanti del rosso.", "cliente3@example.com", "Brunello di Montalcino", 2016),
-(4567890123, "2023-06-27", 3, "Meh, niente di speciale.", "cliente4@example.com", "Amarone della Valpolicella", 2017),
-(5678901234, "2023-06-28", 5, "Superbo vino, davvero eccezionale!", "cliente5@example.com", "Barbera d'Alba", 2018),
-(6789012345, "2023-06-29", 4, "Buon rapporto qualita-prezzo.", "cliente6@example.com", "Nebbiolo d'alba", 2020),
-(7890123456, "2023-06-30", 5, "Vino fantastico, lo adoro!", "cliente7@example.com", "Montepulciano d'Abruzzo", 2019),
-(8901234567, "2023-07-01", 4, "Piacevole sorpresa, molto buono.", "cliente8@example.com", "Aglianico del Vulture", 2017),
-(9012345678, "2023-07-02", 5, "Il miglior vino che abbia mai assaggiato.", "cliente9@example.com", "Primitivo di Manduria", 2018),
-(1234567899, "2023-07-03", 3, "Non è male, ma non è eccezionale.", "cliente10@example.com", "Valpolicella Classico", 2019);
+INSERT INTO Vini (Nome, Anno, Solfiti, Biologico, Tipologia, Gradazione, Id_Produttore, Prezzo) VALUES
+
+('Chianti Classico', 2018, TRUE, FALSE, 'Rosso', 13.5, 1, 12.50),
+
+('Barolo Riserva', 2016, TRUE, TRUE, 'Rosso', 14.0, 2, 25.00),
+
+('Merlot Veneto', 2019, FALSE, FALSE, 'Rosso', 12.0, 3, 8.00),
+
+('Pinot Grigio delle Venezie', 2020, TRUE, TRUE, 'Bianco', 11.5, 4, 10.00),
+
+('Sauvignon Blanc', 2017, TRUE, FALSE, 'Bianco', 13.0, 5, 15.00),
+
+('Rosso di Montalcino', 2015, TRUE, TRUE, 'Rosso', 13.5, 6, 18.00),
+
+('Prosecco DOC', 2021, FALSE, FALSE, 'Spumante', 11.0, 7, 9.00),
+
+('Spumante Brut', 2019, TRUE, FALSE, 'Spumante', 12.5, 8, 20.00),
+
+('Rosato Toscana', 2020, TRUE, TRUE, 'Rosato', 12.0, 9, 7.50),
+
+('Bianco di Custoza', 2021, FALSE, FALSE, 'Bianco', 11.5, 10, 6.50),
+
+('Cabernet Sauvignon', 2018, TRUE, FALSE, 'Rosso', 13.8, 11, 14.00),
+
+('Nero di Avola', 2017, TRUE, TRUE, 'Rosso', 14.5, 12, 20.00),
+
+('Chardonnay', 2020, FALSE, FALSE, 'Bianco', 12.5, 13, 11.00),
+
+('Vermentino', 2019, TRUE, FALSE, 'Bianco', 13.0, 14, 13.50),
+
+('Franciacorta', 2018, FALSE, TRUE, 'Spumante', 12.0, 15, 22.00),
+
+('Valpolicella Ripasso', 2016, TRUE, TRUE, 'Rosso', 13.5, 16, 19.00),
+
+('Lambrusco', 2021, FALSE, FALSE, 'Rosso', 10.5, 17, 8.50),
+
+('Gewurztraminer', 2019, TRUE, TRUE, 'Bianco', 14.0, 18, 18.50),
+
+('Brunello di Montalcino', 2015, TRUE, FALSE, 'Rosso', 14.5, 19, 30.00),
+
+('Orvieto Classico', 2020, FALSE, FALSE, 'Bianco', 12.0, 20, 9.50),
+
+('Sangiovese', 2019, TRUE, FALSE, 'Rosso', 13.2, 21, 12.00),
+
+('Zinfandel', 2018, TRUE, TRUE, 'Rosso', 14.3, 22, 21.00),
+
+('Riesling', 2021, FALSE, FALSE, 'Bianco', 11.8, 23, 10.50),
+
+('Grillo', 2020, TRUE, FALSE, 'Bianco', 12.9, 24, 13.00),
+
+('Moscato di Asti', 2019, FALSE, TRUE, 'Spumante', 7.5, 25, 15.50),
+
+('Primitivo', 2017, TRUE, TRUE, 'Rosso', 14.7, 26, 17.00),
+
+('Trebbiano', 2021, FALSE, FALSE, 'Bianco', 11.2, 27, 7.50),
+
+('Syrah', 2019, TRUE, TRUE, 'Rosso', 13.8, 28, 19.50),
+
+('Amarone della Valpolicella', 2015, TRUE, FALSE, 'Rosso', 15.0, 29, 35.00),
+
+('Pinot Nero', 2020, FALSE, FALSE, 'Rosso', 12.7, 30, 11.00);
 ```
----
-### Personale  
+
+### Ordini
 
 ```MySQL
-INSERT INTO Personale (ID_Personale, Ruolo, Nome_Personale, Cognome_Personale) VALUES
-("PERS001234", "Manager", "Luca", "Rossi"),
-("PERS002345", "Sommelier", "Giulia", "Bianchi"),
-("PERS003456", "Addetto Vendite", "Marco", "Verdi"),
-("PERS004567", "Addetto Vendite", "Laura", "Ferrari"),
-("PERS005678", "Addetto Vendite", "Simone", "Esposito"),
-("PERS006789", "Direttore Commerciale", "Federico", "Marino"),
-("PERS007890", "Addetto Vendite", "Chiara", "Greco"),
-("PERS008901", "Addetto Vendite", "Paola", "Bruno"),
-("PERS009012", "Addetto Vendite", "Giovanni", "Gallo"),
-("PERS010123", "Addetto Vendite", "Anna", "Conti");
+INSERT INTO Ordini (Id_Cliente, Stato, Id_Indirizzo, Data_Ordine) VALUES
+
+(1, 'In Preparazione', 1, '2023-01-01 10:00:00'),
+
+(2, 'Spedito', 2, '2023-02-02 11:00:00'),
+
+(3, 'Consegnato', 3, '2023-03-03 12:00:00'),
+
+(4, 'In Preparazione', 4, '2023-04-04 13:00:00'),
+
+(5, 'Spedito', 5, '2023-05-05 14:00:00'),
+
+(6, 'Consegnato', 6, '2023-06-06 15:00:00'),
+
+(7, 'In Preparazione', 7, '2023-07-07 16:00:00'),
+
+(8, 'Spedito', 8, '2023-08-08 17:00:00'),
+
+(9, 'Consegnato', 9, '2023-09-09 18:00:00'),
+
+(10, 'In Preparazione', 10, '2023-10-10 19:00:00');
 ```
----
-### Corrieri  
+
+### Lista Prodotti
 
 ```MySQL
-INSERT INTO Corrieri (P_Iva_Corriere, Intestazione) VALUES
-("12345678901", "Corriere Espresso S.r.l."),
-("23456789012", "Logistica Veloce S.p.A."),
-("34567890123", "Trasporti Rapidi & Co."),
-("45678901234", "Spedizioni Sicure S.r.l."),
-("56789012345", "Logistica Moderna S.p.A."),
-("67890123456", "Corriere Affidabile S.r.l."),
-("78901234567", "Logistica Rapida & Sicura"),
-("89012345678", "Trasporti Semplici S.r.l."),
-("90123456789", "Spedizioni Veloci S.p.A."),
-("12345678903", "Logistica Puntuale S.r.l.");
+INSERT INTO Lista_Prodotti (Id_Vino, Id_Ordine, Quantità) VALUES
+
+(1, 1, 2),
+
+(2, 2, 1),
+
+(3, 3, 3),
+
+(4, 4, 1),
+
+(5, 5, 2),
+
+(6, 6, 1),
+
+(7, 7, 4),
+
+(8, 8, 1),
+
+(9, 9, 2),
+
+(10, 10, 1);
 ```
----
-### Magazzini 
+
+### Pagamenti
 
 ```MySQL
-INSERT INTO Magazzini (ID_Magazzino, Indirizzo) VALUES
-("MAG1234567", "Via Roma 1"),
-("MAG2345678", "Corso Italia 5"),
-("MAG3456789", "Piazza Garibaldi 10"),
-("MAG4567890", "Via Dante 3"),
-("MAG5678901", "Largo Mazzini 7"),
-("MAG6789012", "Via Verdi 15"),
-("MAG7890123", "Piazza Duomo 2"),
-("MAG8901234", "Corso Vittorio Emanuele 20"),
-("MAG9012345", "Via Manzoni 8"),
-("MAG1234567", "Lungomare Marconi 4");
+INSERT INTO Pagamenti (Id_Ordine, Id_Carta, Data_Pagamento) VALUES
+
+(1, 1, '2023-01-01 10:30:00'),
+
+(2, 2, '2023-02-02 11:30:00'),
+
+(3, 3, '2023-03-03 12:30:00'),
+
+(4, 4, '2023-04-04 13:30:00'),
+
+(5, 5, '2023-05-05 14:30:00'),
+
+(6, 6, '2023-06-06 15:30:00'),
+
+(7, 7, '2023-07-07 16:30:00'),
+
+(8, 8, '2023-08-08 17:30:00'),
+
+(9, 9, '2023-09-09 18:30:00'),
+
+(10, 10, '2023-10-10 19:30:00');
 ```
----
-### Miscela
+
+### Preferire
+```MySQL
+INSERT INTO Preferire (Id_Cliente, Id_Vino) VALUES
+
+(1, 1),
+
+(2, 2),
+
+(3, 3),
+
+(4, 4),
+
+(5, 5),
+
+(6, 6),
+
+(7, 7),
+
+(8, 8),
+
+(9, 9),
+
+(10, 10);
+```
+
+### Recensire
 
 ```MySQL
-INSERT INTO Miscela (Nome_Miscela, Descrizione) VALUES 
-('Blend_001', 'Una miscela toscana di Sangiovese e Merlot con note fruttate e speziate.'),
-('Cuvee_Rosso', 'Un cuvée piemontese di Nebbiolo e Barbera con un carattere complesso e raffinato.'),
-('Super_Tuscan', 'Un Super Tuscan che combina Cabernet Sauvignon, Sangiovese e Merlot per un vino robusto e corposo.'),
-('Nobile_Rosso', 'Un nobile rosso veneto con Corvina, Rondinella e Molinara, perfetto per occasioni speciali.'),
-('Blend_002', 'Una miscela unica con varietà segrete, dal gusto sorprendente e raffinato.'),
-('Cuvee_Bianco', 'Un cuvée bianco aromatico e fresco, ideale per cene estive.'),
-('Riserva_Speciale', 'Una riserva speciale invecchiata con un gusto robusto e maturo.'),
-('Passito_Dolce', 'Un passito dolce con note di miele e albicocca, perfetto per dessert.'),
-('Frizzante_Vivace', 'Un vino frizzante vivace e rinfrescante, ideale per aperitivi.'),
-('Novello_Giovane', 'Un vino novello giovane e fresco, perfetto per ogni occasione.');
+INSERT INTO Recensire (Id_Cliente, Id_Vino, Voto, Commento, Data_recensione) VALUES
+
+(1, 1, 8, 'Ottimo vino!', '2023-01-10 10:00:00'),
+
+(2, 2, 9, 'Fantastico!', '2023-02-10 11:00:00'),
+
+(3, 3, 7, 'Buono.', '2023-03-10 12:00:00'),
+
+(4, 4, 6, 'Niente di speciale.', '2023-04-10 13:00:00'),
+
+(5, 5, 10, 'Eccellente!', '2023-05-10 14:00:00'),
+
+(6, 6, 5, 'Non male.', '2023-06-10 15:00:00'),
+
+(7, 7, 8, 'Molto buono.', '2023-07-10 16:00:00'),
+
+(8, 8, 9, 'Fantastico!', '2023-08-10 17:00:00'),
+
+(9, 9, 7, 'Buono.', '2023-09-10 18:00:00'),
+
+(10, 10, 6, 'Niente di speciale.', '2023-10-10 19:00:00');
 ```
----
-### Cantine  
+
+### Premi
 
 ```MySQL
-INSERT INTO Cantine (P_Iva_Cantina, Intestazione, Regione, Storia) VALUES
-("01234567890", "Cantina Sociale di Alba", "Piemonte", "Fondata nel 1920, la Cantina Sociale di Alba è nota per la produzione di vini di alta qualita."),
-("12345678901", "Tenuta San Guido", "Toscana", "Tenuta San Guido è famosa per il suo vino Sassicaia, uno dei più prestigiosi vini italiani."),
-("23456789012", "Marchesi Antinori", "Toscana", "Marchesi Antinori è una delle cantine più antiche d'Italia, con una storia che risale al 1385."),
-("34567890123", "Cantina di Negrar", "Veneto", "La Cantina di Negrar produce alcuni dei migliori Amarone della Valpolicella."),
-("45678901234", "Cantine Ferrari", "Trentino-Alto Adige", "Cantine Ferrari è rinomata per la produzione di spumanti metodo classico di alta qualita."),
-("56789012345", "Cantina di Soave", "Veneto", "Cantina di Soave è una delle cooperative vinicole più grandi e rispettate d'Italia."),
-("67890123456", "Planeta", "Sicilia", "Planeta è una delle cantine più innovative della Sicilia, conosciuta per i suoi vini bianchi e rossi."),
-("78901234567", "Feudi di San Gregorio", "Campania", "Feudi di San Gregorio è un' azienda leader nella produzione di vini del Sud Italia."),
-("89012345678", "Mastroberardino", "Campania", "Mastroberardino è una cantina storica che ha contribuito a salvare dall' estinzione molti vitigni autoctoni campani."),
-("90123456789", "Cantina di Montalcino", "Toscana", "Cantina di Montalcino è famosa per la produzione di Brunello di Montalcino, uno dei vini italiani più apprezzati.");
+INSERT INTO Premi (Nome, Organizzazione) VALUES
+
+('Premio Eccellenza', 'Organizzazione 1'),
+
+('Premio Qualità', 'Organizzazione 2'),
+
+('Premio Innovazione', 'Organizzazione 3'),
+
+('Premio Sostenibilità', 'Organizzazione 4'),
+
+('Premio Tradizione', 'Organizzazione 5'),
+
+('Premio Miglior Vino', 'Organizzazione 6'),
+
+('Premio Miglior Produttore', 'Organizzazione 7'),
+
+('Premio Miglior Design', 'Organizzazione 8'),
+
+('Premio Miglior Gusto', 'Organizzazione 9'),
+
+('Premio Miglior Annata', 'Organizzazione 10');
 ```
----
-### Uve  
+
+### Assegnare
 
 ```MySQL
-INSERT INTO Uve (Varieta_Uva , Provenienza) VALUES
-("Nebbiolo", "Italia"),
-("Sangiovese", "Italia"),
-("Corvina", "Italia"),
-("Montepulciano", "Italia"),
-("Chardonnay", "Francia"),
-("Merlot", "Francia"),
-("Cabernet Sauvignon", "Francia"),
-("Syrah", "Francia"),
-("Pinot Noir", "Francia"),
-("Riesling", "Germania");
+INSERT INTO Assegnare (Id_Premio, Id_Vino, Data_Assegnazione) VALUES
+
+(1, 1, '2024-01-01'),
+
+(2, 2, '2024-02-02'),
+
+(3, 3, '2024-03-03'),
+
+(4, 4, '2021-04-04'),
+
+(5, 5, '2024-05-05'),
+
+(6, 6, '2024-06-06'),
+
+(7, 7, '2024-07-07'),
+
+(8, 8, '2024-08-08'),
+
+(9, 9, '2024-09-09'),
+
+(10, 10, '2022-10-10');
 ```
----
-### Metodi
+
+### Ricevere
 
 ```MySQL
-INSERT INTO Metodi (Nome_Metodo, Descrizione, Invecchiamento) VALUES
-("Metodo Classico", "Tecnica tradizionale di spumantizzazione con rifermentazione in bottiglia.", 24),
-("Metodo Charmat", "Metodo di spumantizzazione con fermentazione in autoclave.", 6),
-("Appassimento", "Processo di essiccazione delle uve prima della vinificazione per concentrare gli zuccheri.", 12),
-("Metodo Ripasso", "Tecnica che prevede la rifermentazione del vino sulle vinacce dell' Amarone.", 18),
-("Metodo Solera", "Sistema di invecchiamento del vino in botti sovrapposte, utilizzato soprattutto per lo Sherry.", 36),
-("Metodo Sur Lie", "Vinificazione che prevede l'affinamento del vino sui lieviti.", 12),
-("Criomacerazione", "Tecnica di macerazione a basse temperature per estrarre aromi e colore.", 2),
-("Affinamento in Barrique", "Invecchiamento del vino in piccole botti di rovere per arricchire il bouquet.", 24),
-("Metodo Anfora", "Fermentazione e invecchiamento del vino in anfore di terracotta.", 12),
-("Macération Carbonique", "Fermentazione intracellulare delle uve intere, utilizzata soprattutto per il Beaujolais.", 1);
+INSERT INTO Ricevere (Id_Premio, Id_Produttore, Data_Ricezione) VALUES
+
+(1, 1, '2024-01'),
+
+(2, 2, '2024-02-02'),
+
+(3, 3, '2024-03-03'),
+
+(4, 4, '2024-04-04'),
+
+(5, 5, '2024-05-05'),
+
+(6, 6, '2024-06-06'),
+
+(7, 7, '2024-07-07'),
+
+(8, 8, '2024-08-08'),
+
+(9, 9, '2024-09-09'),
+
+(10, 10, '2024-10-10');
 ```
----
-### Premio Vino  
+
+### Uve
 
 ```MySQL
-INSERT INTO Premio (Nome_Premio, Associazione, Tipologia) VALUES
-("Gran Premio del Vino", "Associazione Italiana Sommelier", "Qualita"),
-("Medaglia d'Oro", "Consorzio Vino Chianti", "Eccellenza"),
-("Trofeo del Barolo", "Associazione Enologi Italiani", "Miglior Vino Rosso"),
-("Premio Brunello", "Consorzio del Brunello di Montalcino", "Miglior Annata"),
-("Stella d'Argento", "Gambero Rosso", "Rapporto Qualita-Prezzo"),
-("Coppa del Vino", "Slow Wine", "Vino Sostenibile"),
-("Premio d'Onore", "Vinitaly", "Innovazione"),
-("Sigillo d'Eccellenza", "Wine Spectator", "Critica Internazionale"),
-("Premio del Pubblico", "Decanter", "Scelta del Pubblico"),
-("Gran Medaglia", "Bibenda", "Miglior Vino Italiano");
-```
----
-### Premio Cantina  
----
+INSERT INTO Uve (Nome, Descrizione) VALUES
 
+('Cabernet Sauvignon', 'Descrizione Cabernet Sauvignon'),
+
+('Merlot', 'Descrizione Merlot'),
+
+('Sangiovese', 'Descrizione Sangiovese'),
+
+('Nebbiolo', 'Descrizione Nebbiolo'),
+
+('Pinot Nero', 'Descrizione Pinot Nero'),
+
+('Chardonnay', 'Descrizione Chardonnay'),
+
+('Sauvignon Blanc', 'Descrizione Sauvignon Blanc'),
+
+('Trebbiano', 'Descrizione Trebbiano'),
+
+('Barbera', 'Descrizione Barbera'),
+
+('Malvasia', 'Descrizione Malvasia');
+```
+
+### Compone
+
+```MySQL
+INSERT INTO Compone (Id_Vino, Id_Uva, Percentuale) VALUES
+
+(1, 1, 60),
+
+(1, 3, 40),
+
+(2, 4, 100),
+
+(3, 2, 100),
+
+(4, 6, 100),
+
+(5, 7, 100),
+
+(6, 3, 80),
+
+(6, 9, 20),
+
+(7, 8, 100),
+
+(8, 6, 50),
+
+(8, 7, 50),
+
+(9, 5, 100),
+
+(10, 6, 70),
+
+(10, 10, 30);
+
+```
+
+### Magazzini
+
+```MySQL
+INSERT INTO Magazzini (Id_Indirizzo, Nome) VALUES
+
+(1, 'Magazzino Torino'),
+
+(2, 'Magazzino Milano'),
+
+(3, 'Magazzino Napoli'),
+
+(4, 'Magazzino Firenze'),
+
+(5, 'Magazzino Venezia'),
+
+(6, 'Magazzino Bari'),
+
+(7, 'Magazzino Bologna'),
+
+(8, 'Magazzino Genova'),
+
+(9, 'Magazzino Palermo'),
+
+(10, 'Magazzino Cagliari');
+```
+
+### Contenere
+
+```MySQL
+INSERT INTO Contenere (Id_Magazzino, Id_Vino, Quantità_Rimanente) VALUES
+
+(1, 1, 100),
+
+(2, 2, 50),
+
+(3, 3, 75),
+
+(4, 4, 100),
+
+(5, 5, 50),
+
+(6, 6, 60),
+
+(7, 7, 30),
+
+(8, 8, 40),
+
+(9, 9, 20),
+
+(10, 10, 10);
+```
+
+### Spedizioni
+
+```MySQL
+INSERT INTO Spedizioni (Id_Ordine, Id_Corriere, Data_Spedizione, Data_Consegna, Stato_Spedizione) VALUES
+
+(1, 1, '2023-01-01 09:00:00', '2023-01-02 09:00:00', 'In Viaggio'),
+
+(2, 2, '2023-02-01 10:00:00', '2023-02-03 10:00:00', 'In Viaggio'),
+
+(3, 3, '2023-03-01 11:00:00', '2023-03-05 11:00:00', 'Consegnato'),
+
+(4, 4, '2023-04-01 12:00:00', '2023-04-04 12:00:00', 'Consegnato'),
+
+(5, 5, '2023-05-01 13:00:00', '2023-05-02 13:00:00', 'Consegnato'),
+
+(6, 6, '2023-06-01 14:00:00', '2023-06-03 14:00:00', 'Consegnato'),
+
+(7, 7, '2023-07-01 15:00:00', '2023-07-04 15:00:00', 'Consegnato'),
+
+(8, 8, '2023-08-01 16:00:00', '2023-08-05 16:00:00', 'Consegnato'),
+
+(9, 9, '2023-09-01 17:00:00', '2023-09-06 17:00:00', 'Consegnato'),
+
+(10, 10, '2023-10-01 18:00:00', '2023-10-04 18:00:00', 'Consegnato');
+```
+
+---
 ## Query
+1. Conta il numero di vini di una certa tipologia (es: rosso)
+```MySQL
+SELECT
+	COUNT(vini.Id_Vino) AS Num_Vini_Rossi
+FROM
+	vini
+WHERE
+	vini.Tipologia = "Rosso";
+```
+
+2. Restituisce le 10 città con più clienti
+```MySQL
+SELECT
+	indirizzi.Città,
+	COUNT(clienti.Id_Cliente) AS Numero_Clienti
+FROM
+	clienti
+INNER JOIN indirizzi ON clienti.Id_Indirizzo = indirizzi.Id_Indirizzo
+GROUP BY
+	Città
+ORDER BY
+	Numero_Clienti
+DESC
+;
+```
+
+3.  Restituisce i vini che rispettano alcuni parametri presi in input (annata, prezzo, tipologia)
+```MySQL
+SELECT
+	*
+FROM
+	vini
+WHERE
+	vini.Tipologia = "Rosso" AND vini.Prezzo <= 20 AND vini.Anno > 2015;
+```
+
+4. Trova i clienti che hanno fatto i 10 ordini più costosi.
+```MySQL
+SELECT
+	clienti.Nome, clienti.Cognome, ordini.Id_Ordine,
+	SUM(
+		contiene.Quantità * vini.Prezzo
+	) AS Totale_Ordine
+FROM clienti INNER JOIN
+	ordini ON clienti.Id_Cliente = ordini.Id_Cliente
+INNER JOIN contiene ON ordini.Id_Ordine = contiene.Id_Ordine
+INNER JOIN vini ON contiene.Id_Vino = vini.Id_Vino
+GROUP BY
+	ordini.Id_Ordine
+ORDER BY
+	Totale_Ordine
+DESC
+LIMIT 10;
+```
+
+5. Trova i 10 vini più costosi.
+```MySQL
+SELECT 
+	* 
+FROM 
+	vini 
+ORDER BY 
+	vini.Prezzo 
+DESC 
+LIMIT 10;
+```
+
+6. Restituisce quanti ordini hanno fatto i clienti
+```MySQL
+SELECT
+	clienti.Nome,
+	clienti.Cognome,
+COUNT(ordini.Id_Ordine) AS Num_Ordini
+FROM
+	clienti
+INNER JOIN ordini ON clienti.Id_Cliente = ordini.Id_Cliente
+GROUP BY
+	ordini.Id_Cliente;
+```
+
+7. Restituisce i vini col maggior numero di preferiti
+```MySQL
+SELECT
+	vini.Id_Vino,
+	vini.Nome,
+	COUNT(preferiti.Id_Cliente) AS Num_Preferiti
+FROM
+	vini
+INNER JOIN preferiti ON vini.Id_Vino = preferiti.Id_Vino
+GROUP BY
+	vini.Id_Vino;
+```
+
+8. Restituisce i 10 vini più venduti
+```MySQL
+SELECT
+	vini.Id_Vino,
+	vini.Nome,
+	SUM(
+		vini.Prezzo * contiene.Quantità
+	) AS Totale_Venduto
+FROM
+	vini
+INNER JOIN contiene ON vini.Id_Vino = contiene.Id_Vino
+INNER JOIN ordini ON contiene.Id_Ordine = ordini.Id_Ordine
+GROUP BY
+	vini.Id_Vino
+ORDER BY
+	Totale_Venduto
+DESC
+LIMIT 10;
+```
+
+9. Restituisce i 10 vini meglio recensiti ed il loro prezzo
+```MySQL
+SELECT
+	vini.Id_Vino,
+	vini.Nome,
+	vini.Prezzo,
+	ROUND(AVG(recensioni.Voto),
+	2) AS Voto_Medio
+FROM
+	vini
+INNER JOIN recensioni ON vini.Id_Vino = recensioni.Id_Vino
+GROUP BY
+	vini.Id_Vino
+ORDER BY
+	Voto_Medio
+DESC
+LIMIT 10;
+```
+
+10. Restituisce i 10 vini più premiati dalla critica
+```MySQL
+SELECT
+	vini.Id_Vino,
+	vini.Nome,
+	COUNT(assegnare.Id_Premio) AS Num_Premi
+FROM
+	vini
+INNER JOIN assegnare ON vini.Id_Vino = assegnare.Id_Vino
+GROUP BY
+	vini.Id_Vino
+ORDER BY
+	Num_Premi
+DESC
+LIMIT 10;
+```
+
+11. Restituisce i 10 produttori di vino più premiati dalla critica
+```MySQL
+SELECT
+	produttori.Nome,
+	COUNT(ricevere.Id_Premio) AS Num_Premi
+FROM
+	produttori
+INNER JOIN ricevere ON produttori.Id_Produttore = ricevere.Id_Produttore
+GROUP BY
+	produttori.Id_Produttore
+ORDER BY
+	Num_Premi
+DESC;
+```
+
+12. Trova i clienti che hanno ordinato di più
+```MySQL
+SELECT
+	
+FROM
+	clienti
+INNER JOIN ordini ON clienti.Id_Cliente = ordini.Id_Cliente
+INNER JOIN contiene ON ordini.Id_Ordine = contiene.Id_Ordine
+INNER JOIN vini ON contiene.Id_Vino = vini.Id_Vino
+GROUP BY 
+	clienti.Id_Cliente, 
+	contiene.Id_Contenuto;
+```
+
+13. Restituisce il fatturato totale in un certo periodo
+```MySQL
+DA FARE
+```
+
+14. Restituisce la lista dei vini novelli
+```MySQL
+SELECT 
+	*
+FROM 
+	vini
+WHERE 
+	vini.Anno = YEAR(CURDATE()) AND vini.gradazione >= 11;
+```
+
+15. Restituisce tutti i vini fatti con una percentuale arbitraria di tipo di uva
+```MySQL
+DA FARE
+```
+
+
+
+
 ---
 
 ## Algebra Relazionale

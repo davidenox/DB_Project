@@ -93,7 +93,28 @@ INSERT INTO Vini (Nome, Anno, Solfiti, Biologico, Tipologia, Gradazione, Id_Prod
 ('Prosecco DOC', 2021, FALSE, FALSE, 'Spumante', 11.0, 7, 9.00),
 ('Spumante Brut', 2019, TRUE, FALSE, 'Spumante', 12.5, 8, 20.00),
 ('Rosato Toscana', 2020, TRUE, TRUE, 'Rosato', 12.0, 9, 7.50),
-('Bianco di Custoza', 2021, FALSE, FALSE, 'Bianco', 11.5, 10, 6.50);
+('Bianco di Custoza', 2021, FALSE, FALSE, 'Bianco', 11.5, 10, 6.50),
+('Cabernet Sauvignon', 2018, TRUE, FALSE, 'Rosso', 13.8, 11, 14.00),
+('Nero di Avola', 2017, TRUE, TRUE, 'Rosso', 14.5, 12, 20.00),
+('Chardonnay', 2020, FALSE, FALSE, 'Bianco', 12.5, 13, 11.00),
+('Vermentino', 2019, TRUE, FALSE, 'Bianco', 13.0, 14, 13.50),
+('Franciacorta', 2018, FALSE, TRUE, 'Spumante', 12.0, 15, 22.00),
+('Valpolicella Ripasso', 2016, TRUE, TRUE, 'Rosso', 13.5, 16, 19.00),
+('Lambrusco', 2021, FALSE, FALSE, 'Rosso', 10.5, 17, 8.50),
+('Gewurztraminer', 2019, TRUE, TRUE, 'Bianco', 14.0, 18, 18.50),
+('Brunello di Montalcino', 2015, TRUE, FALSE, 'Rosso', 14.5, 19, 30.00),
+('Orvieto Classico', 2020, FALSE, FALSE, 'Bianco', 12.0, 20, 9.50),
+('Sangiovese', 2019, TRUE, FALSE, 'Rosso', 13.2, 21, 12.00),
+('Zinfandel', 2018, TRUE, TRUE, 'Rosso', 14.3, 22, 21.00),
+('Riesling', 2021, FALSE, FALSE, 'Bianco', 11.8, 23, 10.50),
+('Grillo', 2020, TRUE, FALSE, 'Bianco', 12.9, 24, 13.00),
+('Moscato di Asti', 2019, FALSE, TRUE, 'Spumante', 7.5, 25, 15.50),
+('Primitivo', 2017, TRUE, TRUE, 'Rosso', 14.7, 26, 17.00),
+('Trebbiano', 2021, FALSE, FALSE, 'Bianco', 11.2, 27, 7.50),
+('Syrah', 2019, TRUE, TRUE, 'Rosso', 13.8, 28, 19.50),
+('Amarone della Valpolicella', 2015, TRUE, FALSE, 'Rosso', 15.0, 29, 35.00),
+('Pinot Nero', 2020, FALSE, FALSE, 'Rosso', 12.7, 30, 11.00);
+
 
 -- Insert into Ordini
 INSERT INTO Ordini (Id_Cliente, Stato, Id_Indirizzo, Data_Ordine) VALUES
@@ -254,3 +275,16 @@ INSERT INTO Contenere (Id_Magazzino, Id_Vino, Quantità_Rimanente) VALUES
 (8, 8, 40),
 (9, 9, 20),
 (10, 10, 10);
+
+-- Insert into Spedizioni
+INSERT INTO Spedizioni (Id_Ordine, Id_Corriere, Data_Spedizione, Data_Consegna, Stato_Spedizione) VALUES
+(1, 1, '2023-01-01 09:00:00', '2023-01-02 09:00:00', 'In Viaggio'),
+(2, 2, '2023-02-01 10:00:00', '2023-02-03 10:00:00', 'In Viaggio'),
+(3, 3, '2023-03-01 11:00:00', '2023-03-05 11:00:00', 'Consegnato'),
+(4, 4, '2023-04-01 12:00:00', '2023-04-04 12:00:00', 'Consegnato'),
+(5, 5, '2023-05-01 13:00:00', '2023-05-02 13:00:00', 'Consegnato'),
+(6, 6, '2023-06-01 14:00:00', '2023-06-03 14:00:00', 'Consegnato'),
+(7, 7, '2023-07-01 15:00:00', '2023-07-04 15:00:00', 'Consegnato'),
+(8, 8, '2023-08-01 16:00:00', '2023-08-05 16:00:00', 'Consegnato'),
+(9, 9, '2023-09-01 17:00:00', '2023-09-06 17:00:00', 'Consegnato'),
+(10, 10, '2023-10-01 18:00:00', '2023-10-04 18:00:00', 'Consegnato');
