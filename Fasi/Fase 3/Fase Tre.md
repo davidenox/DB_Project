@@ -66,21 +66,23 @@ Gli utenti principali del DB sono i seguenti:
 # Parte seconda: Raccolta e analisi dei Requisiti
 ## Glossario dei termini
 
-| Entità           | Descrizione            | Sinonimi       |
-| ---------------- | ---------------------- | -------------- |
-| Clienti          | Comprano il prodotto   | Compratori     |
-| Vini             | Prodotti in vendita    | Prodotti       |
-| Carte di Credito | Metodo di pagamento    | Carte          |
-| Spedizioni       | Consegna dei prodotti  | Invio          |
-| Ordini           | Acquisto dei prodotti  | Richieste      |
-| Recensioni       | Feedback dell'utente   | Feedback       |
-| Indirizzi        | Indirizzi fisici       | Recapiti       |
-| Corrieri         | Gestore consegne       | Trasportatori  |
-| Magazzini        | Depositi dei vini      | Riserve        |
-| Tipi di Vini     | Varianti del vino      | Tipologie      |
-| Uve              | Ingrediente per i vini | Materie Prime  |
-| Produttori       | Produttori dei vini    | Realizzatori   |
-| Premi            | Nome premio vinto      | Riconoscimenti |
+| Entità           | Descrizione                     | Sinonimi       |
+| ---------------- | ------------------------------- | -------------- |
+| Clienti          | Comprano il prodotto            | Compratori     |
+| Vini             | Prodotti in vendita             | Prodotti       |
+| Carte di Credito | Metodo di pagamento             | Carte          |
+| Spedizioni       | Consegna dei prodotti           | Invio          |
+| Ordini           | Acquisto dei prodotti           | Richieste      |
+| Recensioni       | Feedback dell'utente            | Feedback       |
+| Indirizzi        | Indirizzi fisici                | Recapiti       |
+| Corrieri         | Gestore consegne                | Trasportatori  |
+| Magazzini        | Depositi dei vini               | Riserve        |
+| Tipi di Vini     | Varianti del vino               | Tipologie      |
+| Uve              | Ingrediente per i vini          | Materie Prime  |
+| Produttori       | Produttori dei vini             | Realizzatori   |
+| Premi            | Nome premio vinto               | Riconoscimenti |
+| Lista Prodotti   | Prodotti dentro un certo ordine | Elenco         |
+
 
 ## Specifiche, assunzioni e vincoli d’integrità
 
