@@ -11,9 +11,11 @@
             "id": "57625f27b15d51b4",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Scarti/ER_Definitivo.drawio.pdf"
+                "file": "Fasi/Fase 3/Fase Tre.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Scarti/ER_Definitivo.drawio.pdf",
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Scarti/ER_Definitivo.drawio.pdf",
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Scarti/ER_Definitivo.drawio.pdf"
+                "file": "Fasi/Fase 3/Fase Tre.md"
               }
             }
           },
@@ -152,8 +154,9 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "4b4063c61c456e68",
+  "active": "57625f27b15d51b4",
   "lastOpenFiles": [
+    "Scarti/ER_Definitivo.drawio.pdf",
     "Scarti/Logico_Definitivo.drawio.png",
     "Scarti/Schema_Scheletro.drawio.pdf",
     "Scarti/Logico_Definitivo2.drawio.png",

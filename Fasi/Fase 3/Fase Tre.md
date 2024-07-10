@@ -1,7 +1,7 @@
 ***Progetto*** **EnoMarket**
 ***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone**
 ***Corso di laurea:*** **Informatica**
-***Data:*** **26/05/2024**
+***Data:*** **10/07/2024**
 # Parte Prima: Generalità
 
 ## Descrizione generale del prodotto
@@ -15,7 +15,6 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
     - Registrazione degli utenti con dati personali, credenziali di accesso e preferenze.
     - Registrazione dei metodi di pagamento dei clienti
     - Storico degli acquisti e tracciamento degli ordini.
-
 3. **Processamento degli Ordini**:
     - Sistema per la creazione, la modifica e la cancellazione degli ordini.
     - Tracciabilità degli ordini dal momento della creazione fino alla consegna.
@@ -25,6 +24,7 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
 5. **Analisi e Reportistica**:
     - Generazione di recensioni sulle vendite e sulle performance dei prodotti.
     - Analisi dei comportamenti degli utenti per migliorare l'esperienza di acquisto e le strategie di marketing.
+
 ## Utenti
 
 Gli utenti principali del DB sono i seguenti:
@@ -66,22 +66,21 @@ Gli utenti principali del DB sono i seguenti:
 # Parte seconda: Raccolta e analisi dei Requisiti
 ## Glossario dei termini
 
-| Entità           | Descrizione                    | Sinonimi      |
-| ---------------- | ------------------------------ | ------------- |
-| Clienti          | Comprano il prodotto           | Compratori    |
-| Vini             | Prodotti in vendita            | Prodotti      |
-| Carte di Credito | Metodo di pagamento            | Carte         |
-| Spedizioni       | Consegna dei prodotti          | Invio         |
-| Ordini           | Acquisto dei prodotti          | Richieste     |
-| Recensioni       | Feedback dell'utente           | Feedback      |
-| Personale        | Gestore degli acquisti         | Dipendenti    |
-| Corrieri         | Gestore consegne               | Trasportatori |
-| Magazzini        | Depositi dei vini              | Riserve       |
-| Miscele          | Informazioni del vino          | Composti      |
-| Cantine          | Produzione del vino            | Bottiglierie  |
-| Uve              | Ingrediente per i vini         | Materie Prime |
-| Procedimento     | Procedimento per produrre vini | Metodo        |
-| Premio           | Nome premio vinto              | Trofeo        |
+| Entità           | Descrizione            | Sinonimi       |
+| ---------------- | ---------------------- | -------------- |
+| Clienti          | Comprano il prodotto   | Compratori     |
+| Vini             | Prodotti in vendita    | Prodotti       |
+| Carte di Credito | Metodo di pagamento    | Carte          |
+| Spedizioni       | Consegna dei prodotti  | Invio          |
+| Ordini           | Acquisto dei prodotti  | Richieste      |
+| Recensioni       | Feedback dell'utente   | Feedback       |
+| Indirizzi        | Indirizzi fisici       | Recapiti       |
+| Corrieri         | Gestore consegne       | Trasportatori  |
+| Magazzini        | Depositi dei vini      | Riserve        |
+| Tipi di Vini     | Varianti del vino      | Tipologie      |
+| Uve              | Ingrediente per i vini | Materie Prime  |
+| Produttori       | Produttori dei vini    | Realizzatori   |
+| Premi            | Nome premio vinto      | Riconoscimenti |
 
 ## Specifiche, assunzioni e vincoli d’integrità
 #### Vincoli
@@ -132,7 +131,7 @@ Qui si raffina l'entità *Ordini*:
 - *Spedizioni* che verranno effettuate dai *Corrieri*.
 
 # Parte Quarta: Progettazione Logica
-
+DA RIVEDERE
 ## Schema Logico
 ![[Logico_Definitivo2.drawio.png]]
 
@@ -176,8 +175,7 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 
 ## Schema E-R concettuale ristrutturato
-![[Last_ER3.jpg]]
-
+DA FARE
 ## Dizionario Entità e Relazioni
 ### Glossario delle Entità
 | Entità           | Descrizione                                          | Attributi                                                                       | Relazioni coinvolte                                                               |
