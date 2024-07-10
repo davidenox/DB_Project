@@ -167,3 +167,31 @@ WHERE vini.Anno = YEAR(CURDATE()) AND vini.gradazione >= 11;
 
 -- Restituisce tutti i vini fatti con una percentuale arbitraria di un tipo di uva
 
+-- Elenca tutti i vini prodotti da un particolare produttore
+
+SELECT Nome, Anno, Prezzo
+FROM Vini
+WHERE Id_Produttore = 1; -- Sostituire 1 con l'Id_Produttore desiderato
+
+-- Visualizza tutti gli ordini effettuati da un cliente specifico
+
+SELECT Id_Ordine, Stato, Data_Ordine
+FROM Ordini
+WHERE Id_Cliente = 1; -- Sostituire 1 con l'Id_Cliente desiderato
+
+-- Trova tutti i clienti che hanno acquistato un vino specifico
+
+SELECT DISTINCT Clienti.Id_Cliente, Clienti.Nome, Clienti.Cognome
+FROM Clienti
+JOIN Ordini ON Clienti.Id_Cliente = Ordini.Id_Cliente.
+JOIN Lista_Prodotti L ON Ordini.Id_Ordine = Lista_Prodotti.Id_Ordine
+WHERE Lista_Prodotti.Id_Vino = 1; -- Sostituire 1 con l'Id_Vino desiderato
+
+-- Trova i vini con una media di voti superiore a 8:
+
+SELECT V.Nome, AVG(R.Voto) AS MediaVoti
+FROM Vini V
+JOIN Recensioni R ON V.Id_Vino = R.Id_Vino
+GROUP BY V.Nome
+HAVING AVG(R.Voto) > 8;
+
