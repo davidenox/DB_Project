@@ -2,12 +2,16 @@
 ***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone**
 ***Corso di laurea:*** **Informatica**
 ***Data:*** **11/07/2024**
+
+# Indice
+
+
 # 1. Generalità
 
-## 1.2 Descrizione generale del prodotto
+## 1.1 Descrizione generale del prodotto
 
 Il progetto mira alla creazione di un database per la gestione di un sito e-commerce dedicato alla vendita di vini. Questo database sarà il nucleo centrale del sistema informativo, supportando le operazioni quotidiane dell'e-commerce, dall'ordine da parte degli utenti alla spedizione del prodotto stesso. Il database si occuperà della gestione degli ordini, delle specifiche dei vini, della consegna dei prodotti e della raccolta delle recensioni da parte dei clienti riguardo la consegna e la qualità dei prodotti.
-## 1.3 Obiettivi del Progetto:
+## 1.2 Obiettivi del Progetto:
 
 1. **Organizzazione Efficiente dell'Inventario**:
     - Archiviazione dettagliata delle informazioni sui prodotti, inclusi nomi, descrizioni, varietà di uve, annate, regioni di produzione, cantine, e immagini.
@@ -25,13 +29,13 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
     - Generazione di recensioni sulle vendite e sulle performance dei prodotti.
     - Analisi dei comportamenti degli utenti per migliorare l'esperienza di acquisto e le strategie di marketing.
 
-## 1.4 Utenti
+## 1.3 Utenti
 
 Gli utenti principali del DB sono i seguenti:
 - *Clienti*;
 - *Produttori*;
 - *Corrieri*.
-### 1.4.1 Clienti
+### 1.3.1 Clienti
 
 **Profilo**: I clienti sono gli utenti finali che visitano il sito per acquistare vini. Possono essere appassionati di vini, collezionisti, ristoratori o semplici consumatori occasionali.
 
@@ -43,7 +47,7 @@ Gli utenti principali del DB sono i seguenti:
 - **Gestione degli Ordini**: Visualizzazione dello stato degli ordini, storico degli acquisti, e aggiornamenti sulle spedizioni.
 - **Personalizzazione**: Raccomandazioni personalizzate basate sui precedenti acquisti e preferenze.
 
-### 1.4.2 Produttori
+### 1.3.2 Produttori
 
 **Profilo**: I produttori gestiscono l'inventario fisico, preparando gli ordini per la spedizione e monitorando le scorte.
 
@@ -53,7 +57,7 @@ Gli utenti principali del DB sono i seguenti:
 - **Processo degli Ordini**: Accesso agli ordini in tempo reale per preparare le spedizioni e aggiornare lo stato degli ordini.
 - **Logistica e Spedizioni**: Coordinamento con i corrieri e generazione di etichette di spedizione.
 
-### 1.4.3 Corrieri
+### 1.3.3 Corrieri
 **Profilo**: I corrieri sono i partner logistici responsabili della consegna dei prodotti acquistati dai clienti sul sito e-commerce. Possono essere aziende di spedizioni esterne contrattate per gestire le consegne.
 
 **Obiettivi/Bisogni**:
@@ -88,10 +92,21 @@ Gli utenti principali del DB sono i seguenti:
 
 ### 2.2.1 Vincoli
 
-- Il cliente viene inserito solo se maggiorenne;
-- I voti delle recensioni vanno da 0 a 10;
-- Un premio non può essere assegnato prima che il vino venga prodotto;
-- DA FINIRE
+- **Sicurezza**: Il cliente viene inserito solo se maggiorenne;
+- **Coerenza**: I voti delle recensioni vanno da 0 a 10;
+- **Correttezza**: Un premio non può essere assegnato prima che il vino venga prodotto;
+- **Quantità dei Prodotti**: La quantità di vini in `Lista_Prodotti` non può essere negativa.
+- **Data di Scadenza della Carta di Credito**: La data di scadenza della carta di credito deve essere successiva alla data corrente.
+- **Email Unica**: Ogni cliente deve avere un'email unica, senza duplicati (se esiste un campo email per i clienti).
+- **Validità della Data di Nascita**: La data di nascita del cliente non può essere nel futuro.
+- **Data di Spedizione e Consegna**: La data di consegna non può essere precedente alla data di spedizione.
+- **Produttore Esistente**: Un vino può essere inserito solo se il produttore specificato esiste.
+- **Quantità Rimasta in Magazzino**: La quantità rimanente di un vino in un magazzino non può essere negativa.
+- **Percentuale di Composizione**: La somma delle percentuali delle uve per ogni vino deve essere pari a 100%.
+- **Pagamento Unico per Ordine**: Ogni ordine deve avere almeno un pagamento associato.
+- **Ordini Validi**: Ogni ordine deve essere associato a un cliente valido e un indirizzo esistente.
+- **Stato dell'Ordine**: Lo stato dell'ordine può essere solo "In Preparazione", "Spedito" o "Consegnato".
+
 # 3. Progettazione concettuale
 ## 3.1 Diagramma E-R
 
@@ -168,7 +183,7 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 1. Le tuple del diagramma possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
 2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
 3. Gli attributi non primi delle nostre entità dipendono in maniera non transitiva dalla chiave primaria completa $\implies$ 3NF è soddisfatta.
-4. Le entità sono state decomposte in maniera da otteçnere il massimo numero possibile di BCNF.
+4. Le entità sono state decomposte in maniera da ottenere il massimo numero possibile di BCNF.
 
 ----
 
@@ -243,10 +258,6 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Compone          | Relazione | 3500       | (4+4+4)=12              | 42000                  |
 | Magazzini        | Entità    | 5          | (4+4+51)=59             | 295                    |
 | Contenere        | Relazione | 30000      | (4+4+4)=12              | 360000                 |
-
-
-### Tabella delle Operazioni
------
 
 # 5. Implementazione Database - MySQL
 
@@ -1257,7 +1268,21 @@ GROUP BY
 
 13. Restituisce il fatturato totale in un certo periodo
 ```MySQL
-DA FARE
+SELECT 
+    o.Id_Ordine, 
+    SUM(l.Quantità * v.Prezzo) AS FatturatoTot
+FROM 
+    Ordini o
+JOIN 
+    Lista_Prodotti l ON o.Id_Ordine = l.Id_Ordine
+JOIN 
+    Vini v ON l.Id_Vino = v.Id_Vino
+WHERE 
+    o.Data_Ordine BETWEEN '2023-01-01' AND '2023-12-31'
+GROUP BY 
+    o.Id_Ordine
+ORDER BY 
+    FatturatoTot;
 ```
 
 14. Restituisce la lista dei vini novelli
@@ -1272,7 +1297,20 @@ WHERE
 
 15. Restituisce tutti i vini fatti con una percentuale arbitraria di tipo di uva
 ```MySQL
-DA FARE
+SELECT 
+    v.Id_Vino,
+    v.Nome,
+    c.Percentuale,
+    u.Tipo
+FROM 
+    Vini v
+JOIN 
+    Compone c ON v.Id_Vino = c.Id_Vino
+JOIN 
+    Uva u ON c.Id_Uva = u.Id_Uva
+WHERE 
+    c.Percentuale >= 120
+    AND u.Tipo = 'Chardonay'
 ```
 
 16. Elenca tutti i vini prodotti da un particolare produttore
@@ -1472,6 +1510,8 @@ CREATE INDEX idx_compone_id_uva ON Compone (Id_Uva);
 CREATE INDEX idx_lista_prodotti_id_ordine ON Lista_Prodotti (Id_Ordine);
 CREATE INDEX idx_lista_prodotti_id_vino ON Lista_Prodotti (Id_Vino);
 ```
+
+### 5.8.1 Ottimizzazione query
 
 ## 5.9 Procedure
 
