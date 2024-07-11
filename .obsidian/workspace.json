@@ -11,8 +11,12 @@
             "id": "a8a3ab3305f43122",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Fasi/Fase 3/Fase Tre.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Fasi/Fase 3/Fase Tre.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Fasi/Fase 3/Fase Tre.md"
+              }
             }
           },
           {
@@ -146,7 +154,7 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "a8a3ab3305f43122",
+  "active": "b426d025edcfdb9d",
   "lastOpenFiles": [
     "Senza nome.md",
     "Fasi/Fase 3/Fase Tre.md",

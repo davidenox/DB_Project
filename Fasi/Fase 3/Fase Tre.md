@@ -1,13 +1,13 @@
 ***Progetto*** **EnoMarket**
 ***Autori:*** **La Rovere Andrea, Noce Davide, Zheng Simone**
 ***Corso di laurea:*** **Informatica**
-***Data:*** **10/07/2024**
-# Parte Prima: Generalità
+***Data:*** **11/07/2024**
+# 1. Generalità
 
-## Descrizione generale del prodotto
+## 1.2 Descrizione generale del prodotto
 
 Il progetto mira alla creazione di un database per la gestione di un sito e-commerce dedicato alla vendita di vini. Questo database sarà il nucleo centrale del sistema informativo, supportando le operazioni quotidiane dell'e-commerce, dall'ordine da parte degli utenti alla spedizione del prodotto stesso. Il database si occuperà della gestione degli ordini, delle specifiche dei vini, della consegna dei prodotti e della raccolta delle recensioni da parte dei clienti riguardo la consegna e la qualità dei prodotti.
-## Obiettivi del Progetto:
+## 1.3 Obiettivi del Progetto:
 
 1. **Organizzazione Efficiente dell'Inventario**:
     - Archiviazione dettagliata delle informazioni sui prodotti, inclusi nomi, descrizioni, varietà di uve, annate, regioni di produzione, cantine, e immagini.
@@ -25,13 +25,13 @@ Il progetto mira alla creazione di un database per la gestione di un sito e-comm
     - Generazione di recensioni sulle vendite e sulle performance dei prodotti.
     - Analisi dei comportamenti degli utenti per migliorare l'esperienza di acquisto e le strategie di marketing.
 
-## Utenti
+## 1.4 Utenti
 
 Gli utenti principali del DB sono i seguenti:
 - *Clienti*;
 - *Produttori*;
 - *Corrieri*.
-### Clienti
+### 1.4.1 Clienti
 
 **Profilo**: I clienti sono gli utenti finali che visitano il sito per acquistare vini. Possono essere appassionati di vini, collezionisti, ristoratori o semplici consumatori occasionali.
 
@@ -43,7 +43,7 @@ Gli utenti principali del DB sono i seguenti:
 - **Gestione degli Ordini**: Visualizzazione dello stato degli ordini, storico degli acquisti, e aggiornamenti sulle spedizioni.
 - **Personalizzazione**: Raccomandazioni personalizzate basate sui precedenti acquisti e preferenze.
 
-### Produttori
+### 1.4.2 Produttori
 
 **Profilo**: I produttori gestiscono l'inventario fisico, preparando gli ordini per la spedizione e monitorando le scorte.
 
@@ -53,7 +53,7 @@ Gli utenti principali del DB sono i seguenti:
 - **Processo degli Ordini**: Accesso agli ordini in tempo reale per preparare le spedizioni e aggiornare lo stato degli ordini.
 - **Logistica e Spedizioni**: Coordinamento con i corrieri e generazione di etichette di spedizione.
 
-### Corrieri
+### 1.4.3 Corrieri
 **Profilo**: I corrieri sono i partner logistici responsabili della consegna dei prodotti acquistati dai clienti sul sito e-commerce. Possono essere aziende di spedizioni esterne contrattate per gestire le consegne.
 
 **Obiettivi/Bisogni**:
@@ -63,8 +63,8 @@ Gli utenti principali del DB sono i seguenti:
 - **Generazione di Etichette di Spedizione**: Strumenti per generare e stampare etichette di spedizione con tutte le informazioni necessarie (indirizzo di destinazione, numero di tracciamento, codice a barre).
 - **Tracciabilità delle Spedizioni**: Sistema di tracciamento per monitorare il percorso delle spedizioni e fornire aggiornamenti ai clienti e agli operatori del magazzino.
 
-# Parte seconda: Raccolta e analisi dei Requisiti
-## Glossario dei termini
+# 2. Raccolta e analisi dei Requisiti
+## 2.1 Glossario dei termini
 
 | Entità           | Descrizione                     | Sinonimi       |
 | ---------------- | ------------------------------- | -------------- |
@@ -84,20 +84,20 @@ Gli utenti principali del DB sono i seguenti:
 | Lista Prodotti   | Prodotti dentro un certo ordine | Elenco         |
 
 
-## Specifiche, assunzioni e vincoli d’integrità
+## 2.2 Specifiche, assunzioni e vincoli d’integrità
 
-#### Vincoli
+### 2.2.1 Vincoli
 
 - Il cliente viene inserito solo se maggiorenne;
 - I voti delle recensioni vanno da 0 a 10;
 - Un premio non può essere assegnato prima che il vino venga prodotto;
 - DA FINIRE
-# Parte Terza: Progettazione concettuale
-## Diagramma E-R
+# 3. Progettazione concettuale
+## 3.1 Diagramma E-R
 
 ![[DiagrammaER.png|center]]
 
-### Schema scheletro
+### 3.2 Schema scheletro
 
 ![[scheletro.jpg]]
 
@@ -106,7 +106,7 @@ Le entità principali del sistema sono le seguenti:
 - Vino
 - Corriere
 Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene spedito dal _Corriere_. 
-### Raffinamenti 
+### 3.3 Raffinamenti 
 1. Raffinazione *Clienti*:
    ![[Pasted image 20240708155053.png]]
 
@@ -135,9 +135,9 @@ Qui si raffina l'entità *Ordini*:
 - Gli ordini sono associati a delle *liste dei prodotti*;
 - Successivamente gli ordini andranno a formare delle *Spedizioni* che verranno organizzate e consegnate dai *Corrieri*
 
-# Parte Quarta: Progettazione Logica
+# 4. Progettazione Logica
 
-## Schema Logico
+## 4.1 Schema Logico
 
 ![[SchemaLogico.png|center]]
 
@@ -163,7 +163,7 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 - **Uve** (**Id_Uva**, Nome, Descrizione)
 - **Compone** (**Id_Vino**, **Id_Uva**, Percentuale)
 - **Lista_Prodotti** (**Id_Lista**, Quantità, *Id_Vino*, *ID_Ordine*)
-### Normalizzazione
+### 4.2 Normalizzazione
 
 1. Le tuple del diagramma possiedono solo attributi semplici $\implies$ 1NF è soddisfatta.
 2. Gli attributi non primi delle nostre entità dipendono unicamente dalla chiave primaria completa $\implies$ 2NF è soddisfatta.
@@ -172,10 +172,11 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 
 ----
 
-## Schema E-R concettuale ristrutturato
+## 4.3 Schema E-R concettuale ristrutturato
 ![[DiagrammaER 1.png|center]]
-## Dizionario Entità e Relazioni
-### Glossario delle Entità
+## 4.4 Dizionario Entità e Relazioni
+### 4.4.1 Glossario delle Entità
+
 | Entità           | Descrizione                                          | Attributi                                                                       | Relazioni coinvolte                                                               |
 | ---------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | Clienti          | Utente che intende acquistare il prodotto            | *ID_Cliente*,  Nome, Cognome, Data_Nascita                                      | Risiedere, Effettuare, Collegare, Scrivere, Preferire                             |
@@ -193,8 +194,7 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Premi            | Premio assegnati                                     | *ID_Premio*, Nome, Descrizione                                                  | Assegnare, Ricevere                                                               |
 | Indirizzi        | Indirizzo della sede e del cliente                   | *ID_Indirizzo*, Via, Civico, CAP, Città, Provincia, Nazione                     | Risiedere, Sede, Destinazione                                                     |
 
-
-### Glossario delle Relazioni
+### 4.4.2 Glossario delle Relazioni
 
 | Relazione    | Descrizione                                           | Entità                              |
 | ------------ | ----------------------------------------------------- | ----------------------------------- |
@@ -218,56 +218,39 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Appartenere  | Un vino appartiene ad un tipo                         | Vini(1:1), Tipi di Vino(1:N)        |
 | Risiedere    | Luogo in cui un cliente abita                         | Clienti(1:1), Indirizzi(1:N)        |
 
-## Carico Applicativo
-### Tabella dei Volumi 
+## 4.5 Carico Applicativo
+### 4.5.1 Volume dei dati
 
-| Concetto         | Costrutto | Volume |
-| ---------------- | --------- | ------ |
-| Clienti          | E         |        |
-| Vini             | E         |        |
-| Carte di credito | E         |        |
-| Spedizioni       | E         |        |
-| Ordini           | E         |        |
-| Recensioni       | E         |        |
-| Personale        | E         |        |
-| Corrieri         | E         |        |
-| Magazzini        | E         |        |
-| Miscele          | E         |        |
-| Cantine          | E         |        |
-| Uve              | E         |        |
-| Procedimento     | E         |        |
-| Premio Vino      | E         |        |
-| Premio Cantina   | E         |        |
-### Volume dei dati
+| Concetto         | Tipologia | Occorrenze | Dimensione Record       | Volume Totale in Bytes |
+| ---------------- | --------- | ---------- | ----------------------- | ---------------------- |
+| Corrieri         | Entità    | 15         | (4+101)=105             | 225                    |
+| Indirizzi        | Entità    | 1000       | (4+64+4+4+51+51+51)=229 | 229000                 |
+| Clienti          | Entità    | 500        | (4+51+51+3+4)=113       | 56500                  |
+| Carte di Credito | Entità    | 550        | (4+21+51+3+5+51+4)=139  | 76450                  |
+| Produttori       | Entità    | 300        | (4+51+8+4)=67           | 20100                  |
+| Tipi di Vino     | Entità    | 10         | (51)=51                 | 510                    |
+| Vini             | Entità    | 3000       | (4+51+4+1+1+51+4+4)=120 | 360000                 |
+| Ordini           | Entità    | 10000      | (4+4+51+4+8)=71         | 710000                 |
+| Spedizioni       | Entità    | 1000       | (4+4+4+8+8+51)=79       | 79000                  |
+| Lista Prodotti   | Entità    | 30000      | (4+4+4+4)=16            | 480000                 |
+| Pagamenti        | Relazione | 9000       | (4+4+8)=16              | 144000                 |
+| Preferire        | Relazione | 100        | (4+4)=8                 | 800                    |
+| Recensire        | Relazione | 2000       | (4+4+4+64+8)=84         | 168000                 |
+| Premi            | Entità    | 50         | (4+51+51)=106           | 5300                   |
+| Assegnare        | Relazione | 200        | (4+4+3)=11              | 2200                   |
+| Ricevere         | Relazione | 200        | (4+4+3)=11              | 2200                   |
+| Uve              | Entità    | 300        | (4+51+64)=119           | 35700                  |
+| Compone          | Relazione | 3500       | (4+4+4)=12              | 42000                  |
+| Magazzini        | Entità    | 5          | (4+4+51)=59             | 295                    |
+| Contenere        | Relazione | 30000      | (4+4+4)=12              | 360000                 |
 
-| Concetto         | Dimensione Record | Volume |
-| ---------------- | ----------------- | ------ |
-| Clienti          |                   |        |
-| Vini             |                   |        |
-| Carte di credito |                   |        |
-| Spedizioni       |                   |        |
-| Ordini           |                   |        |
-| Recensioni       |                   |        |
-| Personale        |                   |        |
-| Corrieri         |                   |        |
-| Magazzini        |                   |        |
-| Miscele          |                   |        |
-| Cantine          |                   |        |
-| Uve              |                   |        |
-| Procedimento     |                   |        |
-| Premio Vino      |                   |        |
-| Premio Cantina   |                   |        |
 
 ### Tabella delle Operazioni
 -----
 
+# 5. Implementazione Database - MySQL
 
-## Schema Fisico
-----
-
-## Implementazione Database - MySQL
-
-### Creazione delle Tabelle
+## 5.1 Creazione delle Tabelle
 
 ```MySQL
 CREATE TABLE Corrieri (
@@ -459,7 +442,7 @@ FOREIGN KEY (Id_Corriere) REFERENCES Corrieri(Id_Corriere)
 );
 ```
 
-### Triggers 
+## 5.2 Triggers 
 I trigger fanno parte del DDL (Data Definition Manipulation), essi seguono il principio ECA, ovvero Event-Condition-Action. Solitamente, un trigger si può attivare prima o dopo un inserimento e hanno 2 livelli di granularità:
 1. Attivarsi per ogni tupla
 2. Ativarsi per ogni istruzione DML
@@ -514,9 +497,9 @@ END //
 
 ---
 
-## Inserimenti 
+## 5.3 Inserimenti 
 Di seguito vengono riportati gli inserimenti per popolare il DB
-### Indirizzi
+### 5.3.1 Indirizzi
 
 ```MySQL
 INSERT INTO Indirizzi (Via, Civico, CAP, Città, Provincia, Nazione) VALUES
@@ -562,7 +545,7 @@ INSERT INTO Indirizzi (Via, Civico, CAP, Città, Provincia, Nazione) VALUES
 ('Via Campobasso', 20, 86100, 'Campobasso', 'CB', 'Italia');
 ```
 
-### Corrieri
+### 5.3.2 Corrieri
 
 ```MySQL
 INSERT INTO Corrieri (Nome) VALUES
@@ -588,7 +571,7 @@ INSERT INTO Corrieri (Nome) VALUES
 ('TNT Express');
 ```
 
-### Clienti
+### 5.3.3 Clienti
 
 ```MySQL
 INSERT INTO Clienti (Nome, Cognome, Data_di_nascita, Id_Indirizzo) VALUES
@@ -614,7 +597,7 @@ INSERT INTO Clienti (Nome, Cognome, Data_di_nascita, Id_Indirizzo) VALUES
 ('Davide', 'Viola', '1992-10-10', 10);
 ```
 
-### Carte di Credito
+### 5.3.4 Carte di Credito
 
 ```MySQL
 INSERT INTO Carte_di_Credito (Numero_Carta, Tipo_Carta, Scadenza, CVV, Nome_Carta, Cognome_Carta, Id_Cliente) VALUES
@@ -640,7 +623,7 @@ INSERT INTO Carte_di_Credito (Numero_Carta, Tipo_Carta, Scadenza, CVV, Nome_Cart
 ('0123456789012345', 'Mastercard', '2034-10-10', '012', 'Davide', 'Viola', 10);
 ```
 
-### Produttori
+### 5.3.5 Produttori
 
 ```MySQL
 INSERT INTO Produttori (Nome, Partita_IVA, Id_Indirizzo) VALUES
@@ -666,7 +649,7 @@ INSERT INTO Produttori (Nome, Partita_IVA, Id_Indirizzo) VALUES
 ('Vinicola Viola', 10123456780, 20);
 ```
 
-### Tipi di Vino
+### 5.3.6 Tipi di Vino
 
 ```MySQL
 INSERT INTO Tipi_di_Vino (Nome) VALUES
@@ -680,7 +663,7 @@ INSERT INTO Tipi_di_Vino (Nome) VALUES
 ('Spumante');
 ```
 
-### Vini
+### 5.3.7 Vini
 
 ```MySQL
 INSERT INTO Vini (Nome, Anno, Solfiti, Biologico, Tipologia, Gradazione, Id_Produttore, Prezzo) VALUES
@@ -746,7 +729,7 @@ INSERT INTO Vini (Nome, Anno, Solfiti, Biologico, Tipologia, Gradazione, Id_Prod
 ('Pinot Nero', 2020, FALSE, FALSE, 'Rosso', 12.7, 30, 11.00);
 ```
 
-### Ordini
+### 5.3.8 Ordini
 
 ```MySQL
 INSERT INTO Ordini (Id_Cliente, Stato, Id_Indirizzo, Data_Ordine) VALUES
@@ -772,7 +755,7 @@ INSERT INTO Ordini (Id_Cliente, Stato, Id_Indirizzo, Data_Ordine) VALUES
 (10, 'In Preparazione', 10, '2023-10-10 19:00:00');
 ```
 
-### Lista Prodotti
+### 5.3.9 Lista Prodotti
 
 ```MySQL
 INSERT INTO Lista_Prodotti (Id_Vino, Id_Ordine, Quantità) VALUES
@@ -798,7 +781,7 @@ INSERT INTO Lista_Prodotti (Id_Vino, Id_Ordine, Quantità) VALUES
 (10, 10, 1);
 ```
 
-### Pagamenti
+### 5.3.10 Pagamenti
 
 ```MySQL
 INSERT INTO Pagamenti (Id_Ordine, Id_Carta, Data_Pagamento) VALUES
@@ -824,7 +807,7 @@ INSERT INTO Pagamenti (Id_Ordine, Id_Carta, Data_Pagamento) VALUES
 (10, 10, '2023-10-10 19:30:00');
 ```
 
-### Preferire
+###  5.3.11 Preferire
 ```MySQL
 INSERT INTO Preferire (Id_Cliente, Id_Vino) VALUES
 
@@ -849,7 +832,7 @@ INSERT INTO Preferire (Id_Cliente, Id_Vino) VALUES
 (10, 10);
 ```
 
-### Recensire
+### 5.3.12 Recensire
 
 ```MySQL
 INSERT INTO Recensire (Id_Cliente, Id_Vino, Voto, Commento, Data_recensione) VALUES
@@ -875,7 +858,7 @@ INSERT INTO Recensire (Id_Cliente, Id_Vino, Voto, Commento, Data_recensione) VAL
 (10, 10, 6, 'Niente di speciale.', '2023-10-10 19:00:00');
 ```
 
-### Premi
+### 5.3.13 Premi
 
 ```MySQL
 INSERT INTO Premi (Nome, Organizzazione) VALUES
@@ -901,7 +884,7 @@ INSERT INTO Premi (Nome, Organizzazione) VALUES
 ('Premio Miglior Annata', 'Organizzazione 10');
 ```
 
-### Assegnare
+### 5.3.14 Assegnare
 
 ```MySQL
 INSERT INTO Assegnare (Id_Premio, Id_Vino, Data_Assegnazione) VALUES
@@ -927,7 +910,7 @@ INSERT INTO Assegnare (Id_Premio, Id_Vino, Data_Assegnazione) VALUES
 (10, 10, '2022-10-10');
 ```
 
-### Ricevere
+### 5.3.15 Ricevere
 
 ```MySQL
 INSERT INTO Ricevere (Id_Premio, Id_Produttore, Data_Ricezione) VALUES
@@ -953,7 +936,7 @@ INSERT INTO Ricevere (Id_Premio, Id_Produttore, Data_Ricezione) VALUES
 (10, 10, '2024-10-10');
 ```
 
-### Uve
+### 5.3.16 Uve
 
 ```MySQL
 INSERT INTO Uve (Nome, Descrizione) VALUES
@@ -979,7 +962,7 @@ INSERT INTO Uve (Nome, Descrizione) VALUES
 ('Malvasia', 'Descrizione Malvasia');
 ```
 
-### Compone
+### 5.3.17 Compone
 
 ```MySQL
 INSERT INTO Compone (Id_Vino, Id_Uva, Percentuale) VALUES
@@ -1014,7 +997,7 @@ INSERT INTO Compone (Id_Vino, Id_Uva, Percentuale) VALUES
 
 ```
 
-### Magazzini
+### 5.3.18 Magazzini
 
 ```MySQL
 INSERT INTO Magazzini (Id_Indirizzo, Nome) VALUES
@@ -1040,7 +1023,7 @@ INSERT INTO Magazzini (Id_Indirizzo, Nome) VALUES
 (10, 'Magazzino Cagliari');
 ```
 
-### Contenere
+### 5.3.19 Contenere
 
 ```MySQL
 INSERT INTO Contenere (Id_Magazzino, Id_Vino, Quantità_Rimanente) VALUES
@@ -1066,7 +1049,7 @@ INSERT INTO Contenere (Id_Magazzino, Id_Vino, Quantità_Rimanente) VALUES
 (10, 10, 10);
 ```
 
-### Spedizioni
+###  5.3.20 Spedizioni
 
 ```MySQL
 INSERT INTO Spedizioni (Id_Ordine, Id_Corriere, Data_Spedizione, Data_Consegna, Stato_Spedizione) VALUES
@@ -1093,7 +1076,7 @@ INSERT INTO Spedizioni (Id_Ordine, Id_Corriere, Data_Spedizione, Data_Consegna, 
 ```
 
 ---
-## Query
+## 5.4 Query
 1. Conta il numero di vini di una certa tipologia (es: rosso)
 ```MySQL
 SELECT
@@ -1346,7 +1329,7 @@ HAVING
 
 ---
 
-## Algebra Relazionale
+## 5.5 Algebra Relazionale
 L’algebra relazionale è un linguaggio query procedurale in notazione algebrica. In una query, si applicano sequenzialmente le operazioni alle relazioni. Ogni operazione (unaria o binaria) riceve in input una relazione e ne produce un’altra in output.
 
 Le operazioni primitive sono:
@@ -1376,7 +1359,7 @@ $$\pi_{IdOrdine,Stato,Data\_Ordine}​(\sigma_{IdCliente=1}​(Ordini))$$
 - _Trova i vini con una media di voti superiore a 8_
   In algebra relazionale sarà:
 $$\sigma_{MediaVoti>8}​(\gamma_{Vini.Nome;AVG(Recensioni.Voto)→MediaVoti}​(\pi_{Vini.Nome,Recensioni.Voto}​(Vini⋈_{Vini.Id\_Vino=Recensioni.Id\_Vino}​Recensioni)))$$
-## Calcolo Relazionale
+##  5.6 Calcolo Relazionale
 Il calcolo relazionale è un linguaggio query non procedurale ma dichiarativo. Invece dell’algebra, utilizza il calcolo dei predicati matematici del primo ordine in notazione logica. L’output di una query è una relazione che contiene solo tuple che soddisfano le formule logiche espresse. Il potere espressivo del calcolo relazionale è dunque equivalente a quello dell’algebra relazionale. Versioni:
 1. Calcolo relazionale sui domini  
 2. Calcolo relazionale sulle tuple con dichiarazione di range
@@ -1395,7 +1378,7 @@ $$P = \{ (o.Id\_Ordine, o.Stato, o.Data\_Ordine) ∣ o \in Ordine, o.Id\_Cliente
 - _Trova i vini con una media di voti superiore a 8_
 $$P = \{ (v.Nome, AVG(r.Voto) \rightarrow MediaVoti) ∣ v \in Vini, r \in Recensioni, v.Id\_Vino = r.Id\_Vino, AVG(r.Voto)> 8 \}$$
 
-### Views
+## 5.7 Views
 ```Mysql
   
 
@@ -1458,4 +1441,91 @@ INNER JOIN ordini ON Lista_Prodotti.Id_Ordine = ordini.Id_Ordine
 GROUP BY vini.Id_Vino
 ORDER BY Totale_Venduto DESC
 LIMIT 10;
+```
+
+## 5.8 Index
+
+```MySQL
+CREATE INDEX idx_indirizzi_cap ON Indirizzi (CAP);
+CREATE INDEX idx_indirizzi_citta ON Indirizzi (Città);
+CREATE INDEX idx_indirizzi_provincia ON Indirizzi (Provincia);
+
+CREATE INDEX idx_clienti_nome ON Clienti (Nome);
+CREATE INDEX idx_clienti_cognome ON Clienti (Cognome);
+
+CREATE INDEX idx_vini_nome ON Vini (Nome);
+CREATE INDEX idx_vini_anno ON Vini (Anno);
+CREATE INDEX idx_vini_tipologia ON Vini (Tipologia);
+
+CREATE INDEX idx_ordini_id_cliente ON Ordini (Id_Cliente);
+CREATE INDEX idx_ordini_data_ordine ON Ordini (Data_Ordine);
+
+CREATE INDEX idx_spedizioni_id_ordine ON Spedizioni (Id_Ordine);
+CREATE INDEX idx_spedizioni_data_spedizione ON Spedizioni (Data_Spedizione);
+
+CREATE INDEX idx_recensioni_id_vino ON Recensioni (Id_Vino);
+CREATE INDEX idx_recensioni_id_cliente ON Recensioni (Id_Cliente);
+
+CREATE INDEX idx_compone_id_vino ON Compone (Id_Vino);
+CREATE INDEX idx_compone_id_uva ON Compone (Id_Uva);
+
+CREATE INDEX idx_lista_prodotti_id_ordine ON Lista_Prodotti (Id_Ordine);
+CREATE INDEX idx_lista_prodotti_id_vino ON Lista_Prodotti (Id_Vino);
+```
+
+## 5.9 Procedure
+
+```MySQL
+DELIMITER //
+
+CREATE PROCEDURE AggiungiVinoOrdine (
+    IN p_Id_Ordine INT,
+    IN p_Id_Vino INT,
+    IN p_Quantità INT
+)
+BEGIN
+    DECLARE v_QuantitàRimanente INT;
+
+    -- Controlla la disponibilità nel magazzino
+    SELECT Quantità_Rimanente INTO v_QuantitàRimanente
+    FROM Contenere
+    WHERE Id_Vino = p_Id_Vino;
+
+    IF v_QuantitàRimanente < p_Quantità THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Quantità non disponibile nel magazzino.';
+    END IF;
+
+    -- Aggiunge il vino all'ordine
+    INSERT INTO Lista_Prodotti (Id_Ordine, Id_Vino, Quantità)
+    VALUES (p_Id_Ordine, p_Id_Vino, p_Quantità);
+
+    -- Aggiorna la quantità rimanente nel magazzino
+    UPDATE Contenere
+    SET Quantità_Rimanente = Quantità_Rimanente - p_Quantità
+    WHERE Id_Vino = p_Id_Vino;
+END //
+
+DELIMITER ;
+```
+
+
+# 6 Sicurezza
+### 6.1 Utenti
+```MySQL
+CREATE USER 'admin'@'%' IDENTIFIED BY 'strong_password';
+GRANT ALL PRIVILEGES ON EnoMarketDB.* TO 'admin'@'%';
+
+CREATE USER 'data_analyst'@'%' IDENTIFIED BY 'strong_password';
+GRANT SELECT ON EnoMarketDB.* TO 'data_analyst'@'%';
+
+CREATE USER 'app_user'@'%' IDENTIFIED BY 'strong_password';
+GRANT SELECT, INSERT, UPDATE, DELETE ON EnoMarketDB.* TO 'app_user'@'%';
+
+-- È possibile anche garantire permessi per singole tabelle
+
+GRANT SELECT, INSERT ON EnoMarketDB.Ordini TO 'app_user'@'%';
+GRANT SELECT, UPDATE ON EnoMarketDB.Spedizioni TO 'app_user'@'%';
+
+CREATE USER 'read_only'@'%' IDENTIFIED BY 'strong_password';
+GRANT SELECT ON EnoMarketDB.* TO 'read_only'@'%';
 ```
