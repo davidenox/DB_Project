@@ -4,8 +4,63 @@
 ***Data:*** **11/07/2024**
 
 # Indice
-
-
+[[Fase Tre#1. Generalità|1. Generalità]]
+[[Fase Tre#1.1 Descrizione generale del prodotto|1.1 Descrizione generale del prodotto]]
+[[Fase Tre#1.2 Obiettivi del Progetto|1.2 Obiettivi del Progetto]]
+[[Fase Tre#1.3 Utenti|1.3 Utenti]]
+[[Fase Tre#1.3.1 Clienti|1.3.1 Clienti]]
+[[Fase Tre#1.3.2 Produttori|1.3.2 Produttori]]
+[[Fase Tre#1.3.3 Corrieri|1.3.3 Corrieri]]
+[[Fase Tre#2. Raccolta e analisi dei Requisiti|2. Raccolta e analisi dei Requisiti]]
+[[Fase Tre#2.1 Glossario dei termini|2.1 Glossario dei termini]]
+[[Fase Tre#2.2 Specifiche, assunzioni e vincoli d'integrità|2.2 Specifiche, assunzioni e vincoli d'integrità]]
+[[Fase Tre#2.2.1 Vincoli|2.2.1 Vincoli]]
+[[Fase Tre#3. Progettazione concettuale|3. Progettazione concettuale]]
+[[Fase Tre#3.1 Diagramma E-R|3.1 Diagramma E-R]]
+[[Fase Tre#3.2 Schema scheletro|3.2 Schema scheletro]]
+[[Fase Tre#3.3 Raffinamenti|3.3 Raffinamenti]]
+[[Fase Tre#4. Progettazione Logica|4. Progettazione Logica]]
+[[Fase Tre#4.1 Schema Logico|4.1 Schema Logico]]
+[[Fase Tre#4.2 Normalizzazione|4.2 Normalizzazione]]
+[[Fase Tre#4.3 Schema E-R concettuale ristrutturato|4.3 Schema E-R concettuale ristrutturato]]
+[[Fase Tre#4.4 Dizionario Entità e Relazioni|4.4 Dizionario Entità e Relazioni]]
+[[Fase Tre#4.4.1 Glossario delle Entità|4.4.1 Glossario delle Entità]]
+[[Fase Tre#4.4.2 Glossario delle Relazioni|4.4.2 Glossario delle Relazioni]]
+[[Fase Tre#4.5 Carico Applicativo|4.5 Carico Applicativo]]
+[[Fase Tre#4.5.1 Volume dei dati|4.5.1 Volume dei dati]]
+[[Fase Tre#5. Implementazione Database - MySQL|5. Implementazione Database - MySQL]]
+[[Fase Tre#5.1 Creazione delle Tabelle|5.1 Creazione delle Tabelle]]
+[[Fase Tre#5.2 Triggers|5.2 Triggers]]
+[[Fase Tre#5.3 Inserimenti|5.3 Inserimenti]]
+[[Fase Tre#5.3.1 Indirizzi|5.3.1 Indirizzi]]
+[[Fase Tre#5.3.2 Corrieri|5.3.2 Corrieri]]
+[[Fase Tre#5.3.3 Clienti|5.3.3 Clienti]]
+[[Fase Tre#5.3.4 Carte di Credito|5.3.4 Carte di Credito]]
+[[Fase Tre#5.3.5 Produttori|5.3.5 Produttori]]
+[[Fase Tre#5.3.6 Tipi di Vino|5.3.6 Tipi di Vino]]
+[[Fase Tre#5.3.7 Vini|5.3.7 Vini]]
+[[Fase Tre#5.3.8 Ordini|5.3.8 Ordini]]
+[[Fase Tre#5.3.9 Lista Prodotti|5.3.9 Lista Prodotti]]
+[[Fase Tre#5.3.10 Pagamenti|5.3.10 Pagamenti]]
+[[Fase Tre#5.3.11 Preferire|5.3.11 Preferire]]
+[[Fase Tre#5.3.12 Recensire|5.3.12 Recensire]]
+[[Fase Tre#5.3.13 Premi|5.3.13 Premi]]
+[[Fase Tre#5.3.14 Assegnare|5.3.14 Assegnare]]
+[[Fase Tre#5.3.15 Ricevere|5.3.15 Ricevere]]
+[[Fase Tre#5.3.16 Uve|5.3.16 Uve]]
+[[Fase Tre#5.3.17 Compone|5.3.17 Compone]]
+[[Fase Tre#5.3.18 Magazzini|5.3.18 Magazzini]]
+[[Fase Tre#5.3.19 Contenere|5.3.19 Contenere]]
+[[Fase Tre#5.3.20 Spedizioni|5.3.20 Spedizioni]]
+[[Fase Tre#5.4 Query|5.4 Query]]
+[[Fase Tre#5.5 Algebra Relazionale|5.5 Algebra Relazionale]]
+[[Fase Tre#5.6 Calcolo Relazionale|5.6 Calcolo Relazionale]]
+[[Fase Tre#5.7 Views|5.7 Views]]
+[[Fase Tre#5.8 Index|5.8 Index]]
+[[Fase Tre#5.8.1 Ottimizzazione query| 5.8.1 Ottimizzazione Query]]
+[[Fase Tre#5.9 Procedure|5.9 Procedure]]
+[[Fase Tre#6. Sicurezza| 6. Sicurezza]]
+[[Fase Tre#6.1 Utenti|6.1 Utenti]]
 # 1. Generalità
 
 ## 1.1 Descrizione generale del prodotto
@@ -1549,7 +1604,7 @@ DELIMITER ;
 ```
 
 
-# 6 Sicurezza
+# 6. Sicurezza
 ### 6.1 Utenti
 ```MySQL
 CREATE USER 'admin'@'%' IDENTIFIED BY 'strong_password';
