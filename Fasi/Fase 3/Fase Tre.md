@@ -926,7 +926,7 @@ INSERT INTO Assegnare (Id_Premio, Id_Vino, Data_Assegnazione) VALUES
 ```MySQL
 INSERT INTO Ricevere (Id_Premio, Id_Produttore, Data_Ricezione) VALUES
 
-(1, 1, '2024-01'),
+(1, 1, '2024-01-01'),
 
 (2, 2, '2024-02-02'),
 
