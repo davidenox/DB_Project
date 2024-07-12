@@ -1524,13 +1524,13 @@ Il calcolo relazionale è un linguaggio query non procedurale ma dichiarativo. 
 Di seguito sono alcune query espresse tramite il calcolo relazionale sulle tuple con dichiarazione di range:
 
 - _Restituisce i vini che rispettano alcuni parametri presi in input (annata, prezzo, tipologia)_
-$$P = \{ (v∣ v \in Vini, v.Tipologia = 'Rosso', v.Prezzo \le 20, v.Anno > 2015 ) \}$$
+$$\begin{align}\\&P = \{ (v∣ v \in Vini, v.Tipologia = 'Rosso', v.Prezzo \le 20,\\& v.Anno > 2015 ) \}\end{align}$$
 
 - _Restituisce i 10 vini più premiati dalla critica_
 $$\begin{align}\\&P=\{(v.Id\_Vino,v.Nome,COUNT(a.Id\_Premio)\rightarrow NumPremi)\\&∣v\in vini,a\in assegnare,v.Id\_Vino=a.Id\_Vino\}\end{align}$$
 
 - _Visualizza tutti gli ordini effettuati da un cliente specifico_
-$$P = \{ (o.Id\_Ordine, o.Stato, o.Data\_Ordine) ∣ o \in Ordine, o.Id\_Cliente = 1  \}$$
+$$\begin{align}\\&P = \{ (o.Id\_Ordine, o.Stato, o.Data\_Ordine)\\& ∣ o \in Ordine, o.Id\_Cliente = 1  \}\end{align}$$
 
 - _Trova i vini con una media di voti superiore a 8_
 $$\begin{align}\\&P = \{ (v.Nome, AVG(r.Voto) \rightarrow MediaVoti) ∣ v \in Vini, r \in Recensioni,\\& v.Id\_Vino = r.Id\_Vino, AVG(r.Voto)> 8 \}\end{align}$$
