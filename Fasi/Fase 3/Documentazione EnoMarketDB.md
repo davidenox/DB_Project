@@ -1509,18 +1509,13 @@ Di seguito troviamo alcune query sul nostro database scritte in Algebra Relazion
 In algebra relazionale sarà:
 $$ \sigma_{vini.Tipologia='Rosso'\land vini.Prezzo\leq20\land vini.Anno>2015​}(Vini)$$
 
-- _Restituisce i 10 vini più premiati dalla critica_
-  In algebra relazionale sarà:
-  $$\rho_{10}​(\tau_{Num\_Premi DESC}​(\gamma_{vini.Id\_Vino,vini.Nome;COUNT(assegnare.Id\_Premio)→NumPremi}​(\pi_{vini.Id\_Vino,vini.Nome,assegnare.Id\_Premio}​(Vini⋈_{vini.Id\_Vino=assegnare.Id\_Vino​}assegnare))))$$
-
-
 - _Visualizza tutti gli ordini effettuati da un cliente specifico_
   In algebra relazionale sarà:
 $$\pi_{IdOrdine,Stato,Data\_Ordine}​(\sigma_{IdCliente=1}​(Ordini))$$
 
 - _Trova i vini con una media di voti superiore a 8_
   In algebra relazionale sarà:
-$$\sigma_{MediaVoti>8}​(\gamma_{Vini.Nome;AVG(Recensioni.Voto)→MediaVoti}​(\pi_{Vini.Nome,Recensioni.Voto}​(Vini⋈_{Vini.Id\_Vino=Recensioni.Id\_Vino}​Recensioni)))$$
+$$\begin{align}\\&\sigma_{MediaVoti>8}​(\gamma_{Vini.Nome;AVG(Recensioni.Voto)→MediaVoti}​(\pi_{Vini.Nome,Recensioni.Voto}\\&(Vini⋈_{Vini.Id\_Vino=Recensioni.Id\_Vino}​Recensioni)))\end{align}$$
 ##  5.6 Calcolo Relazionale
 Il calcolo relazionale è un linguaggio query non procedurale ma dichiarativo. Invece dell’algebra, utilizza il calcolo dei predicati matematici del primo ordine in notazione logica. L’output di una query è una relazione che contiene solo tuple che soddisfano le formule logiche espresse. Il potere espressivo del calcolo relazionale è dunque equivalente a quello dell’algebra relazionale. Versioni:
 1. Calcolo relazionale sui domini  
@@ -1532,13 +1527,13 @@ Di seguito sono alcune query espresse tramite il calcolo relazionale sulle tuple
 $$P = \{ (v∣ v \in Vini, v.Tipologia = 'Rosso', v.Prezzo \le 20, v.Anno > 2015 ) \}$$
 
 - _Restituisce i 10 vini più premiati dalla critica_
-$$P=\{(v.Id\_Vino,v.Nome,COUNT(a.Id\_Premio)\rightarrow NumPremi)∣v\in vini,a\in assegnare,v.Id\_Vino=a.Id\_Vino\}$$
+$$\begin{align}\\&P=\{(v.Id\_Vino,v.Nome,COUNT(a.Id\_Premio)\rightarrow NumPremi)\\&∣v\in vini,a\in assegnare,v.Id\_Vino=a.Id\_Vino\}\end{align}$$
 
 - _Visualizza tutti gli ordini effettuati da un cliente specifico_
 $$P = \{ (o.Id\_Ordine, o.Stato, o.Data\_Ordine) ∣ o \in Ordine, o.Id\_Cliente = 1  \}$$
 
 - _Trova i vini con una media di voti superiore a 8_
-$$P = \{ (v.Nome, AVG(r.Voto) \rightarrow MediaVoti) ∣ v \in Vini, r \in Recensioni, v.Id\_Vino = r.Id\_Vino, AVG(r.Voto)> 8 \}$$
+$$\begin{align}\\&P = \{ (v.Nome, AVG(r.Voto) \rightarrow MediaVoti) ∣ v \in Vini, r \in Recensioni,\\& v.Id\_Vino = r.Id\_Vino, AVG(r.Voto)> 8 \}\end{align}$$
 
 ## 5.7 Views
 ```Mysql
