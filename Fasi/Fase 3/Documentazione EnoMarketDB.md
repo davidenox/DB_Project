@@ -4,63 +4,64 @@
 ***Data:*** **11/07/2024**
 
 # Indice
-[[Fase Tre#1. Generalità|1. Generalità]]
-[[Fase Tre#1.1 Descrizione generale del prodotto|1.1 Descrizione generale del prodotto]]
-[[Fase Tre#1.2 Obiettivi del Progetto|1.2 Obiettivi del Progetto]]
-[[Fase Tre#1.3 Utenti|1.3 Utenti]]
-[[Fase Tre#1.3.1 Clienti|1.3.1 Clienti]]
-[[Fase Tre#1.3.2 Produttori|1.3.2 Produttori]]
-[[Fase Tre#1.3.3 Corrieri|1.3.3 Corrieri]]
-[[Fase Tre#2. Raccolta e analisi dei Requisiti|2. Raccolta e analisi dei Requisiti]]
-[[Fase Tre#2.1 Glossario dei termini|2.1 Glossario dei termini]]
-[[Fase Tre#2.2 Specifiche, assunzioni e vincoli d'integrità|2.2 Specifiche, assunzioni e vincoli d'integrità]]
-[[Fase Tre#2.2.1 Vincoli|2.2.1 Vincoli]]
-[[Fase Tre#3. Progettazione concettuale|3. Progettazione concettuale]]
-[[Fase Tre#3.1 Diagramma E-R|3.1 Diagramma E-R]]
-[[Fase Tre#3.2 Schema scheletro|3.2 Schema scheletro]]
-[[Fase Tre#3.3 Raffinamenti|3.3 Raffinamenti]]
-[[Fase Tre#4. Progettazione Logica|4. Progettazione Logica]]
-[[Fase Tre#4.1 Schema Logico|4.1 Schema Logico]]
-[[Fase Tre#4.2 Normalizzazione|4.2 Normalizzazione]]
-[[Fase Tre#4.3 Schema E-R concettuale ristrutturato|4.3 Schema E-R concettuale ristrutturato]]
-[[Fase Tre#4.4 Dizionario Entità e Relazioni|4.4 Dizionario Entità e Relazioni]]
-[[Fase Tre#4.4.1 Glossario delle Entità|4.4.1 Glossario delle Entità]]
-[[Fase Tre#4.4.2 Glossario delle Relazioni|4.4.2 Glossario delle Relazioni]]
-[[Fase Tre#4.5 Carico Applicativo|4.5 Carico Applicativo]]
-[[Fase Tre#4.5.1 Volume dei dati|4.5.1 Volume dei dati]]
-[[Fase Tre#5. Implementazione Database - MySQL|5. Implementazione Database - MySQL]]
-[[Fase Tre#5.1 Creazione delle Tabelle|5.1 Creazione delle Tabelle]]
-[[Fase Tre#5.2 Triggers|5.2 Triggers]]
-[[Fase Tre#5.3 Inserimenti|5.3 Inserimenti]]
-[[Fase Tre#5.3.1 Indirizzi|5.3.1 Indirizzi]]
-[[Fase Tre#5.3.2 Corrieri|5.3.2 Corrieri]]
-[[Fase Tre#5.3.3 Clienti|5.3.3 Clienti]]
-[[Fase Tre#5.3.4 Carte di Credito|5.3.4 Carte di Credito]]
-[[Fase Tre#5.3.5 Produttori|5.3.5 Produttori]]
-[[Fase Tre#5.3.6 Tipi di Vino|5.3.6 Tipi di Vino]]
-[[Fase Tre#5.3.7 Vini|5.3.7 Vini]]
-[[Fase Tre#5.3.8 Ordini|5.3.8 Ordini]]
-[[Fase Tre#5.3.9 Lista Prodotti|5.3.9 Lista Prodotti]]
-[[Fase Tre#5.3.10 Pagamenti|5.3.10 Pagamenti]]
-[[Fase Tre#5.3.11 Preferire|5.3.11 Preferire]]
-[[Fase Tre#5.3.12 Recensire|5.3.12 Recensire]]
-[[Fase Tre#5.3.13 Premi|5.3.13 Premi]]
-[[Fase Tre#5.3.14 Assegnare|5.3.14 Assegnare]]
-[[Fase Tre#5.3.15 Ricevere|5.3.15 Ricevere]]
-[[Fase Tre#5.3.16 Uve|5.3.16 Uve]]
-[[Fase Tre#5.3.17 Compone|5.3.17 Compone]]
-[[Fase Tre#5.3.18 Magazzini|5.3.18 Magazzini]]
-[[Fase Tre#5.3.19 Contenere|5.3.19 Contenere]]
-[[Fase Tre#5.3.20 Spedizioni|5.3.20 Spedizioni]]
-[[Fase Tre#5.4 Query|5.4 Query]]
-[[Fase Tre#5.5 Algebra Relazionale|5.5 Algebra Relazionale]]
-[[Fase Tre#5.6 Calcolo Relazionale|5.6 Calcolo Relazionale]]
-[[Fase Tre#5.7 Views|5.7 Views]]
-[[Fase Tre#5.8 Index|5.8 Index]]
-[[Fase Tre#5.8.1 Ottimizzazione query| 5.8.1 Ottimizzazione Query]]
-[[Fase Tre#5.9 Procedure|5.9 Procedure]]
-[[Fase Tre#6. Sicurezza| 6. Sicurezza]]
-[[Fase Tre#6.1 Utenti|6.1 Utenti]]
+[[Documentazione EnoMarketDB#1. Generalità|1. Generalità]]
+	[[Documentazione EnoMarketDB#1.1 Descrizione generale del prodotto|1.1 Descrizione generale del prodotto]]
+	[[Documentazione EnoMarketDB#1.2 Obiettivi del Progetto|1.2 Obiettivi del Progetto]]
+	[[Documentazione EnoMarketDB#1.3 Utenti|1.3 Utenti]]
+		[[Documentazione EnoMarketDB#1.3.1 Clienti|1.3.1 Clienti]]
+		[[Documentazione EnoMarketDB#1.3.2 Produttori|1.3.2 Produttori]]
+		[[Documentazione EnoMarketDB#1.3.3 Corrieri|1.3.3 Corrieri]]
+[[Documentazione EnoMarketDB#2. Raccolta e analisi dei Requisiti|2. Raccolta e analisi dei Requisiti]]
+	[[Documentazione EnoMarketDB#2.1 Glossario dei termini|2.1 Glossario dei termini]]
+	[[Documentazione EnoMarketDB#2.2 Specifiche, assunzioni e vincoli d'integrità|2.2 Specifiche, assunzioni e vincoli d'integrità]]
+		[[Documentazione EnoMarketDB#2.2.1 Vincoli|2.2.1 Vincoli]]
+[[Documentazione EnoMarketDB#3. Progettazione concettuale|3. Progettazione concettuale]]
+	[[Documentazione EnoMarketDB#3.1 Diagramma E-R|3.1 Diagramma E-R]]
+	[[Documentazione EnoMarketDB#3.2 Schema scheletro|3.2 Schema scheletro]]
+	[[Documentazione EnoMarketDB#3.3 Raffinamenti|3.3 Raffinamenti]]
+[[Documentazione EnoMarketDB#4. Progettazione Logica|4. Progettazione Logica]]
+	[[Documentazione EnoMarketDB#4.1 Schema Logico|4.1 Schema Logico]]
+	[[Documentazione EnoMarketDB#4.2 Normalizzazione|4.2 Normalizzazione]]
+	[[Documentazione EnoMarketDB#4.3 Schema E-R concettuale ristrutturato|4.3 Schema E-R concettuale ristrutturato]]
+	[[Documentazione EnoMarketDB#4.4 Dizionario Entità e Relazioni|4.4 Dizionario Entità e Relazioni]]
+		[[Documentazione EnoMarketDB#4.4.1 Glossario delle Entità|4.4.1 Glossario delle Entità]]
+		[[Documentazione EnoMarketDB#4.4.2 Glossario delle Relazioni|4.4.2 Glossario delle Relazioni]]
+	[[Documentazione EnoMarketDB#4.5 Carico Applicativo|4.5 Carico Applicativo]]
+		[[Documentazione EnoMarketDB#4.5.1 Volume dei dati|4.5.1 Volume dei dati]]
+		[[Documentazione EnoMarketDB#4.5.2 Script SQL per il calcolo del Carico Applicativo|4.5.2 Script SQL per il calcolo del Carico Applicativo]]
+[[Documentazione EnoMarketDB#5. Implementazione Database - MySQL|5. Implementazione Database - MySQL]]
+	[[Documentazione EnoMarketDB#5.1 Creazione delle Tabelle|5.1 Creazione delle Tabelle]]
+	[[Documentazione EnoMarketDB#5.2 Triggers|5.2 Triggers]]
+	[[Documentazione EnoMarketDB#5.3 Inserimenti|5.3 Inserimenti]]
+		[[Documentazione EnoMarketDB#5.3.1 Indirizzi|5.3.1 Indirizzi]]
+		[[Documentazione EnoMarketDB#5.3.2 Corrieri|5.3.2 Corrieri]]
+		[[Documentazione EnoMarketDB#5.3.3 Clienti|5.3.3 Clienti]]
+		[[Documentazione EnoMarketDB#5.3.4 Carte di Credito|5.3.4 Carte di Credito]]
+		[[Documentazione EnoMarketDB#5.3.5 Produttori|5.3.5 Produttori]]
+		[[Documentazione EnoMarketDB#5.3.6 Tipi di Vino|5.3.6 Tipi di Vino]]
+		[[Documentazione EnoMarketDB#5.3.7 Vini|5.3.7 Vini]]
+		[[Documentazione EnoMarketDB#5.3.8 Ordini|5.3.8 Ordini]]
+		[[Documentazione EnoMarketDB#5.3.9 Lista Prodotti|5.3.9 Lista Prodotti]]
+		[[Documentazione EnoMarketDB#5.3.10 Pagamenti|5.3.10 Pagamenti]]
+		[[Documentazione EnoMarketDB#5.3.11 Preferire|5.3.11 Preferire]]
+		[[Documentazione EnoMarketDB#5.3.12 Recensire|5.3.12 Recensire]]
+		[[Documentazione EnoMarketDB#5.3.13 Premi|5.3.13 Premi]]
+		[[Documentazione EnoMarketDB#5.3.14 Assegnare|5.3.14 Assegnare]]
+		[[Documentazione EnoMarketDB#5.3.15 Ricevere|5.3.15 Ricevere]]
+		[[Documentazione EnoMarketDB#5.3.16 Uve|5.3.16 Uve]]
+		[[Documentazione EnoMarketDB#5.3.17 Compone|5.3.17 Compone]]
+		[[Documentazione EnoMarketDB#5.3.18 Magazzini|5.3.18 Magazzini]]
+		[[Documentazione EnoMarketDB#5.3.19 Contenere|5.3.19 Contenere]]
+		[[Documentazione EnoMarketDB#5.3.20 Spedizioni|5.3.20 Spedizioni]]
+	[[Documentazione EnoMarketDB#5.4 Query|5.4 Query]]
+		[[Documentazione EnoMarketDB#5.4.1 Ottimizzazione query| 5.4.1 Ottimizzazione Query]]
+		[[Documentazione EnoMarketDB#5.4.2 Index|5.4.2 Index]]
+	[[Documentazione EnoMarketDB#5.5 Algebra Relazionale|5.5 Algebra Relazionale]]
+	[[Documentazione EnoMarketDB#5.6 Calcolo Relazionale|5.6 Calcolo Relazionale]]
+	[[Documentazione EnoMarketDB#5.7 Views|5.7 Views]]
+	[[Documentazione EnoMarketDB#5.9 Procedure|5.8 Procedure]]
+[[Documentazione EnoMarketDB#6. Sicurezza| 6. Sicurezza]]
+	[[Documentazione EnoMarketDB#6.1 Utenti|6.1 Utenti]]
 # 1. Generalità
 
 ## 1.1 Descrizione generale del prodotto
@@ -147,10 +148,10 @@ Gli utenti principali del DB sono i seguenti:
 
 ### 2.2.1 Vincoli
 
-- **Sicurezza**: Il cliente viene inserito solo se maggiorenne;
-- **Coerenza**: I voti delle recensioni vanno da 0 a 10;
-- **Correttezza**: Un premio non può essere assegnato prima che il vino venga prodotto;
-- **Quantità dei Prodotti**: La quantità di vini in `Lista_Prodotti` non può essere negativa.
+- **Sicurezza**: Il cliente viene inserito solo se maggiorenne.
+- **Coerenza**: I voti delle recensioni vanno da 0 a 10.
+- **Correttezza**: Un premio non può essere assegnato prima che il vino venga prodotto.
+- **Quantità dei Prodotti**: La quantità di vini in `Lista_Prodotti` non può essere minore di 1.
 - **Data di Scadenza della Carta di Credito**: La data di scadenza della carta di credito deve essere successiva alla data corrente.
 - **Email Unica**: Ogni cliente deve avere un'email unica, senza duplicati (se esiste un campo email per i clienti).
 - **Validità della Data di Nascita**: La data di nascita del cliente non può essere nel futuro.
@@ -158,7 +159,7 @@ Gli utenti principali del DB sono i seguenti:
 - **Produttore Esistente**: Un vino può essere inserito solo se il produttore specificato esiste.
 - **Quantità Rimasta in Magazzino**: La quantità rimanente di un vino in un magazzino non può essere negativa.
 - **Percentuale di Composizione**: La somma delle percentuali delle uve per ogni vino deve essere pari a 100%.
-- **Pagamento Unico per Ordine**: Ogni ordine deve avere almeno un pagamento associato.
+- **Pagamento Unico per Ordine**: Ogni ordine spedito deve avere almeno un pagamento associato.
 - **Ordini Validi**: Ogni ordine deve essere associato a un cliente valido e un indirizzo esistente.
 - **Stato dell'Ordine**: Lo stato dell'ordine può essere solo "In Preparazione", "Spedito" o "Consegnato".
 
@@ -178,7 +179,7 @@ Le entità principali del sistema sono le seguenti:
 Le relazioni presenti permettono di affermare che un _Cliente_ può comprare un _Vino_ che viene spedito dal _Corriere_. 
 ### 3.3 Raffinamenti 
 1. Raffinazione *Clienti*:
-   ![[Pasted image 20240708155053.png]]
+   ![[Pasted image 20240712100005.png|center|300]]
 
 Qui si raffina l'entità _Cliente_:
 - Ad ogni _Cliente_ è collegata una o più _Carte di Credito_ che gli permetterà di acquistare i prodotti;
@@ -188,7 +189,7 @@ Qui si raffina l'entità _Cliente_:
 
 2. Raffinazione *Vini*:
    
-![[raffinazione2.jpg]]
+![[Pasted image 20240712100153.png|center]]
 
 Qui si raffina l'entità *Vini*:
 - I *Vini* saranno composti da *Uve*  e creeranno diversi *Tipi di vino*;
@@ -314,6 +315,22 @@ Le chiavi primarie sono identificate in **grassetto**, mentre le chiavi secondar
 | Magazzini        | Entità    | 5          | (4+4+51)=59             | 295                    |
 | Contenere        | Relazione | 30000      | (4+4+4)=12              | 360000                 |
 
+### 4.5.2 Script SQL per il calcolo del Carico Applicativo
+
+```MySQL
+SELECT 
+    table_schema, 
+    table_name, 
+    ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Size (MB)"
+FROM 
+    information_schema.TABLES 
+WHERE 
+    table_schema = "EnoMarketDB" 
+ORDER BY 
+    (data_length + index_length) DESC;
+```
+
+Il seguente codice restituisce una tabella con le varie entità e relazioni con lo spazio che occupano sulla memoria secondaria.
 # 5. Implementazione Database - MySQL
 
 ## 5.1 Creazione delle Tabelle
@@ -1184,12 +1201,12 @@ WHERE
 SELECT
 	clienti.Nome, clienti.Cognome, ordini.Id_Ordine,
 	SUM(
-		contiene.Quantità * vini.Prezzo
+		Lista_Prodotti.Quantità * vini.Prezzo
 	) AS Totale_Ordine
 FROM clienti INNER JOIN
 	ordini ON clienti.Id_Cliente = ordini.Id_Cliente
-INNER JOIN contiene ON ordini.Id_Ordine = contiene.Id_Ordine
-INNER JOIN vini ON contiene.Id_Vino = vini.Id_Vino
+INNER JOIN Lista_Prodotti ON ordini.Id_Ordine = Lista_Prodotti.Id_Ordine
+INNER JOIN vini ON Lista_Prodotti.Id_Vino = vini.Id_Vino
 GROUP BY
 	ordini.Id_Ordine
 ORDER BY
@@ -1228,10 +1245,10 @@ GROUP BY
 SELECT
 	vini.Id_Vino,
 	vini.Nome,
-	COUNT(preferiti.Id_Cliente) AS Num_Preferiti
+	COUNT(preferire.Id_Cliente) AS Num_Preferiti
 FROM
 	vini
-INNER JOIN preferiti ON vini.Id_Vino = preferiti.Id_Vino
+INNER JOIN preferire ON vini.Id_Vino = preferire.Id_Vino
 GROUP BY
 	vini.Id_Vino;
 ```
@@ -1242,12 +1259,12 @@ SELECT
 	vini.Id_Vino,
 	vini.Nome,
 	SUM(
-		vini.Prezzo * contiene.Quantità
+		vini.Prezzo * Lista_Prodotti.Quantità
 	) AS Totale_Venduto
 FROM
 	vini
-INNER JOIN contiene ON vini.Id_Vino = contiene.Id_Vino
-INNER JOIN ordini ON contiene.Id_Ordine = ordini.Id_Ordine
+INNER JOIN Lista_Prodotti ON vini.Id_Vino = Lista_Prodotti.Id_Vino
+INNER JOIN ordini ON Lista_Prodotti.Id_Ordine = ordini.Id_Ordine
 GROUP BY
 	vini.Id_Vino
 ORDER BY
@@ -1262,11 +1279,11 @@ SELECT
 	vini.Id_Vino,
 	vini.Nome,
 	vini.Prezzo,
-	ROUND(AVG(recensioni.Voto),
+	ROUND(AVG(recensire.Voto),
 	2) AS Voto_Medio
 FROM
 	vini
-INNER JOIN recensioni ON vini.Id_Vino = recensioni.Id_Vino
+INNER JOIN recensire ON vini.Id_Vino = recensire.Id_Vino
 GROUP BY
 	vini.Id_Vino
 ORDER BY
@@ -1310,15 +1327,15 @@ DESC;
 12. Trova i clienti che hanno ordinato di più
 ```MySQL
 SELECT
-	
+	clienti.Id_Cliente, clienti.Nome, clienti.Cognome
 FROM
 	clienti
 INNER JOIN ordini ON clienti.Id_Cliente = ordini.Id_Cliente
-INNER JOIN contiene ON ordini.Id_Ordine = contiene.Id_Ordine
-INNER JOIN vini ON contiene.Id_Vino = vini.Id_Vino
+INNER JOIN Lista_Prodotti ON ordini.Id_Ordine = Lista_Prodotti.Id_Ordine
+INNER JOIN vini ON Lista_Prodotti.Id_Vino = vini.Id_Vino
 GROUP BY 
 	clienti.Id_Cliente, 
-	contiene.Id_Contenuto;
+	Lista_Prodotti.Id_Lista;
 ```
 
 13. Restituisce il fatturato totale in un certo periodo
@@ -1413,12 +1430,64 @@ SELECT
 	AVG(R.Voto) AS MediaVoti
 FROM 
 	Vini V
-JOIN Recensioni R ON V.Id_Vino = R.Id_Vino
+JOIN Recensire R ON V.Id_Vino = R.Id_Vino
 GROUP BY 
 	V.Nome
 HAVING 
 	AVG(R.Voto) > 8;
 ```
+
+### 5.4.1 Ottimizzazione query
+
+Riportiamo un esempio di ottimizzazione delle Query tramite Index:
+Utilizzeremo il seguente Snippet di codice che restituisce tutti i clienti di una data nazione:
+```MySQL
+SELECT
+	Clienti.Nome , Clienti.Cognome,Indirizzi.CAP ,Indirizzi.Citta , Indirizzi.Provincia
+FROM 
+	Indirizzi
+INNER JOIN Clienti ON Indirizzi.Id_Indirizzo = Clienti.Id_Indirizzo
+WHERE 
+	Indirizzi.Nazione = 'Italia' ;
+```
+
+- Tempo richiesto dalla Query prima dell'ottimizzazione tramite Index:
+![[Pasted image 20240712100507.png]]
+- Tempo richiesto dalla Query dopo l'ottimizzazione tramite Index:
+![[Pasted image 20240712100520.png]]
+Il miglioramento ottenuto risulta dalla formula seguente:$$100\cdot\frac{0,015 - 0,009}{0,015} \approx 40\%$$
+### 5.4.2 Index
+
+```MySQL
+CREATE INDEX idx_indirizzi_cap ON Indirizzi (CAP);
+CREATE INDEX idx_indirizzi_citta ON Indirizzi (Città);
+CREATE INDEX idx_indirizzi_provincia ON Indirizzi (Provincia);
+
+CREATE INDEX idx_clienti_nome ON Clienti (Nome);
+CREATE INDEX idx_clienti_cognome ON Clienti (Cognome);
+
+CREATE INDEX idx_vini_nome ON Vini (Nome);
+CREATE INDEX idx_vini_anno ON Vini (Anno);
+CREATE INDEX idx_vini_tipologia ON Vini (Tipologia);
+
+CREATE INDEX idx_ordini_id_cliente ON Ordini (Id_Cliente);
+CREATE INDEX idx_ordini_data_ordine ON Ordini (Data_Ordine);
+
+CREATE INDEX idx_spedizioni_id_ordine ON Spedizioni (Id_Ordine);
+CREATE INDEX idx_spedizioni_data_spedizione ON Spedizioni (Data_Spedizione);
+
+CREATE INDEX idx_recensioni_id_vino ON Recensioni (Id_Vino);
+CREATE INDEX idx_recensioni_id_cliente ON Recensioni (Id_Cliente);
+
+CREATE INDEX idx_compone_id_vino ON Compone (Id_Vino);
+CREATE INDEX idx_compone_id_uva ON Compone (Id_Uva);
+
+CREATE INDEX idx_lista_prodotti_id_ordine ON Lista_Prodotti (Id_Ordine);
+CREATE INDEX idx_lista_prodotti_id_vino ON Lista_Prodotti (Id_Vino);
+```
+
+
+
 
 ---
 
@@ -1463,7 +1532,7 @@ Di seguito sono alcune query espresse tramite il calcolo relazionale sulle tuple
 $$P = \{ (v∣ v \in Vini, v.Tipologia = 'Rosso', v.Prezzo \le 20, v.Anno > 2015 ) \}$$
 
 - _Restituisce i 10 vini più premiati dalla critica_
-$$P=\{(v.IdVino,v.Nome,COUNT(a.IdPremio)→NumPremi)∣v\in vini,a\in assegnare,v.IdVino=a.IdVino\}$$
+$$P=\{(v.Id\_Vino,v.Nome,COUNT(a.Id\_Premio)\rightarrow NumPremi)∣v\in vini,a\in assegnare,v.Id\_Vino=a.Id\_Vino\}$$
 
 - _Visualizza tutti gli ordini effettuati da un cliente specifico_
 $$P = \{ (o.Id\_Ordine, o.Stato, o.Data\_Ordine) ∣ o \in Ordine, o.Id\_Cliente = 1  \}$$
@@ -1536,39 +1605,8 @@ ORDER BY Totale_Venduto DESC
 LIMIT 10;
 ```
 
-## 5.8 Index
 
-```MySQL
-CREATE INDEX idx_indirizzi_cap ON Indirizzi (CAP);
-CREATE INDEX idx_indirizzi_citta ON Indirizzi (Città);
-CREATE INDEX idx_indirizzi_provincia ON Indirizzi (Provincia);
-
-CREATE INDEX idx_clienti_nome ON Clienti (Nome);
-CREATE INDEX idx_clienti_cognome ON Clienti (Cognome);
-
-CREATE INDEX idx_vini_nome ON Vini (Nome);
-CREATE INDEX idx_vini_anno ON Vini (Anno);
-CREATE INDEX idx_vini_tipologia ON Vini (Tipologia);
-
-CREATE INDEX idx_ordini_id_cliente ON Ordini (Id_Cliente);
-CREATE INDEX idx_ordini_data_ordine ON Ordini (Data_Ordine);
-
-CREATE INDEX idx_spedizioni_id_ordine ON Spedizioni (Id_Ordine);
-CREATE INDEX idx_spedizioni_data_spedizione ON Spedizioni (Data_Spedizione);
-
-CREATE INDEX idx_recensioni_id_vino ON Recensioni (Id_Vino);
-CREATE INDEX idx_recensioni_id_cliente ON Recensioni (Id_Cliente);
-
-CREATE INDEX idx_compone_id_vino ON Compone (Id_Vino);
-CREATE INDEX idx_compone_id_uva ON Compone (Id_Uva);
-
-CREATE INDEX idx_lista_prodotti_id_ordine ON Lista_Prodotti (Id_Ordine);
-CREATE INDEX idx_lista_prodotti_id_vino ON Lista_Prodotti (Id_Vino);
-```
-
-### 5.8.1 Ottimizzazione query
-
-## 5.9 Procedure
+## 5.8 Procedure
 
 ```MySQL
 DELIMITER //
@@ -1605,6 +1643,7 @@ DELIMITER ;
 
 
 # 6. Sicurezza
+In questa sezione mostriamo il codice necessario alla creazione di profili diversi i quali possono essere limitati nei comandi che possono eseguire sul nostro database.
 ### 6.1 Utenti
 ```MySQL
 CREATE USER 'admin'@'%' IDENTIFIED BY 'strong_password';

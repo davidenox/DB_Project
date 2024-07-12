@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md",
+                "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md",
+                "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md",
+                "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fasi/Fase 3/Fase Tre.md"
+                "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md"
               }
             }
           },
@@ -156,8 +156,12 @@
   },
   "active": "b426d025edcfdb9d",
   "lastOpenFiles": [
+    "Pasted image 20240712100520.png",
+    "Pasted image 20240712100507.png",
+    "Pasted image 20240712100153.png",
+    "Pasted image 20240712100005.png",
     "Senza nome.md",
-    "Fasi/Fase 3/Fase Tre.md",
+    "Fasi/Fase 3/Documentazione EnoMarketDB.md",
     "Fasi/Immagini/DiagrammaER 1.png",
     "Fasi/Immagini/Pasted image 20240710140309.png",
     "Fasi/Immagini/Pasted image 20240710140259.png",
@@ -167,15 +171,12 @@
     "Scarti/ER_Definitivo.drawio.pdf",
     "Scarti/Logico_Definitivo.drawio.png",
     "Scarti/Schema_Scheletro.drawio.pdf",
-    "Scarti/Logico_Definitivo2.drawio.png",
     "Scarti",
     "EnoMarketDB/Views.sql",
     "EnoMarketDB/Tables.sql",
     "EnoMarketDB/Scripts",
     "EnoMarketDB/Queries.sql",
     "EnoMarketDB/Insert.sql",
-    "Scarti/scheletro.jpg",
-    "Scarti/raffinazione2.jpg",
     "Fasi/Codice/Implementazione MYSQL.md",
     "Fasi/Fase 3",
     "EnoMarketDB/Insert_Manuali.sql",
