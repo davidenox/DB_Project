@@ -16,7 +16,9 @@
                 "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Documentazione EnoMarketDB"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Esplora risorse"
             }
           },
           {
@@ -54,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Ricerca"
             }
           },
           {
@@ -62,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Segnalibri"
             }
           }
         ]
@@ -93,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Riferimenti a Documentazione EnoMarketDB"
             }
           },
           {
@@ -105,7 +115,9 @@
                 "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Collegamenti in uscita da Documentazione EnoMarketDB"
             }
           },
           {
@@ -116,7 +128,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Etichette"
             }
           },
           {
@@ -126,7 +140,9 @@
               "type": "outline",
               "state": {
                 "file": "Fasi/Fase 3/Documentazione EnoMarketDB.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "Struttura di Documentazione EnoMarketDB"
             }
           },
           {
@@ -134,7 +150,9 @@
             "type": "leaf",
             "state": {
               "type": "git-view",
-              "state": {}
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -154,14 +172,16 @@
       "command-palette:Apri riquadro comandi": false
     }
   },
-  "active": "4b4063c61c456e68",
+  "active": "a8a3ab3305f43122",
   "lastOpenFiles": [
+    "Documentazione/Documentazione EnoMarketDB.pdf",
+    "README.md",
+    "Fasi/Fase 3/Documentazione EnoMarketDB.md",
     "Fasi/Immagini/Pasted image 20240712100520.png",
     "Fasi/Immagini/Pasted image 20240712100507.png",
     "Fasi/Immagini/Pasted image 20240712100153.png",
     "Fasi/Immagini/Pasted image 20240712100005.png",
     "Senza nome.md",
-    "Fasi/Fase 3/Documentazione EnoMarketDB.md",
     "Fasi/Immagini/DiagrammaER 1.png",
     "Fasi/Immagini/Pasted image 20240710140309.png",
     "Fasi/Immagini/Pasted image 20240710140259.png",
@@ -169,7 +189,6 @@
     "Fasi/Immagini/SchemaLogico.png",
     "SchemaLogico.drawio(1).png",
     "Scarti/ER_Definitivo.drawio.pdf",
-    "Scarti/Logico_Definitivo.drawio.png",
     "Scarti/Schema_Scheletro.drawio.pdf",
     "Scarti",
     "EnoMarketDB/Views.sql",
@@ -195,7 +214,6 @@
     "Fasi/Fase 1/Fase Uno.md",
     "ER.md",
     "Progettazione logica.md",
-    "README.md",
     "Fasi/Fase Uno.md",
     "Fase Uno.md"
   ]
